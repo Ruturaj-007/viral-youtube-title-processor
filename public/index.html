@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Title Doctor - AI Title Optimizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .input-focus:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .pulse-slow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="text-center">
+                <div class="inline-block mb-4">
+                    <span class="text-6xl">🎬</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-3">
+                    YouTube Title Doctor
+                </h1>
+                <p class="text-lg md:text-xl text-purple-100 mb-2">
+                    Transform Your Titles with AI-Powered Optimization
+                </p>
+                <div class="flex items-center justify-center gap-4 text-sm text-purple-200">
+                    <span class="flex items-center gap-1">
+                        <span>⚡</span> Powered by Gemini 2.5
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                        <span>🚀</span> Built with Motia.dev
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 -mt-8 pb-16">
+        <!-- Main Card -->
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white rounded-2xl card-shadow p-8 md:p-10">
+                
+                <!-- Form Section -->
+                <div id="formSection">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">
+                        Get Better Video Titles in Seconds
+                    </h2>
+                    
+                    <div class="space-y-5">
+                        <!-- Channel Input -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                YouTube Channel
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">
+                                    📺
+                                </span>
+                                <input 
+                                    type="text" 
+                                    id="channelInput"
+                                    placeholder="@chaiaurcode or Channel Name"
+                                    class="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl input-focus transition-all outline-none"
+                                />
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1.5 ml-1">
+                                Enter @ handle or search by channel name
+                            </p>
+                        </div>
+
+                        <!-- Email Input -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Email Address
+                            </label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">
+                                    📧
+                                </span>
+                                <input 
+                                    type="email" 
+                                    id="emailInput"
+                                    placeholder="your@email.com"
+                                    class="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-xl input-focus transition-all outline-none"
+                                />
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1.5 ml-1">
+                                Improved titles will be sent here
+                            </p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button 
+                            onclick="submitRequest()"
+                            class="w-full gradient-bg text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg mt-6"
+                        >
+                            <span class="flex items-center justify-center gap-2">
+                                <span class="text-xl">✨</span>
+                                Generate Better Titles
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Loading Section -->
+                <div id="loadingSection" class="hidden text-center py-8">
+                    <div class="flex flex-col items-center">
+                        <!-- Spinner -->
+                        <div class="relative mb-6">
+                            <div class="w-20 h-20 border-4 border-purple-200 rounded-full"></div>
+                            <div class="w-20 h-20 border-4 border-purple-600 rounded-full border-t-transparent animate-spin absolute top-0"></div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">
+                            AI is Working Magic ✨
+                        </h3>
+                        <p class="text-gray-600 mb-6" id="loadingStatus">
+                            Processing your request...
+                        </p>
+
+                        <!-- Progress Steps -->
+                        <div class="w-full max-w-md space-y-3 text-left">
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</span>
+                                <span class="text-gray-700">Resolving channel...</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">✓</span>
+                                <span class="text-gray-700">Fetching latest videos...</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="flex-shrink-0 w-6 h-6 bg-purple-600 rounded-full flex items-center justify-center animate-pulse">
+                                    <span class="text-white text-xs">⟳</span>
+                                </span>
+                                <span class="text-gray-700 font-medium">Generating viral titles with AI...</span>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-500 mt-6">This usually takes 10-15 seconds</p>
+                    </div>
+                </div>
+
+                <!-- Success Section -->
+                <div id="successSection" class="hidden text-center py-8">
+                    <div class="mb-6">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-4xl">🎉</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">
+                            Success!
+                        </h3>
+                        <p class="text-lg text-gray-600 mb-2">
+                            Your improved titles are ready
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Check your email inbox for the results 📧
+                        </p>
+                    </div>
+
+                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6">
+                        <p class="text-sm text-purple-800">
+                            <strong>📬 Email sent successfully!</strong><br/>
+                            We've sent you 5 AI-improved titles with detailed explanations.
+                        </p>
+                    </div>
+
+                    <button 
+                        onclick="resetForm()"
+                        class="gradient-bg text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all font-semibold"
+                    >
+                        Optimize Another Channel
+                    </button>
+                </div>
+
+                <!-- Error Section -->
+                <div id="errorSection" class="hidden text-center py-8">
+                    <div class="mb-6">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-4xl">😕</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">
+                            Oops!
+                        </h3>
+                        <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-2">
+                            <p class="text-sm text-red-800 font-medium" id="errorMessage">
+                                Something went wrong
+                            </p>
+                        </div>
+                        <p class="text-sm text-gray-500">
+                            Please try again or contact support
+                        </p>
+                    </div>
+
+                    <button 
+                        onclick="resetForm()"
+                        class="gradient-bg text-white px-8 py-3 rounded-xl hover:opacity-90 transition-all font-semibold"
+                    >
+                        Try Again
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="max-w-4xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-3">🤖</div>
+                <h4 class="font-bold text-gray-800 mb-2">AI-Powered</h4>
+                <p class="text-sm text-gray-600">Google Gemini 2.5 Flash analyzes and improves your titles</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-3">⚡</div>
+                <h4 class="font-bold text-gray-800 mb-2">Lightning Fast</h4>
+                <p class="text-sm text-gray-600">Get optimized titles in just 10-15 seconds</p>
+            </div>
+            <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl mb-3">🎯</div>
+                <h4 class="font-bold text-gray-800 mb-2">SEO Optimized</h4>
+                <p class="text-sm text-gray-600">Titles designed for maximum clicks and views</p>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="max-w-2xl mx-auto mt-16 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">How It Works</h3>
+            <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 gradient-bg rounded-full flex items-center justify-center text-white font-bold">1</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Enter Channel Details</h4>
+                        <p class="text-sm text-gray-600">Provide YouTube channel handle or name and your email</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 gradient-bg rounded-full flex items-center justify-center text-white font-bold">2</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">AI Analysis</h4>
+                        <p class="text-sm text-gray-600">Our AI fetches latest videos and analyzes titles for improvement</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 gradient-bg rounded-full flex items-center justify-center text-white font-bold">3</div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Receive Results</h4>
+                        <p class="text-sm text-gray-600">Get improved titles with detailed explanations via email</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function submitRequest() {
+            const channel = document.getElementById('channelInput').value.trim();
+            const email = document.getElementById('emailInput').value.trim();
+
+            // Validation
+            if (!channel) {
+                alert('⚠️ Please enter a YouTube channel name or handle');
+                document.getElementById('channelInput').focus();
+                return;
+            }
+
+            if (!email) {
+                alert('⚠️ Please enter your email address');
+                document.getElementById('emailInput').focus();
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('⚠️ Please enter a valid email address');
+                document.getElementById('emailInput').focus();
+                return;
+            }
+
+            // Show loading state
+            document.getElementById('formSection').classList.add('hidden');
+            document.getElementById('loadingSection').classList.remove('hidden');
+
+            try {
+                    const response = await fetch('http://localhost:3000/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ channel, email })
+                });
+
+                // Check if response is ok
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status} ${response.statusText}`);
+                }
+
+                // Check if response has content
+                const contentType = response.headers.get("content-type");
+                if (!contentType || !contentType.includes("application/json")) {
+                    throw new Error("Server didn't return JSON response");
+                }
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Show success
+                    document.getElementById('loadingSection').classList.add('hidden');
+                    document.getElementById('successSection').classList.remove('hidden');
+                } else {
+                    throw new Error(data.error || 'Unknown error occurred');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                // Show error
+                document.getElementById('loadingSection').classList.add('hidden');
+                document.getElementById('errorSection').classList.remove('hidden');
+                document.getElementById('errorMessage').textContent = error.message;
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('channelInput').value = '';
+            document.getElementById('emailInput').value = '';
+            document.getElementById('successSection').classList.add('hidden');
+            document.getElementById('errorSection').classList.add('hidden');
+            document.getElementById('formSection').classList.remove('hidden');
+        }
+
+        // Allow Enter key to submit
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        submitRequest();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
