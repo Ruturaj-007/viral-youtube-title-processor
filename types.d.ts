@@ -18,6 +18,5 @@ declare module 'motia' {
     'fetchVideos': EventHandler<never, { topic: 'yt.videos.fetched'; data: unknown } | { topic: 'yt.videos.error'; data: never }>
     'ResolveChannel': EventHandler<never, { topic: 'yt.channel.resolved'; data: never } | { topic: 'yt.channel.error'; data: never }>
     'SubmitChannel': ApiRouteHandler<Record<string, unknown>, unknown, { topic: 'yt.submit'; data: never }>
-    'HomePage': ApiRouteHandler<Record<string, unknown>, unknown, never>
   }
 }

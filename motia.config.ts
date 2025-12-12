@@ -1,3 +1,5 @@
+// motia.config.ts
+
 import { config } from '@motiadev/core'
 const statesPlugin = require('@motiadev/plugin-states/plugin')
 const endpointPlugin = require('@motiadev/plugin-endpoint/plugin')
