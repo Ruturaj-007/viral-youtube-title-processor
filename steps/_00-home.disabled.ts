@@ -42,7 +42,7 @@ import * as path from "path";
 export const config: ApiRouteConfig = {
   name: "HomePage",
   type: "api",
-  path: "/home",  // ✅ yaha change kiya
+  path: "/home",
   // path: "/",
   method: "GET",
   emits: [],

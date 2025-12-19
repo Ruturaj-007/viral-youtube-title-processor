@@ -1,774 +1,4 @@
 {
-  "6KJ9U-1146065:d80d9d9b-63bf-46b6-b681-6661dffc05ee": {
-    "id": "d80d9d9b-63bf-46b6-b681-6661dffc05ee",
-    "name": "SubmitChannel",
-    "parentTraceId": "6KJ9U-1146065",
-    "status": "completed",
-    "startTime": 1763831146066,
-    "endTime": 1763831146601,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831146539,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@chaiaurcode",
-            "email": "test@test.com"
-          },
-          "level": "info",
-          "time": 1763831146513,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831146544,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1763831146514_43uagsg6r",
-          "key": {
-            "jobId": "job_1763831146514_43uagsg6r",
-            "channel": "@chaiaurcode",
-            "email": "test@test.com",
-            "status": "queued",
-            "createdAt": "2025-11-22T17:05:46.514Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1763831146551,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "SubmitChannel",
-          "jobId": "job_1763831146514_43uagsg6r",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com",
-          "level": "info",
-          "time": 1763831146548,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831146555,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831146514_43uagsg6r",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "6KJ9U-1146065:3dd3b66e-79bf-4a7d-8194-1167cb50465f": {
-    "id": "3dd3b66e-79bf-4a7d-8194-1167cb50465f",
-    "name": "ResolveChannel",
-    "parentTraceId": "6KJ9U-1146065",
-    "status": "completed",
-    "startTime": 1763831146561,
-    "endTime": 1763831147600,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831147121,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "ResolveChannel",
-          "jobId": "job_1763831146514_43uagsg6r",
-          "channel": "@chaiaurcode",
-          "level": "info",
-          "time": 1763831147120,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831147127,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1763831146514_43uagsg6r"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831147130,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1763831146514_43uagsg6r",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831147407,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831146514_43uagsg6r",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "channelName": "Chai aur Code",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "6KJ9U-1146065:da8d4efb-e2b6-44a7-9b80-fd6f6b28e223": {
-    "id": "da8d4efb-e2b6-44a7-9b80-fd6f6b28e223",
-    "name": "fetchVideos",
-    "parentTraceId": "6KJ9U-1146065",
-    "status": "completed",
-    "startTime": 1763831147411,
-    "endTime": 1763831148712,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831147909,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "fetchVideos",
-          "jobId": "job_1763831146514_43uagsg6r",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "level": "info",
-          "time": 1763831147907,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831147912,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1763831146514_43uagsg6r"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831147916,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1763831146514_43uagsg6r",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1763831148528,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "fetchVideos",
-          "jobId": "job_1763831146514_43uagsg6r",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1763831148527,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831148532,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1763831146514_43uagsg6r",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "5RjiIu7bknI",
-                "title": "The boring websites that I love",
-                "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-                "publishedAt": "2025-11-22T13:44:29Z",
-                "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-              },
-              {
-                "videoId": "sQuuemyiA1g",
-                "title": "Masterji app is available at your nearest App/play store",
-                "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-                "publishedAt": "2025-11-20T13:52:28Z",
-                "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-              },
-              {
-                "videoId": "8ashfLSm3tc",
-                "title": "opportunities are not equal for everyone",
-                "url": "https://www.youtube.com/watch?v=8ashfLSm3tc",
-                "publishedAt": "2025-11-19T10:32:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/8ashfLSm3tc/default.jpg"
-              },
-              {
-                "videoId": "9A8Xv7UAkOE",
-                "title": "Open source done right",
-                "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-                "publishedAt": "2025-11-18T12:21:08Z",
-                "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-              },
-              {
-                "videoId": "8cshn2IIkbY",
-                "title": "The hidden chrome performance tools",
-                "url": "https://www.youtube.com/watch?v=8cshn2IIkbY",
-                "publishedAt": "2025-11-13T15:04:13Z",
-                "thumbnail": "https://i.ytimg.com/vi/8cshn2IIkbY/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831148537,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831146514_43uagsg6r",
-          "channelName": "Chai aur Code",
-          "videos": [
-            {
-              "videoId": "5RjiIu7bknI",
-              "title": "The boring websites that I love",
-              "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-              "publishedAt": "2025-11-22T13:44:29Z",
-              "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-            },
-            {
-              "videoId": "sQuuemyiA1g",
-              "title": "Masterji app is available at your nearest App/play store",
-              "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-              "publishedAt": "2025-11-20T13:52:28Z",
-              "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-            },
-            {
-              "videoId": "8ashfLSm3tc",
-              "title": "opportunities are not equal for everyone",
-              "url": "https://www.youtube.com/watch?v=8ashfLSm3tc",
-              "publishedAt": "2025-11-19T10:32:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/8ashfLSm3tc/default.jpg"
-            },
-            {
-              "videoId": "9A8Xv7UAkOE",
-              "title": "Open source done right",
-              "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-              "publishedAt": "2025-11-18T12:21:08Z",
-              "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-            },
-            {
-              "videoId": "8cshn2IIkbY",
-              "title": "The hidden chrome performance tools",
-              "url": "https://www.youtube.com/watch?v=8cshn2IIkbY",
-              "publishedAt": "2025-11-13T15:04:13Z",
-              "thumbnail": "https://i.ytimg.com/vi/8cshn2IIkbY/default.jpg"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "6KJ9U-1146065:043df235-6f30-4419-8e91-7ac39e7b7803": {
-    "id": "043df235-6f30-4419-8e91-7ac39e7b7803",
-    "name": "GenerateTitles",
-    "parentTraceId": "6KJ9U-1146065",
-    "status": "completed",
-    "startTime": 1763831148542,
-    "endTime": 1763831149477,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831149017,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "GenerateTitles",
-          "jobId": "job_1763831146514_43uagsg6r",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1763831149016,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831149021,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1763831146514_43uagsg6r"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831149028,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1763831146514_43uagsg6r",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1763831149340,
-        "level": "error",
-        "message": "Error generating titles",
-        "metadata": {
-          "traceId": "6KJ9U-1146065",
-          "step": "GenerateTitles",
-          "error": "Gemini API error: Invalid value at 'prompt' (type.googleapis.com/google.ai.generativelanguage.v1beta.TextPrompt), \"You are a Youtube title optimization expert. Below are 5 video titles from the channel \"Chai aur Code\".\n\nFor each title, provide:\n1. An improved version that is more engaging, SEO-friendly, and likely to get more clicks \n2. A brief rationale (1-2 sentences) explaining why the improved title is better\n\nGuidelines:\n- Keep the core topic and authenticity\n- Use action verbs, numbers, and specific value propositions\n- Make it curiosity-inducing without being clickbait\n- Optimize for searchability and clarity\n\nVideo Titles:\n1.\"The boring websites that I love\"\n2.\"Masterji app is available at your nearest App/play store\"\n3.\"opportunities are not equal for everyone\"\n4.\"Open source done right\"\n5.\"The hidden chrome performance tools\"\n\nRespond strictly in JSON format:\n{\n   \"titles\": [\n   {\n      \"original\": \"...\",\n      \"improved\": \"...\",\n      \"rationale\": \"...\"\n   }\n  ]                 \n}\"",
-          "level": "error",
-          "time": 1763831149338,
-          "msg": "Error generating titles"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831149344,
-        "operation": "get",
-        "data": {
-          "traceId": "job: job_1763831146514_43uagsg6r"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831149350,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1763831146514_43uagsg6r",
-          "key": {
-            "status": "failed",
-            "error": "Gemini API error: Invalid value at 'prompt' (type.googleapis.com/google.ai.generativelanguage.v1beta.TextPrompt), \"You are a Youtube title optimization expert. Below are 5 video titles from the channel \"Chai aur Code\".\n\nFor each title, provide:\n1. An improved version that is more engaging, SEO-friendly, and likely to get more clicks \n2. A brief rationale (1-2 sentences) explaining why the improved title is better\n\nGuidelines:\n- Keep the core topic and authenticity\n- Use action verbs, numbers, and specific value propositions\n- Make it curiosity-inducing without being clickbait\n- Optimize for searchability and clarity\n\nVideo Titles:\n1.\"The boring websites that I love\"\n2.\"Masterji app is available at your nearest App/play store\"\n3.\"opportunities are not equal for everyone\"\n4.\"Open source done right\"\n5.\"The hidden chrome performance tools\"\n\nRespond strictly in JSON format:\n{\n   \"titles\": [\n   {\n      \"original\": \"...\",\n      \"improved\": \"...\",\n      \"rationale\": \"...\"\n   }\n  ]                 \n}\""
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831149356,
-        "topic": "yt.videos.error",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831146514_43uagsg6r",
-          "email": "test@test.com",
-          "error": "Failed to fetch videos. Please try again later"
-        }
-      }
-    ]
-  },
-  "ZG6AM-1444451:a8fba867-429f-4bee-91ad-b72222f2d831": {
-    "id": "a8fba867-429f-4bee-91ad-b72222f2d831",
-    "name": "SubmitChannel",
-    "parentTraceId": "ZG6AM-1444451",
-    "status": "completed",
-    "startTime": 1763831444451,
-    "endTime": 1763831444941,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831444878,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@chaiaurcode",
-            "email": "test@test.com"
-          },
-          "level": "info",
-          "time": 1763831444849,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831444882,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1763831444850_hbf7vxi6u",
-          "key": {
-            "jobId": "job_1763831444850_hbf7vxi6u",
-            "channel": "@chaiaurcode",
-            "email": "test@test.com",
-            "status": "queued",
-            "createdAt": "2025-11-22T17:10:44.850Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1763831444888,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "SubmitChannel",
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com",
-          "level": "info",
-          "time": 1763831444885,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831444891,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "ZG6AM-1444451:a9b48606-1206-4cc6-86ec-2366f5e222ba": {
-    "id": "a9b48606-1206-4cc6-86ec-2366f5e222ba",
-    "name": "ResolveChannel",
-    "parentTraceId": "ZG6AM-1444451",
-    "status": "completed",
-    "startTime": 1763831444900,
-    "endTime": 1763831445903,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831445438,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "ResolveChannel",
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "channel": "@chaiaurcode",
-          "level": "info",
-          "time": 1763831445437,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831445442,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1763831444850_hbf7vxi6u"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831445446,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1763831444850_hbf7vxi6u",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831445719,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "channelName": "Chai aur Code",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "ZG6AM-1444451:e18007a1-1005-4122-8090-22b03f4c8031": {
-    "id": "e18007a1-1005-4122-8090-22b03f4c8031",
-    "name": "fetchVideos",
-    "parentTraceId": "ZG6AM-1444451",
-    "status": "completed",
-    "startTime": 1763831445722,
-    "endTime": 1763831446964,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831446195,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "fetchVideos",
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "level": "info",
-          "time": 1763831446194,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831446199,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1763831444850_hbf7vxi6u"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831446203,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1763831444850_hbf7vxi6u",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1763831446774,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "fetchVideos",
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1763831446773,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831446779,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1763831444850_hbf7vxi6u",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "5RjiIu7bknI",
-                "title": "The boring websites that I love",
-                "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-                "publishedAt": "2025-11-22T13:44:29Z",
-                "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-              },
-              {
-                "videoId": "sQuuemyiA1g",
-                "title": "Masterji app is available at your nearest App/play store",
-                "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-                "publishedAt": "2025-11-20T13:52:28Z",
-                "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-              },
-              {
-                "videoId": "9A8Xv7UAkOE",
-                "title": "Open source done right",
-                "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-                "publishedAt": "2025-11-18T12:21:08Z",
-                "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-              },
-              {
-                "videoId": "8cshn2IIkbY",
-                "title": "The hidden chrome performance tools",
-                "url": "https://www.youtube.com/watch?v=8cshn2IIkbY",
-                "publishedAt": "2025-11-13T15:04:13Z",
-                "thumbnail": "https://i.ytimg.com/vi/8cshn2IIkbY/default.jpg"
-              },
-              {
-                "videoId": "uBE9zLU--DA",
-                "title": "The DSA Toolkit",
-                "url": "https://www.youtube.com/watch?v=uBE9zLU--DA",
-                "publishedAt": "2025-11-13T11:59:33Z",
-                "thumbnail": "https://i.ytimg.com/vi/uBE9zLU--DA/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831446784,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "channelName": "Chai aur Code",
-          "videos": [
-            {
-              "videoId": "5RjiIu7bknI",
-              "title": "The boring websites that I love",
-              "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-              "publishedAt": "2025-11-22T13:44:29Z",
-              "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-            },
-            {
-              "videoId": "sQuuemyiA1g",
-              "title": "Masterji app is available at your nearest App/play store",
-              "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-              "publishedAt": "2025-11-20T13:52:28Z",
-              "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-            },
-            {
-              "videoId": "9A8Xv7UAkOE",
-              "title": "Open source done right",
-              "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-              "publishedAt": "2025-11-18T12:21:08Z",
-              "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-            },
-            {
-              "videoId": "8cshn2IIkbY",
-              "title": "The hidden chrome performance tools",
-              "url": "https://www.youtube.com/watch?v=8cshn2IIkbY",
-              "publishedAt": "2025-11-13T15:04:13Z",
-              "thumbnail": "https://i.ytimg.com/vi/8cshn2IIkbY/default.jpg"
-            },
-            {
-              "videoId": "uBE9zLU--DA",
-              "title": "The DSA Toolkit",
-              "url": "https://www.youtube.com/watch?v=uBE9zLU--DA",
-              "publishedAt": "2025-11-13T11:59:33Z",
-              "thumbnail": "https://i.ytimg.com/vi/uBE9zLU--DA/default.jpg"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "ZG6AM-1444451:050613c7-2868-443c-97e5-340da1e821f0": {
-    "id": "050613c7-2868-443c-97e5-340da1e821f0",
-    "name": "GenerateTitles",
-    "parentTraceId": "ZG6AM-1444451",
-    "status": "completed",
-    "startTime": 1763831446788,
-    "endTime": 1763831447713,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1763831447267,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "GenerateTitles",
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1763831447265,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831447272,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1763831444850_hbf7vxi6u"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831447276,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1763831444850_hbf7vxi6u",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1763831447557,
-        "level": "error",
-        "message": "Error generating titles",
-        "metadata": {
-          "traceId": "ZG6AM-1444451",
-          "step": "GenerateTitles",
-          "error": "Gemini API error: Requested entity was not found.",
-          "level": "error",
-          "time": 1763831447555,
-          "msg": "Error generating titles"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831447562,
-        "operation": "get",
-        "data": {
-          "traceId": "job: job_1763831444850_hbf7vxi6u"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1763831447566,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1763831444850_hbf7vxi6u",
-          "key": {
-            "status": "failed",
-            "error": "Gemini API error: Requested entity was not found."
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1763831447570,
-        "topic": "yt.videos.error",
-        "success": true,
-        "data": {
-          "jobId": "job_1763831444850_hbf7vxi6u",
-          "email": "test@test.com",
-          "error": "Failed to fetch videos. Please try again later"
-        }
-      }
-    ]
-  },
   "WZHG8-1903130:7bfffed7-b014-4cc9-81b8-1c01c014d062": {
     "id": "7bfffed7-b014-4cc9-81b8-1c01c014d062",
     "name": "SubmitChannel",
@@ -17990,6 +17220,1124 @@
           "jobId": "job_1764272581338_1dtx8khxv",
           "email": "pruturaj3003@gmail.com",
           "emailId": "d39fbd66-8800-4a7b-8f09-aed4db72d8b3"
+        }
+      }
+    ]
+  },
+  "DYP6H-5493820:e9327d6e-96bf-433e-b6f0-20fd84c12491": {
+    "id": "e9327d6e-96bf-433e-b6f0-20fd84c12491",
+    "name": "SubmitChannel",
+    "parentTraceId": "DYP6H-5493820",
+    "status": "completed",
+    "startTime": 1766065493855,
+    "endTime": 1766065495221,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065495009,
+        "level": "info",
+        "message": "Received submition request",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1766065494820,
+          "msg": "Received submition request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065495051,
+        "operation": "set",
+        "data": {
+          "traceId": "job: job_1766065494821_wf620i6vr",
+          "key": {
+            "jobId": "job_1766065494821_wf620i6vr",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2025-12-18T13:44:54.821Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065495090,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "SubmitChannel",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1766065495060,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065495117,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DYP6H-5493820:cd23bd54-c33f-4912-8ac8-cfd415631d7f": {
+    "id": "cd23bd54-c33f-4912-8ac8-cfd415631d7f",
+    "name": "ResolveChannel",
+    "parentTraceId": "DYP6H-5493820",
+    "status": "completed",
+    "startTime": 1766065495151,
+    "endTime": 1766065496352,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065495752,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "ResolveChannel",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1766065495749,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065495773,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065495792,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065496121,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "channelName": "Chai aur Code",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DYP6H-5493820:9b6c5cbe-8405-4127-926d-3a0c48fec451": {
+    "id": "9b6c5cbe-8405-4127-926d-3a0c48fec451",
+    "name": "fetchVideos",
+    "parentTraceId": "DYP6H-5493820",
+    "status": "completed",
+    "startTime": 1766065496150,
+    "endTime": 1766065497719,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065496718,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "fetchVideos",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "level": "info",
+          "time": 1766065496717,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065496746,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065496774,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065497482,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "fetchVideos",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766065497480,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065497515,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "aCEC8X0r0L4",
+                "title": "Creator Fund Announcement",
+                "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4",
+                "publishedAt": "2025-12-18T12:17:23Z",
+                "thumbnail": "https://i.ytimg.com/vi/aCEC8X0r0L4/default.jpg"
+              },
+              {
+                "videoId": "rvlQp6Vn8K4",
+                "title": "Late night live",
+                "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4",
+                "publishedAt": "2025-12-17T19:06:24Z",
+                "thumbnail": "https://i.ytimg.com/vi/rvlQp6Vn8K4/default.jpg"
+              },
+              {
+                "videoId": "-AXlZw6Gatw",
+                "title": "Crash course on Typescript with React",
+                "url": "https://www.youtube.com/watch?v=-AXlZw6Gatw",
+                "publishedAt": "2025-12-17T14:30:07Z",
+                "thumbnail": "https://i.ytimg.com/vi/-AXlZw6Gatw/default.jpg"
+              },
+              {
+                "videoId": "uDsF56k12no",
+                "title": "Creator fund is here and you will get a lot of free content",
+                "url": "https://www.youtube.com/watch?v=uDsF56k12no",
+                "publishedAt": "2025-12-17T06:18:24Z",
+                "thumbnail": "https://i.ytimg.com/vi/uDsF56k12no/default.jpg"
+              },
+              {
+                "videoId": "GTyKTyw2GhI",
+                "title": "Type definations and Axios in typescript",
+                "url": "https://www.youtube.com/watch?v=GTyKTyw2GhI",
+                "publishedAt": "2025-12-16T14:30:07Z",
+                "thumbnail": "https://i.ytimg.com/vi/GTyKTyw2GhI/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065497554,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channelName": "Chai aur Code",
+          "videos": [
+            {
+              "videoId": "aCEC8X0r0L4",
+              "title": "Creator Fund Announcement",
+              "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4",
+              "publishedAt": "2025-12-18T12:17:23Z",
+              "thumbnail": "https://i.ytimg.com/vi/aCEC8X0r0L4/default.jpg"
+            },
+            {
+              "videoId": "rvlQp6Vn8K4",
+              "title": "Late night live",
+              "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4",
+              "publishedAt": "2025-12-17T19:06:24Z",
+              "thumbnail": "https://i.ytimg.com/vi/rvlQp6Vn8K4/default.jpg"
+            },
+            {
+              "videoId": "-AXlZw6Gatw",
+              "title": "Crash course on Typescript with React",
+              "url": "https://www.youtube.com/watch?v=-AXlZw6Gatw",
+              "publishedAt": "2025-12-17T14:30:07Z",
+              "thumbnail": "https://i.ytimg.com/vi/-AXlZw6Gatw/default.jpg"
+            },
+            {
+              "videoId": "uDsF56k12no",
+              "title": "Creator fund is here and you will get a lot of free content",
+              "url": "https://www.youtube.com/watch?v=uDsF56k12no",
+              "publishedAt": "2025-12-17T06:18:24Z",
+              "thumbnail": "https://i.ytimg.com/vi/uDsF56k12no/default.jpg"
+            },
+            {
+              "videoId": "GTyKTyw2GhI",
+              "title": "Type definations and Axios in typescript",
+              "url": "https://www.youtube.com/watch?v=GTyKTyw2GhI",
+              "publishedAt": "2025-12-16T14:30:07Z",
+              "thumbnail": "https://i.ytimg.com/vi/GTyKTyw2GhI/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DYP6H-5493820:ebc40a2e-fbfa-4866-a661-8c188d98aecf": {
+    "id": "ebc40a2e-fbfa-4866-a661-8c188d98aecf",
+    "name": "GenerateTitles",
+    "parentTraceId": "DYP6H-5493820",
+    "status": "completed",
+    "startTime": 1766065497574,
+    "endTime": 1766065510178,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065498138,
+        "level": "info",
+        "message": "GenerateTitles: Starting title generation",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "GenerateTitles",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766065498136,
+          "msg": "GenerateTitles: Starting title generation"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065498165,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065498192,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065509898,
+        "level": "info",
+        "message": "Gemini API Response received",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "GenerateTitles",
+          "hasResponse": true,
+          "hasCandidates": true,
+          "level": "info",
+          "time": 1766065509896,
+          "msg": "Gemini API Response received"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065509931,
+        "level": "info",
+        "message": "Parsing AI response",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "GenerateTitles",
+          "textLength": 2318,
+          "level": "info",
+          "time": 1766065509896,
+          "msg": "Parsing AI response"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065509959,
+        "level": "info",
+        "message": "GenerateTitles: Titles generated successfully",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "GenerateTitles",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "titleCount": 5,
+          "level": "info",
+          "time": 1766065509897,
+          "msg": "GenerateTitles: Titles generated successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065509985,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Creator Fund Announcement",
+                "improved": "YouTube Creator Fund UNLOCKED: Get READY for Tons of FREE Content! (Huge Announcement!)",
+                "rationale": "This title adds urgency ('UNLOCKED'), a clear value proposition ('Tons of FREE Content'), and an emotional hook ('Huge Announcement!'). It's optimized for search with 'YouTube Creator Fund' and uses an action verb ('Get READY') to engage viewers.",
+                "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4"
+              },
+              {
+                "original": "Late night live",
+                "improved": "LATE NIGHT LIVE: Unfiltered Q&A on Coding, Careers & YouTube! (Your Questions Answered)",
+                "rationale": "The improved title immediately clarifies the content (Q&A), specifies the topics ('Coding, Careers & YouTube'), and promises direct value ('Your Questions Answered'). 'Unfiltered' adds curiosity, while the specific topics improve searchability for relevant audiences.",
+                "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4"
+              },
+              {
+                "original": "Crash course on Typescript with React",
+                "improved": "React + TypeScript ULTIMATE Crash Course: Go From ZERO to PRO in Hours! (Complete Guide)",
+                "rationale": "This title uses power words like 'ULTIMATE' and 'PRO' to convey comprehensive learning. It highlights a clear transformation ('ZERO to PRO') and hints at efficiency ('in Hours'), making it highly appealing to developers seeking rapid skill acquisition.",
+                "url": "https://www.youtube.com/watch?v=-AXlZw6Gatw"
+              },
+              {
+                "original": "Creator fund is here and you will get a lot of free content",
+                "improved": "YouTube Creator Fund is LIVE! 🔥 Get READY for a FLOOD of FREE Coding Content! (Chai aur Code Plan)",
+                "rationale": "This version creates excitement with 'is LIVE! 🔥' and uses a strong visual metaphor ('FLOOD') for the promised content. It adds specificity ('Coding Content') and brand identity ('Chai aur Code Plan') while maintaining the core value proposition for viewers.",
+                "url": "https://www.youtube.com/watch?v=uDsF56k12no"
+              },
+              {
+                "original": "Type definations and Axios in typescript",
+                "improved": "Axios with TypeScript: MASTER Type Definitions for Flawless API Calls! (Avoid Common Errors)",
+                "rationale": "The improved title uses a strong action verb ('MASTER') and promises a clear benefit ('Flawless API Calls'). It also addresses a common pain point ('Avoid Common Errors'), making it highly relevant and valuable for developers searching for solutions.",
+                "url": "https://www.youtube.com/watch?v=GTyKTyw2GhI"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065510010,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065494821_wf620i6vr",
+          "channelName": "Chai aur Code",
+          "improvedTitles": [
+            {
+              "original": "Creator Fund Announcement",
+              "improved": "YouTube Creator Fund UNLOCKED: Get READY for Tons of FREE Content! (Huge Announcement!)",
+              "rationale": "This title adds urgency ('UNLOCKED'), a clear value proposition ('Tons of FREE Content'), and an emotional hook ('Huge Announcement!'). It's optimized for search with 'YouTube Creator Fund' and uses an action verb ('Get READY') to engage viewers.",
+              "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4"
+            },
+            {
+              "original": "Late night live",
+              "improved": "LATE NIGHT LIVE: Unfiltered Q&A on Coding, Careers & YouTube! (Your Questions Answered)",
+              "rationale": "The improved title immediately clarifies the content (Q&A), specifies the topics ('Coding, Careers & YouTube'), and promises direct value ('Your Questions Answered'). 'Unfiltered' adds curiosity, while the specific topics improve searchability for relevant audiences.",
+              "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4"
+            },
+            {
+              "original": "Crash course on Typescript with React",
+              "improved": "React + TypeScript ULTIMATE Crash Course: Go From ZERO to PRO in Hours! (Complete Guide)",
+              "rationale": "This title uses power words like 'ULTIMATE' and 'PRO' to convey comprehensive learning. It highlights a clear transformation ('ZERO to PRO') and hints at efficiency ('in Hours'), making it highly appealing to developers seeking rapid skill acquisition.",
+              "url": "https://www.youtube.com/watch?v=-AXlZw6Gatw"
+            },
+            {
+              "original": "Creator fund is here and you will get a lot of free content",
+              "improved": "YouTube Creator Fund is LIVE! 🔥 Get READY for a FLOOD of FREE Coding Content! (Chai aur Code Plan)",
+              "rationale": "This version creates excitement with 'is LIVE! 🔥' and uses a strong visual metaphor ('FLOOD') for the promised content. It adds specificity ('Coding Content') and brand identity ('Chai aur Code Plan') while maintaining the core value proposition for viewers.",
+              "url": "https://www.youtube.com/watch?v=uDsF56k12no"
+            },
+            {
+              "original": "Type definations and Axios in typescript",
+              "improved": "Axios with TypeScript: MASTER Type Definitions for Flawless API Calls! (Avoid Common Errors)",
+              "rationale": "The improved title uses a strong action verb ('MASTER') and promises a clear benefit ('Flawless API Calls'). It also addresses a common pain point ('Avoid Common Errors'), making it highly relevant and valuable for developers searching for solutions.",
+              "url": "https://www.youtube.com/watch?v=GTyKTyw2GhI"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DYP6H-5493820:b29f17e3-53ba-48f8-8c78-50123598880d": {
+    "id": "b29f17e3-53ba-48f8-8c78-50123598880d",
+    "name": "SendEmail",
+    "parentTraceId": "DYP6H-5493820",
+    "status": "completed",
+    "startTime": 1766065510028,
+    "endTime": 1766065511634,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065510629,
+        "level": "info",
+        "message": "Sending email",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "SendEmail",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "email": "pruturaj3003@gmail.com",
+          "titleCount": 5,
+          "level": "info",
+          "time": 1766065510628,
+          "msg": "Sending email"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065510647,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065510661,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "sending email"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065511416,
+        "level": "info",
+        "message": "Email sent successfully",
+        "metadata": {
+          "traceId": "DYP6H-5493820",
+          "step": "SendEmail",
+          "jobId": "job_1766065494821_wf620i6vr",
+          "emailId": "121ee97a-a902-4f16-94be-7a26f0160e7c",
+          "level": "info",
+          "time": 1766065511414,
+          "msg": "Email sent successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065511431,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065494821_wf620i6vr",
+          "key": {
+            "status": "completed",
+            "emailSent": true,
+            "emailId": "121ee97a-a902-4f16-94be-7a26f0160e7c",
+            "completedAt": "2025-12-18T13:45:11.414Z"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065511458,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065494821_wf620i6vr",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "121ee97a-a902-4f16-94be-7a26f0160e7c"
+        }
+      }
+    ]
+  },
+  "8CFJ6-5904014:3ef86b9a-5ad2-49fa-92e8-2f70c7ffe689": {
+    "id": "3ef86b9a-5ad2-49fa-92e8-2f70c7ffe689",
+    "name": "SubmitChannel",
+    "parentTraceId": "8CFJ6-5904014",
+    "status": "completed",
+    "startTime": 1766065904046,
+    "endTime": 1766065904904,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065904687,
+        "level": "info",
+        "message": "Received submition request",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@CarryMinati",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1766065904682,
+          "msg": "Received submition request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065904721,
+        "operation": "set",
+        "data": {
+          "traceId": "job: job_1766065904682_ay28z1kjv",
+          "key": {
+            "jobId": "job_1766065904682_ay28z1kjv",
+            "channel": "@CarryMinati",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2025-12-18T13:51:44.682Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065904765,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "SubmitChannel",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channel": "@CarryMinati",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1766065904725,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065904801,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channel": "@CarryMinati",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "8CFJ6-5904014:05575bef-81a1-43f1-a9fb-68a274d477cb": {
+    "id": "05575bef-81a1-43f1-a9fb-68a274d477cb",
+    "name": "ResolveChannel",
+    "parentTraceId": "8CFJ6-5904014",
+    "status": "completed",
+    "startTime": 1766065904825,
+    "endTime": 1766065906289,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065905541,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "ResolveChannel",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channel": "@CarryMinati",
+          "level": "info",
+          "time": 1766065905536,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065905569,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065905595,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065906017,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channelId": "UCj22tfcQrWG7EMEKS0qLeEg",
+          "channelName": "CarryMinati",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "8CFJ6-5904014:695d556e-b079-4921-995f-616353fec797": {
+    "id": "695d556e-b079-4921-995f-616353fec797",
+    "name": "fetchVideos",
+    "parentTraceId": "8CFJ6-5904014",
+    "status": "completed",
+    "startTime": 1766065906048,
+    "endTime": 1766065907649,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065906682,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "fetchVideos",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channelId": "UCj22tfcQrWG7EMEKS0qLeEg",
+          "level": "info",
+          "time": 1766065906680,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065906701,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065906722,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065907407,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "fetchVideos",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766065907404,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065907450,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "465iEeNOEBg",
+                "title": "SAAS BAHU AUR SAANP | CARRYMINATI",
+                "url": "https://www.youtube.com/watch?v=465iEeNOEBg",
+                "publishedAt": "2025-06-06T08:26:47Z",
+                "thumbnail": "https://i.ytimg.com/vi/465iEeNOEBg/default.jpg"
+              },
+              {
+                "videoId": "k4vkJ9PdXwI",
+                "title": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+                "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI",
+                "publishedAt": "2025-06-05T08:30:18Z",
+                "thumbnail": "https://i.ytimg.com/vi/k4vkJ9PdXwI/default.jpg"
+              },
+              {
+                "videoId": "QoqokgcX96M",
+                "title": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+                "url": "https://www.youtube.com/watch?v=QoqokgcX96M",
+                "publishedAt": "2024-12-14T08:18:16Z",
+                "thumbnail": "https://i.ytimg.com/vi/QoqokgcX96M/default.jpg"
+              },
+              {
+                "videoId": "Zfc5rKZhyfw",
+                "title": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+                "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw",
+                "publishedAt": "2024-12-13T09:35:11Z",
+                "thumbnail": "https://i.ytimg.com/vi/Zfc5rKZhyfw/default.jpg"
+              },
+              {
+                "videoId": "vX0CF2VybHs",
+                "title": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+                "url": "https://www.youtube.com/watch?v=vX0CF2VybHs",
+                "publishedAt": "2024-10-25T09:16:56Z",
+                "thumbnail": "https://i.ytimg.com/vi/vX0CF2VybHs/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065907479,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channelName": "CarryMinati",
+          "videos": [
+            {
+              "videoId": "465iEeNOEBg",
+              "title": "SAAS BAHU AUR SAANP | CARRYMINATI",
+              "url": "https://www.youtube.com/watch?v=465iEeNOEBg",
+              "publishedAt": "2025-06-06T08:26:47Z",
+              "thumbnail": "https://i.ytimg.com/vi/465iEeNOEBg/default.jpg"
+            },
+            {
+              "videoId": "k4vkJ9PdXwI",
+              "title": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+              "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI",
+              "publishedAt": "2025-06-05T08:30:18Z",
+              "thumbnail": "https://i.ytimg.com/vi/k4vkJ9PdXwI/default.jpg"
+            },
+            {
+              "videoId": "QoqokgcX96M",
+              "title": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+              "url": "https://www.youtube.com/watch?v=QoqokgcX96M",
+              "publishedAt": "2024-12-14T08:18:16Z",
+              "thumbnail": "https://i.ytimg.com/vi/QoqokgcX96M/default.jpg"
+            },
+            {
+              "videoId": "Zfc5rKZhyfw",
+              "title": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+              "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw",
+              "publishedAt": "2024-12-13T09:35:11Z",
+              "thumbnail": "https://i.ytimg.com/vi/Zfc5rKZhyfw/default.jpg"
+            },
+            {
+              "videoId": "vX0CF2VybHs",
+              "title": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+              "url": "https://www.youtube.com/watch?v=vX0CF2VybHs",
+              "publishedAt": "2024-10-25T09:16:56Z",
+              "thumbnail": "https://i.ytimg.com/vi/vX0CF2VybHs/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "8CFJ6-5904014:58b93ae5-3261-4e81-a7c5-250316a38766": {
+    "id": "58b93ae5-3261-4e81-a7c5-250316a38766",
+    "name": "GenerateTitles",
+    "parentTraceId": "8CFJ6-5904014",
+    "status": "completed",
+    "startTime": 1766065907506,
+    "endTime": 1766065927091,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065908138,
+        "level": "info",
+        "message": "GenerateTitles: Starting title generation",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "GenerateTitles",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766065908136,
+          "msg": "GenerateTitles: Starting title generation"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065908170,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065908198,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065926866,
+        "level": "info",
+        "message": "Gemini API Response received",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "GenerateTitles",
+          "hasResponse": true,
+          "hasCandidates": true,
+          "level": "info",
+          "time": 1766065926864,
+          "msg": "Gemini API Response received"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065926898,
+        "level": "info",
+        "message": "Parsing AI response",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "GenerateTitles",
+          "textLength": 2306,
+          "level": "info",
+          "time": 1766065926865,
+          "msg": "Parsing AI response"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065926923,
+        "level": "info",
+        "message": "GenerateTitles: Titles generated successfully",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "GenerateTitles",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "titleCount": 5,
+          "level": "info",
+          "time": 1766065926865,
+          "msg": "GenerateTitles: Titles generated successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065926948,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "SAAS BAHU AUR SAANP | CARRYMINATI",
+                "improved": "SAAS BAHU AUR SAANP: My CRAZIEST Indian TV Roast EVER! 🐍😂",
+                "rationale": "This title immediately highlights 'Indian TV Roast' and uses 'CRAZIEST' for emotional impact, drawing in fans of his roast content. The snake emoji adds visual intrigue and relates to the original title's core element, making it more clickable and searchable.",
+                "url": "https://www.youtube.com/watch?v=465iEeNOEBg"
+              },
+              {
+                "original": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+                "improved": "INDIAN TV SHOWS: My HILARIOUS Roast That Exposed EVERYTHING! 🤣",
+                "rationale": "Assuming this was meant to be a poorly titled *actual* roast video, this title immediately clarifies the content is an 'Indian TV Shows' roast, using 'HILARIOUS' and 'Exposed EVERYTHING' to promise strong comedy and intriguing revelations. It's much more engaging and SEO-friendly than a generic announcement.",
+                "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI"
+              },
+              {
+                "original": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+                "improved": "CARRY KI SHAADI: Is He Getting Married?! My SHOCKING 2024 Q&A REVEALS ALL 💍",
+                "rationale": "This title amplifies the 'wedding' curiosity with a direct question and uses power words like 'SHOCKING' and 'REVEALS ALL' to create urgency and intrigue. It also clearly states it's a '2024 Q&A,' improving searchability for current content.",
+                "url": "https://www.youtube.com/watch?v=QoqokgcX96M"
+              },
+              {
+                "original": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+                "improved": "Q&A Uncensored: CarryMinati Answers Your WILDEST Questions! 🔥",
+                "rationale": "This title is an actual content title, emphasizing 'Uncensored' and 'WILDEST Questions' to promise an exciting and authentic Q&A experience. It clearly states the type of video and hints at CarryMinati's signature candid and edgy style.",
+                "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw"
+              },
+              {
+                "original": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+                "improved": "MrBeast REACTS to My 'MR LEAST' Parody! (HE WAS SHOCKED!) 🤯",
+                "rationale": "This title immediately hooks viewers by highlighting the reaction of a prominent figure (MrBeast) to CarryMinati's parody, using 'REACTS' and 'SHOCKED' for emotional impact. It's clear, curiosity-inducing, and includes key search terms.",
+                "url": "https://www.youtube.com/watch?v=vX0CF2VybHs"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065926969,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "channelName": "CarryMinati",
+          "improvedTitles": [
+            {
+              "original": "SAAS BAHU AUR SAANP | CARRYMINATI",
+              "improved": "SAAS BAHU AUR SAANP: My CRAZIEST Indian TV Roast EVER! 🐍😂",
+              "rationale": "This title immediately highlights 'Indian TV Roast' and uses 'CRAZIEST' for emotional impact, drawing in fans of his roast content. The snake emoji adds visual intrigue and relates to the original title's core element, making it more clickable and searchable.",
+              "url": "https://www.youtube.com/watch?v=465iEeNOEBg"
+            },
+            {
+              "original": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+              "improved": "INDIAN TV SHOWS: My HILARIOUS Roast That Exposed EVERYTHING! 🤣",
+              "rationale": "Assuming this was meant to be a poorly titled *actual* roast video, this title immediately clarifies the content is an 'Indian TV Shows' roast, using 'HILARIOUS' and 'Exposed EVERYTHING' to promise strong comedy and intriguing revelations. It's much more engaging and SEO-friendly than a generic announcement.",
+              "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI"
+            },
+            {
+              "original": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+              "improved": "CARRY KI SHAADI: Is He Getting Married?! My SHOCKING 2024 Q&A REVEALS ALL 💍",
+              "rationale": "This title amplifies the 'wedding' curiosity with a direct question and uses power words like 'SHOCKING' and 'REVEALS ALL' to create urgency and intrigue. It also clearly states it's a '2024 Q&A,' improving searchability for current content.",
+              "url": "https://www.youtube.com/watch?v=QoqokgcX96M"
+            },
+            {
+              "original": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+              "improved": "Q&A Uncensored: CarryMinati Answers Your WILDEST Questions! 🔥",
+              "rationale": "This title is an actual content title, emphasizing 'Uncensored' and 'WILDEST Questions' to promise an exciting and authentic Q&A experience. It clearly states the type of video and hints at CarryMinati's signature candid and edgy style.",
+              "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw"
+            },
+            {
+              "original": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+              "improved": "MrBeast REACTS to My 'MR LEAST' Parody! (HE WAS SHOCKED!) 🤯",
+              "rationale": "This title immediately hooks viewers by highlighting the reaction of a prominent figure (MrBeast) to CarryMinati's parody, using 'REACTS' and 'SHOCKED' for emotional impact. It's clear, curiosity-inducing, and includes key search terms.",
+              "url": "https://www.youtube.com/watch?v=vX0CF2VybHs"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "8CFJ6-5904014:ce072578-de2a-4d1d-8ed2-1ae555e9656a": {
+    "id": "ce072578-de2a-4d1d-8ed2-1ae555e9656a",
+    "name": "SendEmail",
+    "parentTraceId": "8CFJ6-5904014",
+    "status": "completed",
+    "startTime": 1766065926987,
+    "endTime": 1766065928183,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766065927412,
+        "level": "info",
+        "message": "Sending email",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "SendEmail",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "email": "pruturaj3003@gmail.com",
+          "titleCount": 5,
+          "level": "info",
+          "time": 1766065927410,
+          "msg": "Sending email"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065927424,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065927433,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "sending email"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766065927990,
+        "level": "info",
+        "message": "Email sent successfully",
+        "metadata": {
+          "traceId": "8CFJ6-5904014",
+          "step": "SendEmail",
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "emailId": "eee62ec5-69d5-4c30-831a-55481b11e945",
+          "level": "info",
+          "time": 1766065927988,
+          "msg": "Email sent successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766065928011,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766065904682_ay28z1kjv",
+          "key": {
+            "status": "completed",
+            "emailSent": true,
+            "emailId": "eee62ec5-69d5-4c30-831a-55481b11e945",
+            "completedAt": "2025-12-18T13:52:07.988Z"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766065928027,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1766065904682_ay28z1kjv",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "eee62ec5-69d5-4c30-831a-55481b11e945"
         }
       }
     ]

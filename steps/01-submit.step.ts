@@ -15,12 +15,12 @@
         email: string
     }
 
-    export const handler = async(req:any, {emit, logger,
+    export const handler = async(req:any, {emit, logger,           // emit is the function to fire events
     state}:any) => {
     try {
         logger.info('Received submition request', {body: req.
         body})
-        const {channel, email} = req.body as SubmitRequest;
+        const {channel, email} = req.body as SubmitRequest;        //  extract data 
     if (!channel || !email) {
         return {
             status: 400,
@@ -30,7 +30,7 @@
         };
     }
 
-    // validating the email
+    // validating the email whih must have a @ and domain
     const emailRegex  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         return {
