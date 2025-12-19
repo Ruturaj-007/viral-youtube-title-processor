@@ -14,6 +14,20 @@ export const config: EventConfig = {
   }
 };
 
+function calculateViralScore(title: string): number {
+  let score = 50;
+
+  if (/\d/.test(title)) score += 10;
+  if (title.length < 60) score += 10;
+  if (/[!?]/.test(title)) score += 10;
+  if (/(secret|mistake|truth|hack|power|insane|crazy)/i.test(title)) {
+    score += 10;
+  }
+
+  return Math.min(score, 100);
+}
+
+
 interface Video {
   videoId: string;
   title: string;
@@ -56,32 +70,40 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
       .map((v: Video, idx: number) => `${idx + 1}. "${v.title}"`)
       .join("\n");
 
-    const prompt = `You are a YouTube SEO and viral content expert. Below are ${videos.length} video titles from the channel "${channelName}".
+    const prompt = `
+You are a YouTube growth expert.
 
-For each title, provide:
-1. An improved version that is more engaging, SEO-friendly, and likely to get more clicks
-2. A brief rationale (1-2 sentences) explaining why the improved title is better
+For EACH video title below, generate:
 
-Guidelines:
-- Keep the core topic and authenticity
-- Use action verbs, numbers, and specific value propositions
-- Make it curiosity-inducing without being clickbait
-- Optimize for searchability and clarity
-- Add emotional hooks and power words where appropriate
+1. VIRAL title (emotional, curiosity-driven)
+2. SEO title (keyword-rich, searchable)
+3. PROFESSIONAL title (brand-safe, clean)
 
-Video Titles:
+Also:
+- Give ONE LINE reason for each title
+- Suggest 3 thumbnail texts (MAX 4 words each)
+- Do NOT repeat original title
+
+Titles:
 ${videoTitles}
 
-Respond in JSON format:
+Return STRICT JSON ONLY:
+
 {
-  "titles": [
+  "results": [
     {
-      "original": "...",
-      "improved": "...",
-      "rationale": "..."
+      "viral": "",
+      "viralReason": "",
+      "seo": "",
+      "seoReason": "",
+      "professional": "",
+      "professionalReason": "",
+      "thumbnailTexts": ["", "", ""]
     }
   ]
-}`;
+}
+`;
+
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
@@ -116,14 +138,23 @@ Respond in JSON format:
     
     const parsed = JSON.parse(responseText);
 
-    const improvedTitles: ImprovedTitle[] = parsed.titles.map(
-      (t: any, i: number) => ({
-        original: videos[i].title,
-        improved: t.improved,
-        rationale: t.rationale,
-        url: videos[i].url,
-      })
-    );
+    const improvedTitles = parsed.results.map((r: any, i: number) => ({
+  original: videos[i].title,
+  variants: {
+    viral: r.viral,
+    seo: r.seo,
+    professional: r.professional,
+  },
+  reasons: {
+    viral: r.viralReason,
+    seo: r.seoReason,
+    professional: r.professionalReason,
+  },
+  thumbnailTexts: r.thumbnailTexts,
+  viralScore: calculateViralScore(r.viral),
+  url: videos[i].url,
+}));
+
 
     logger.info("GenerateTitles: Titles generated successfully", {
       jobId,
