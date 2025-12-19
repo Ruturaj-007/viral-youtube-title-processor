@@ -1,123 +1,101 @@
 import { EventConfig } from "motia";
 import "dotenv/config";
 
+// 05-send-email.step.ts
+
 export const config: EventConfig = {
   name: "SendEmail",
   type: "event",
-  subscribes: ["yt.titles.ready"],  
+  subscribes: ["yt.titles.ready"],
   emits: ["yt.email.sent"],
 };
-
-interface ImprovedTitle {
-  original: string;
-  improved: string;
-  rationale: string;
-  url: string;
-}
 
 export const handler = async (eventData: any, { emit, logger, state }: any) => {
   let jobId: string | undefined;
   let email: string | undefined;
 
   try {
-    const data = eventData || {};  
+    const data = eventData || {};
     jobId = data.jobId;
     email = data.email;
     const channelName = data.channelName;
-    const improvedTitles: ImprovedTitle[] = data.improvedTitles;
-
-    logger.info("Sending email", { 
-      jobId, 
-      email,
-      titleCount: improvedTitles.length
-    });
+    const improvedTitles = data.improvedTitles;
 
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-    
-    if (!RESEND_API_KEY) throw new Error("Resend API key not configured");
+    const RESEND_FROM_EMAIL =
+      process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
-    const jobData = await state.get(`job:${jobId}`);
-    await state.set(`job:${jobId}`, { ...jobData, status: "sending email" });
+    if (!RESEND_API_KEY) throw new Error("Resend API key not configured");
 
     const emailText = generateEmailText(channelName, improvedTitles);
 
-    const response = await fetch('https://api.resend.com/emails', {
+    const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json',  
-        'Authorization': `Bearer ${RESEND_API_KEY}`
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
         from: RESEND_FROM_EMAIL,
         to: [email],
-        subject: `🎬 New Viral Title Ideas for ${channelName}`,
+        subject: `🎬 Viral Title Ideas for ${channelName}`,
         text: emailText,
       }),
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      logger.error("Resend API error", { status: response.status, error: errorData });
-      throw new Error(`Resend API error: ${errorData.message || errorData.error?.message || 'Unknown error'}`);
+      const err = await response.json();
+      throw new Error(err.message || "Email send failed");
     }
 
-    const emailResult = await response.json();
-    logger.info("Email sent successfully", { jobId, emailId: emailResult.id });
-
-    await state.set(`job:${jobId}`, {
-      ...jobData,
-      status: "completed",
-      emailSent: true,
-      emailId: emailResult.id,
-      completedAt: new Date().toISOString()
-    });
+    const result = await response.json();
 
     await emit({
       topic: "yt.email.sent",
-      data: {
-        jobId,
-        email,
-        emailId: emailResult.id
-      }
+      data: { jobId, email, emailId: result.id },
     });
+  } catch (err: any) {
+    logger.error("SendEmail Error", { message: err.message });
 
-  } catch (error: any) {
-    logger.error("Error sending email", { 
-      message: error.message,
-      jobId,
-      email
+    if (!jobId) return;
+
+    const jobData = await state.get(`job:${jobId}`);
+    await state.set(`job:${jobId}`, {
+      ...jobData,
+      status: "failed",
+      error: err.message,
     });
-
-    if (jobId) {
-      const jobData = await state.get(`job:${jobId}`);
-      await state.set(`job:${jobId}`, {
-        ...jobData,
-        status: "failed",
-        error: `Email sending failed: ${error.message}`
-      });
-    }
   }
 };
 
-function generateEmailText(
-  channelName: string,
-  titles: ImprovedTitle[]
-): string {
-  let text = `🎬 YouTube Title Doctor - Improved Titles for ${channelName}\n`;
+function generateEmailText(channelName: string, titles: any[]): string {
+  let text = `🎬 YouTube Title Doctor Report\n`;
+  text += `Channel: ${channelName}\n`;
   text += `${"=".repeat(60)}\n\n`;
 
-  titles.forEach((title, index) => {
-    text += `📹 Video ${index + 1}:\n`;
-    text += `${"─".repeat(40)}\n`;
-    text += `📝 Original: ${title.original}\n`;
-    text += `✨ Improved: ${title.improved}\n`;
-    text += `💡 Why: ${title.rationale}\n`;
-    text += `🔗 Watch: ${title.url}\n\n`;
+  titles.forEach((item, idx) => {
+    text += `📹 Video ${idx + 1}\n`;
+    text += `Original: ${item.original}\n\n`;
+
+    text += `🔥 VIRAL TITLE:\n${item.variants.viral}\n`;
+    text += `Why: ${item.reasons.viral}\n`;
+    text += `Score: ${item.viralScore}/100\n\n`;
+
+    text += `🔍 SEO TITLE:\n${item.variants.seo}\n`;
+    text += `Why: ${item.reasons.seo}\n\n`;
+
+    text += `🏷 PROFESSIONAL TITLE:\n${item.variants.professional}\n`;
+    text += `Why: ${item.reasons.professional}\n\n`;
+
+    text += `🖼 THUMBNAIL TEXT IDEAS:\n`;
+    item.thumbnailTexts.forEach((t: string) => {
+      text += `• ${t}\n`;
+    });
+
+    text += `🔗 Video: ${item.url}\n`;
+    text += `${"-".repeat(60)}\n\n`;
   });
 
-  text += `${"=".repeat(60)}\n`;
-  text += `⚡ Powered by YouTube Title Doctor\n`;
   text += `🚀 Built with Motia.dev\n`;
 
   return text;

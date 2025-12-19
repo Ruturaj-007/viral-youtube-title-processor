@@ -1,6 +1,8 @@
 import { EventConfig } from "motia";
 import "dotenv/config";
 
+// 04-ai-title.step.ts
+
 export const config: EventConfig = {
   name: "GenerateTitles",
   type: "event",
@@ -10,8 +12,8 @@ export const config: EventConfig = {
     jobId: "string",
     email: "string",
     channelName: "string",
-    videos: "array"
-  }
+    videos: "array",
+  },
 };
 
 function calculateViralScore(title: string): number {
@@ -27,20 +29,12 @@ function calculateViralScore(title: string): number {
   return Math.min(score, 100);
 }
 
-
 interface Video {
   videoId: string;
   title: string;
   url: string;
   publishedAt: string;
   thumbnail: string;
-}
-
-interface ImprovedTitle {
-  original: string;
-  improved: string;
-  rationale: string;
-  url: string;
 }
 
 export const handler = async (eventData: any, { emit, logger, state }: any) => {
@@ -87,7 +81,7 @@ Also:
 Titles:
 ${videoTitles}
 
-Return STRICT JSON ONLY:
+Return STRICT JSON ONLY in this exact format:
 
 {
   "results": [
@@ -104,62 +98,53 @@ Return STRICT JSON ONLY:
 }
 `;
 
-
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contents: [{
-            parts: [{ text: prompt }]
-          }]
+          contents: [{ parts: [{ text: prompt }] }],
         }),
       }
     );
 
     if (!response.ok) {
       const err = await response.json();
-      logger.error("Gemini API Response Error", { status: response.status, error: err });
-      throw new Error(`Gemini API error: ${err.error?.message || JSON.stringify(err)}`);
+      throw new Error(err.error?.message || "Gemini API error");
     }
 
     const aiResponse = await response.json();
-    
-    logger.info("Gemini API Response received", { 
-      hasResponse: !!aiResponse,
-      hasCandidates: !!aiResponse.candidates 
-    });
+    let responseText =
+      aiResponse?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    let responseText = aiResponse.candidates[0].content.parts[0].text;
-    responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    
-    logger.info("Parsing AI response", { textLength: responseText.length });
-    
+    if (!responseText) {
+      throw new Error("Empty response from Gemini");
+    }
+
+    responseText = responseText
+      .replace(/```json/gi, "")
+      .replace(/```/g, "")
+      .trim();
+
     const parsed = JSON.parse(responseText);
 
     const improvedTitles = parsed.results.map((r: any, i: number) => ({
-  original: videos[i].title,
-  variants: {
-    viral: r.viral,
-    seo: r.seo,
-    professional: r.professional,
-  },
-  reasons: {
-    viral: r.viralReason,
-    seo: r.seoReason,
-    professional: r.professionalReason,
-  },
-  thumbnailTexts: r.thumbnailTexts,
-  viralScore: calculateViralScore(r.viral),
-  url: videos[i].url,
-}));
-
-
-    logger.info("GenerateTitles: Titles generated successfully", {
-      jobId,
-      titleCount: improvedTitles.length,
-    });
+      original: videos[i].title,
+      variants: {
+        viral: r.viral,
+        seo: r.seo,
+        professional: r.professional,
+      },
+      reasons: {
+        viral: r.viralReason,
+        seo: r.seoReason,
+        professional: r.professionalReason,
+      },
+      thumbnailTexts: r.thumbnailTexts,
+      viralScore: calculateViralScore(r.viral),
+      url: videos[i].url,
+    }));
 
     await state.set(`job:${jobId}`, {
       ...jobData,
@@ -171,14 +156,10 @@ Return STRICT JSON ONLY:
       topic: "yt.titles.ready",
       data: { jobId, channelName, improvedTitles, email },
     });
-
   } catch (err: any) {
-    logger.error("GenerateTitles Error", { message: err.message, stack: err.stack });
+    logger.error("GenerateTitles Error", { message: err.message });
 
-    if (!jobId || !email) {
-      logger.error("Cannot send error notification - missing jobId or email");
-      return;
-    }
+    if (!jobId || !email) return;
 
     const jobData = await state.get(`job:${jobId}`);
     await state.set(`job:${jobId}`, {
