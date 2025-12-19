@@ -1,8 +1,8 @@
  import { EventConfig} from "motia"
 
     // step 2 :
-    // Converts youtube handle/name to channel ID using 
-    // youtube data api
+    // Converts youtube handle/name to channel ID using youtube data api
+    // yt.submit event → resolve YouTube channel (handle/name → channelId) → emit yt.channel.resolved OR yt.channel.error
 
     export const config = {
         name: "ResolveChannel",
@@ -12,7 +12,7 @@
     };
 
     // Business logic
-    export const handler = async(eventData:any, {emit, logger,
+    export const handler = async(eventData:any, {emit, logger,      // eventData → data sent by previous step
     state}:any) => {
 
             let jobId: string | undefined
@@ -86,7 +86,7 @@
               }
 
               await emit({
-                topic: "yt.channel.resolved",
+                topic: "yt.channel.resolved",   // Channel is valid. Next step can start
                 data: {
                     jobId,
                     channelId,

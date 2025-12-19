@@ -2,12 +2,14 @@
 
     // step 1 :
     // Accepting channel name and email to start the workflow
-    export const config: ApiRouteConfig = {
+    // Client → /submit API → validate → create job → emit event → other steps run later
+
+    export const config: ApiRouteConfig = {    // It's a Metadata
         name: "SubmitChannel",
         type: "api",
         path: "/submit",
         method: "POST",
-        emits: ["yt.submit"],
+        emits: ["yt.submit"],   // After this API runs, it may trigger the yt.submit workflow step (yt.submit event)
     };
 
     interface SubmitRequest {
@@ -15,12 +17,12 @@
         email: string
     }
 
-    export const handler = async(req:any, {emit, logger,           // emit is the function to fire events
+    export const handler = async(req:any, {emit, logger,           // This is the actual function that runs when /submit is hit.
     state}:any) => {
     try {
         logger.info('Received submition request', {body: req.
         body})
-        const {channel, email} = req.body as SubmitRequest;        //  extract data 
+        const {channel, email} = req.body as SubmitRequest;        //  Pulls channel and email from request body
     if (!channel || !email) {
         return {
             status: 400,
@@ -30,7 +32,7 @@
         };
     }
 
-    // validating the email whih must have a @ and domain
+    // validating the email whih must have a @ and domain no spaces should be involved
     const emailRegex  = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         return {
@@ -41,12 +43,12 @@
         };
     }
 
-    // Keeping track of job 
+    // Job ID Keeping track of job 
     const jobId = `job_${Date.now()}_${Math.random()
         .toString(36)
         .substr(2,9)}`;
 
-    // Passing some details
+    // STATE STORAGE You’re saving job info in shared state.
         await state.set(`job: ${jobId}`, {
             jobId,
             channel,
@@ -56,16 +58,16 @@
         })
         logger.info('Job created', {jobId, channel, email})
 
-        await emit({
+        await emit({     // emit does'nt call a function directly it just sends message to the event system Only workflows listening to "yt.submit" will wake up.
            topic: "yt.submit",
            data: {
                 jobId,
                 channel,
                 email
            }     
-        }); // helps you to broadcast any information 
+        }); 
         return {
-            status: 202,
+            status: 202,  // Accepted but not completed
                 body: {
                    success: true,
                    jobId,
@@ -74,9 +76,8 @@
         };
     }
     catch (error: any) {
-        logger.error("Error in submission handler", {error:
-            error.message
-            })
+        logger.error("Error in submission handler", 
+            {error : error.message })
             return {
                 status: 500,
                 body: {

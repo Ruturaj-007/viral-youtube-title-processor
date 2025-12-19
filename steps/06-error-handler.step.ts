@@ -42,7 +42,7 @@ ${error}
 Please try again later or contact support if the issue persists.
 
 Best regards,
-YouTube Title Doctor Team
+Viral YouTube Title Processor
 
 ---
 Built with Motia.dev`;

@@ -1,10 +1,15 @@
 import { EventConfig} from "motia"
 
+    // step 3 :
+    // This file listens after the channel is verified, fetches recent videos from YouTube, cleans the data, stores it, and triggers the next AI step.
+    // yt.channel.resolved → fetch latest videos of that channel → emit videos or error
+
+
 export const config = {
     name: "fetchVideos",
     type: "event",
     subscribes: ["yt.channel.resolved"],
-    emits: ["yt.videos.fetched", "yt.videos.error"],
+    emits: ["yt.videos.fetched", "yt.videos.error"],    // either yt videos will fetched or fail
 };
 
 interface Video {
@@ -16,6 +21,7 @@ interface Video {
 }
 
 export const handler = async(eventData:any, {emit, logger, state}:any) => {
+
   let jobId: string | undefined;
   let email: string | undefined;      
     
@@ -39,7 +45,7 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
             status: 'fetching videos'
         });
 
-        // FIXED: Use the Activities endpoint for more reliable results
+        // YT search API retuns recent uploads sorted by date
         const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&maxResults=10&key=${YOUTUBE_API_KEY}`;
 
         const response = await fetch(searchUrl);
@@ -63,8 +69,8 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
             return;
         }
 
-        // FIXED: Filter to only include videos from this channel
-        const videos: Video[] = youtubeData.items
+        // DATA NORMALIZATION Filter to only include videos from this channel
+        const videos : Video[] = youtubeData.items
             .filter((item: any) => item.snippet.channelId === channelId) // Only videos from THIS channel
             .slice(0, 5) // Take only 5 videos
             .map((item:any) => ({
@@ -113,8 +119,9 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
                 email,
             },
         });
-
-   } catch (error : any) {
+   } 
+   
+   catch (error : any) {
         logger.error("Error fetching videos", {error: error.message});
 
         if (!jobId || !email) {
@@ -140,3 +147,18 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
         });
     }
 }
+
+/*
+
+FULL PIPELINE SO FAR 
+
+Client
+ → /submit
+   → yt.submit
+     → resolve channel
+       → yt.channel.resolved
+         → fetch videos (THIS FILE)
+           → yt.videos.fetched
+             → AI title generation (next)
+
+*/

@@ -2,11 +2,13 @@ import { EventConfig } from "motia";
 import "dotenv/config";
 
 // 04-ai-title.step.ts
+// This step takes real YouTube videos sends their titles to AI generates better titles scores
+// them decides the best title type and passes results to the next step
 
-export const config: EventConfig = {
+export const config: EventConfig = {            // This handler will auto run when videos are fetched
   name: "GenerateTitles",
   type: "event",
-  subscribes: ["yt.videos.fetched"],
+  subscribes: ["yt.videos.fetched"],            // This file will ONLY run when this happens
   emits: ["yt.titles.ready", "yt.videos.error"],
   input: {
     jobId: "string",
@@ -20,9 +22,9 @@ function calculateViralScore(title: string): number {
   let score = 50;
 
   if (/\d/.test(title)) score += 10;
-  if (title.length < 60) score += 10;
+  if (title.length < 60) score += 10;     // short title better on mob 
   if (/[!?]/.test(title)) score += 10;
-  if (/(secret|mistake|truth|hack|power|insane|crazy)/i.test(title)) {
+  if (/(secret|mistake|truth|hack|power|insane|crazy|stop|unlock|fast)/i.test(title)) {
     score += 10;
   }
 
@@ -45,20 +47,16 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
     const data = eventData || {};
     jobId = data.jobId;
     email = data.email;
-
     const channelName = data.channelName;
     const videos: Video[] = data.videos;
-
-    logger.info("GenerateTitles: Starting title generation", {
-      jobId,
-      videoCount: videos.length,
-    });
-
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
     if (!GEMINI_API_KEY) throw new Error("Gemini API key not configured");
 
     const jobData = await state.get(`job:${jobId}`);
-    await state.set(`job:${jobId}`, { ...jobData, status: "generating titles" });
+    await state.set(`job:${jobId}`,{
+       ...jobData, 
+       status: "generating titles" 
+      });
 
     const videoTitles = videos
       .map((v: Video, idx: number) => `${idx + 1}. "${v.title}"`)
@@ -118,33 +116,54 @@ Return STRICT JSON ONLY in this exact format:
     let responseText =
       aiResponse?.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    if (!responseText) {
-      throw new Error("Empty response from Gemini");
-    }
+    if (!responseText) throw new Error("Empty response from Gemini");
 
-    responseText = responseText
-      .replace(/```json/gi, "")
-      .replace(/```/g, "")
-      .trim();
-
+    responseText = responseText.replace(/```json/gi, "").replace(/```/g, "").trim();
     const parsed = JSON.parse(responseText);
 
-    const improvedTitles = parsed.results.map((r: any, i: number) => ({
-      original: videos[i].title,
-      variants: {
-        viral: r.viral,
-        seo: r.seo,
-        professional: r.professional,
-      },
-      reasons: {
-        viral: r.viralReason,
-        seo: r.seoReason,
-        professional: r.professionalReason,
-      },
-      thumbnailTexts: r.thumbnailTexts,
-      viralScore: calculateViralScore(r.viral),
-      url: videos[i].url,
-    }));
+    const improvedTitles = parsed.results.map((r: any, i: number) => {
+      const viralScore = calculateViralScore(r.viral);
+      const seoScore = calculateViralScore(r.seo);
+      const professionalScore = calculateViralScore(r.professional);
+
+      const scores = {
+        viral: viralScore,
+        seo: seoScore,
+        professional: professionalScore,
+      };
+
+      const bestType = Object.entries(scores).sort(
+        (a, b) => b[1] - a[1]
+      )[0][0];
+
+      const recommendation = {
+        type: bestType.toUpperCase(),
+        reason:
+          bestType === "viral"
+            ? "Highest emotional impact and curiosity trigger"
+            : bestType === "seo"
+            ? "Best keyword coverage and long-term discoverability"
+            : "Most brand-safe and professional tone",
+      };
+
+      return {
+        original: videos[i].title,
+        variants: {
+          viral: r.viral,
+          seo: r.seo,
+          professional: r.professional,
+        },
+        reasons: {
+          viral: r.viralReason,
+          seo: r.seoReason,
+          professional: r.professionalReason,
+        },
+        thumbnailTexts: r.thumbnailTexts,
+        scores,
+        recommendation,
+        url: videos[i].url,
+      };
+    });
 
     await state.set(`job:${jobId}`, {
       ...jobData,
@@ -153,7 +172,7 @@ Return STRICT JSON ONLY in this exact format:
     });
 
     await emit({
-      topic: "yt.titles.ready",
+      topic: "yt.titles.ready", // Title generation is done. Next step can send email / show UI
       data: { jobId, channelName, improvedTitles, email },
     });
   } catch (err: any) {
@@ -161,14 +180,7 @@ Return STRICT JSON ONLY in this exact format:
 
     if (!jobId || !email) return;
 
-    const jobData = await state.get(`job:${jobId}`);
-    await state.set(`job:${jobId}`, {
-      ...jobData,
-      status: "failed",
-      error: err.message,
-    });
-
-    await emit({
+    await emit({  // error path pipeline stops safely if something breaks 
       topic: "yt.videos.error",
       data: { jobId, email, error: err.message },
     });
