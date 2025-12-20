@@ -1,1547 +1,4 @@
 {
-  "3RR6Z-0494649:7b6abfbe-62c4-4c0a-b0fa-036a94bce699": {
-    "id": "7b6abfbe-62c4-4c0a-b0fa-036a94bce699",
-    "name": "SubmitChannel",
-    "parentTraceId": "3RR6Z-0494649",
-    "status": "completed",
-    "startTime": 1764100494692,
-    "endTime": 1764100495412,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764100495304,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@chaiaurcode",
-            "email": "test@test.com"
-          },
-          "level": "info",
-          "time": 1764100495301,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100495316,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764100495302_v53vhezg3",
-          "key": {
-            "jobId": "job_1764100495302_v53vhezg3",
-            "channel": "@chaiaurcode",
-            "email": "test@test.com",
-            "status": "queued",
-            "createdAt": "2025-11-25T19:54:55.302Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100495334,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "SubmitChannel",
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com",
-          "level": "info",
-          "time": 1764100495319,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764100495351,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "3RR6Z-0494649:b9bc9766-c3a6-4461-bb63-bd698ae83d78": {
-    "id": "b9bc9766-c3a6-4461-bb63-bd698ae83d78",
-    "name": "ResolveChannel",
-    "parentTraceId": "3RR6Z-0494649",
-    "status": "completed",
-    "startTime": 1764100495365,
-    "endTime": 1764100496924,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764100496186,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "ResolveChannel",
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channel": "@chaiaurcode",
-          "level": "info",
-          "time": 1764100496179,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100496203,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100496217,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764100496592,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "channelName": "Chai aur Code",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "3RR6Z-0494649:2357ea47-610f-4bbd-9bb6-92fbc90a16b6": {
-    "id": "2357ea47-610f-4bbd-9bb6-92fbc90a16b6",
-    "name": "fetchVideos",
-    "parentTraceId": "3RR6Z-0494649",
-    "status": "completed",
-    "startTime": 1764100496607,
-    "endTime": 1764100499109,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764100497943,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "fetchVideos",
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "level": "info",
-          "time": 1764100497938,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100497967,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100497993,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100498663,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "fetchVideos",
-          "jobId": "job_1764100495302_v53vhezg3",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764100498663,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100498678,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "zDOdlfbS0Ec",
-                "title": "You can learn GenAI here",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-                "publishedAt": "2025-11-25T08:50:06Z",
-                "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-              },
-              {
-                "videoId": "5RjiIu7bknI",
-                "title": "The boring websites that I love",
-                "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-                "publishedAt": "2025-11-22T13:44:29Z",
-                "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-              },
-              {
-                "videoId": "sQuuemyiA1g",
-                "title": "Masterji app is available at your nearest App/play store",
-                "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-                "publishedAt": "2025-11-20T13:52:28Z",
-                "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-              },
-              {
-                "videoId": "8ashfLSm3tc",
-                "title": "opportunities are not equal for everyone",
-                "url": "https://www.youtube.com/watch?v=8ashfLSm3tc",
-                "publishedAt": "2025-11-19T10:32:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/8ashfLSm3tc/default.jpg"
-              },
-              {
-                "videoId": "9A8Xv7UAkOE",
-                "title": "Open source done right",
-                "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-                "publishedAt": "2025-11-18T12:21:08Z",
-                "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764100498696,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channelName": "Chai aur Code",
-          "videos": [
-            {
-              "videoId": "zDOdlfbS0Ec",
-              "title": "You can learn GenAI here",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-              "publishedAt": "2025-11-25T08:50:06Z",
-              "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-            },
-            {
-              "videoId": "5RjiIu7bknI",
-              "title": "The boring websites that I love",
-              "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-              "publishedAt": "2025-11-22T13:44:29Z",
-              "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-            },
-            {
-              "videoId": "sQuuemyiA1g",
-              "title": "Masterji app is available at your nearest App/play store",
-              "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-              "publishedAt": "2025-11-20T13:52:28Z",
-              "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-            },
-            {
-              "videoId": "8ashfLSm3tc",
-              "title": "opportunities are not equal for everyone",
-              "url": "https://www.youtube.com/watch?v=8ashfLSm3tc",
-              "publishedAt": "2025-11-19T10:32:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/8ashfLSm3tc/default.jpg"
-            },
-            {
-              "videoId": "9A8Xv7UAkOE",
-              "title": "Open source done right",
-              "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-              "publishedAt": "2025-11-18T12:21:08Z",
-              "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "3RR6Z-0494649:cb77bc51-a056-47f4-a98c-a444a8797351": {
-    "id": "cb77bc51-a056-47f4-a98c-a444a8797351",
-    "name": "GenerateTitles",
-    "parentTraceId": "3RR6Z-0494649",
-    "status": "completed",
-    "startTime": 1764100498713,
-    "endTime": 1764100510724,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764100499607,
-        "level": "info",
-        "message": "GenerateTitles: Starting title generation",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "GenerateTitles",
-          "jobId": "job_1764100495302_v53vhezg3",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764100499604,
-          "msg": "GenerateTitles: Starting title generation"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100499621,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100499635,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100510420,
-        "level": "info",
-        "message": "Gemini API Response received",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "GenerateTitles",
-          "hasResponse": true,
-          "hasCandidates": true,
-          "level": "info",
-          "time": 1764100510412,
-          "msg": "Gemini API Response received"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100510457,
-        "level": "info",
-        "message": "Parsing AI response",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "GenerateTitles",
-          "textLength": 1832,
-          "level": "info",
-          "time": 1764100510412,
-          "msg": "Parsing AI response"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100510485,
-        "level": "info",
-        "message": "GenerateTitles: Titles generated successfully",
-        "metadata": {
-          "traceId": "3RR6Z-0494649",
-          "step": "GenerateTitles",
-          "jobId": "job_1764100495302_v53vhezg3",
-          "titleCount": 5,
-          "level": "info",
-          "time": 1764100510413,
-          "msg": "GenerateTitles: Titles generated successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100510503,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764100495302_v53vhezg3",
-          "key": {
-            "status": "titles ready",
-            "improvedTitles": [
-              {
-                "original": "You can learn GenAI here",
-                "improved": "Learn GenAI FAST: The ULTIMATE Beginner's Guide to Generative AI!",
-                "rationale": "Adds urgency ('FAST'), promises a comprehensive solution ('ULTIMATE Beginner's Guide'), and clarifies 'GenAI' for broader appeal, using relevant keywords for searchability.",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec"
-              },
-              {
-                "original": "The boring websites that I love",
-                "improved": "My Secret Productivity Weapons: 5 'Boring' Websites I Can't Live Without!",
-                "rationale": "Creates intrigue ('Secret Productivity Weapons'), uses a number for a listicle format (which performs well), re-frames 'boring' ironically, and highlights a strong personal endorsement/benefit.",
-                "url": "https://www.youtube.com/watch?v=5RjiIu7bknI"
-              },
-              {
-                "original": "Masterji app is available at your nearest App/play store",
-                "improved": "Masterji App: Unlock Your FULL Learning Potential! (Download Now!)",
-                "rationale": "Focuses on the core user benefit ('Unlock Your FULL Learning Potential'), uses an aspirational phrase, and includes a clear, urgent call to action ('Download Now!').",
-                "url": "https://www.youtube.com/watch?v=sQuuemyiA1g"
-              },
-              {
-                "original": "opportunities are not equal for everyone",
-                "improved": "They Said Opportunities Aren't Equal... Here's How I Created My Own!",
-                "rationale": "Transforms a negative statement into a compelling, personal narrative with a problem-solution arc. It creates intrigue, suggests overcoming a challenge, and promises a relatable success story.",
-                "url": "https://www.youtube.com/watch?v=8ashfLSm3tc"
-              },
-              {
-                "original": "Open source done right",
-                "improved": "Open Source Success: The BEST Projects & How They Do It RIGHT!",
-                "rationale": "Changes 'done right' to 'Success' for a more positive and aspirational tone. Promises to showcase examples ('BEST Projects') and reveal the methods, implying valuable insights for viewers.",
-                "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764100510523,
-        "topic": "yt.titles.ready",
-        "success": true,
-        "data": {
-          "jobId": "job_1764100495302_v53vhezg3",
-          "channelName": "Chai aur Code",
-          "improvedTitles": [
-            {
-              "original": "You can learn GenAI here",
-              "improved": "Learn GenAI FAST: The ULTIMATE Beginner's Guide to Generative AI!",
-              "rationale": "Adds urgency ('FAST'), promises a comprehensive solution ('ULTIMATE Beginner's Guide'), and clarifies 'GenAI' for broader appeal, using relevant keywords for searchability.",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec"
-            },
-            {
-              "original": "The boring websites that I love",
-              "improved": "My Secret Productivity Weapons: 5 'Boring' Websites I Can't Live Without!",
-              "rationale": "Creates intrigue ('Secret Productivity Weapons'), uses a number for a listicle format (which performs well), re-frames 'boring' ironically, and highlights a strong personal endorsement/benefit.",
-              "url": "https://www.youtube.com/watch?v=5RjiIu7bknI"
-            },
-            {
-              "original": "Masterji app is available at your nearest App/play store",
-              "improved": "Masterji App: Unlock Your FULL Learning Potential! (Download Now!)",
-              "rationale": "Focuses on the core user benefit ('Unlock Your FULL Learning Potential'), uses an aspirational phrase, and includes a clear, urgent call to action ('Download Now!').",
-              "url": "https://www.youtube.com/watch?v=sQuuemyiA1g"
-            },
-            {
-              "original": "opportunities are not equal for everyone",
-              "improved": "They Said Opportunities Aren't Equal... Here's How I Created My Own!",
-              "rationale": "Transforms a negative statement into a compelling, personal narrative with a problem-solution arc. It creates intrigue, suggests overcoming a challenge, and promises a relatable success story.",
-              "url": "https://www.youtube.com/watch?v=8ashfLSm3tc"
-            },
-            {
-              "original": "Open source done right",
-              "improved": "Open Source Success: The BEST Projects & How They Do It RIGHT!",
-              "rationale": "Changes 'done right' to 'Success' for a more positive and aspirational tone. Promises to showcase examples ('BEST Projects') and reveal the methods, implying valuable insights for viewers.",
-              "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "YRSW1-5870770:ff2da352-90ad-466d-9e6f-949350722114": {
-    "id": "ff2da352-90ad-466d-9e6f-949350722114",
-    "name": "SubmitChannel",
-    "parentTraceId": "YRSW1-5870770",
-    "status": "completed",
-    "startTime": 1764185870774,
-    "endTime": 1764185871890,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764185871790,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@chaiaurcode",
-            "email": "test@test.com"
-          },
-          "level": "info",
-          "time": 1764185871606,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185871801,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764185871607_ki7xgh19x",
-          "key": {
-            "jobId": "job_1764185871607_ki7xgh19x",
-            "channel": "@chaiaurcode",
-            "email": "test@test.com",
-            "status": "queued",
-            "createdAt": "2025-11-26T19:37:51.607Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764185871815,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "SubmitChannel",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com",
-          "level": "info",
-          "time": 1764185871808,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764185871829,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channel": "@chaiaurcode",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "YRSW1-5870770:febda2e7-182e-42b1-b7f6-5e8283267c93": {
-    "id": "febda2e7-182e-42b1-b7f6-5e8283267c93",
-    "name": "ResolveChannel",
-    "parentTraceId": "YRSW1-5870770",
-    "status": "completed",
-    "startTime": 1764185871839,
-    "endTime": 1764185874048,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764185873046,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "ResolveChannel",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channel": "@chaiaurcode",
-          "level": "info",
-          "time": 1764185873041,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185873050,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185873066,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764185873473,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "channelName": "Chai aur Code",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "YRSW1-5870770:9753e385-2e6a-4840-96d8-c7f1736616c1": {
-    "id": "9753e385-2e6a-4840-96d8-c7f1736616c1",
-    "name": "fetchVideos",
-    "parentTraceId": "YRSW1-5870770",
-    "status": "completed",
-    "startTime": 1764185873479,
-    "endTime": 1764185875855,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764185875087,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "fetchVideos",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "level": "info",
-          "time": 1764185875086,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185875089,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185875092,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764185875668,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "fetchVideos",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "videoCount": 25,
-          "level": "info",
-          "time": 1764185875667,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185875672,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "inCx7Zolorg",
-                "title": "Chai pe charcha",
-                "url": "https://www.youtube.com/watch?v=inCx7Zolorg",
-                "publishedAt": "2025-11-26T16:58:40Z",
-                "thumbnail": "https://i.ytimg.com/vi/inCx7Zolorg/default.jpg"
-              },
-              {
-                "videoId": "I4HEpowCM20",
-                "title": "Masterji Platform tour",
-                "url": "https://www.youtube.com/watch?v=I4HEpowCM20",
-                "publishedAt": "2025-11-26T13:30:31Z",
-                "thumbnail": "https://i.ytimg.com/vi/I4HEpowCM20/default.jpg"
-              },
-              {
-                "videoId": "DvPtxwFTA60",
-                "title": "Docker and k8 YT",
-                "url": "https://www.youtube.com/watch?v=DvPtxwFTA60",
-                "publishedAt": "2025-11-26T09:18:24Z",
-                "thumbnail": "https://i.ytimg.com/vi/DvPtxwFTA60/default.jpg"
-              },
-              {
-                "videoId": "zDOdlfbS0Ec",
-                "title": "You can learn GenAI here",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-                "publishedAt": "2025-11-25T08:50:06Z",
-                "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-              },
-              {
-                "videoId": "5RjiIu7bknI",
-                "title": "The boring websites that I love",
-                "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-                "publishedAt": "2025-11-22T13:44:29Z",
-                "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-              },
-              {
-                "videoId": "sQuuemyiA1g",
-                "title": "Masterji app is available at your nearest App/play store",
-                "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-                "publishedAt": "2025-11-20T13:52:28Z",
-                "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-              },
-              {
-                "videoId": "8ashfLSm3tc",
-                "title": "opportunities are not equal for everyone",
-                "url": "https://www.youtube.com/watch?v=8ashfLSm3tc",
-                "publishedAt": "2025-11-19T10:32:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/8ashfLSm3tc/default.jpg"
-              },
-              {
-                "videoId": "9A8Xv7UAkOE",
-                "title": "Open source done right",
-                "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-                "publishedAt": "2025-11-18T12:21:08Z",
-                "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-              },
-              {
-                "videoId": "8cshn2IIkbY",
-                "title": "The hidden chrome performance tools",
-                "url": "https://www.youtube.com/watch?v=8cshn2IIkbY",
-                "publishedAt": "2025-11-13T15:04:13Z",
-                "thumbnail": "https://i.ytimg.com/vi/8cshn2IIkbY/default.jpg"
-              },
-              {
-                "videoId": "Dc8uJTrGK9w",
-                "title": "What is Back of Envelope calculation with examples",
-                "url": "https://www.youtube.com/watch?v=Dc8uJTrGK9w",
-                "publishedAt": "2025-11-08T17:45:27Z",
-                "thumbnail": "https://i.ytimg.com/vi/Dc8uJTrGK9w/default.jpg"
-              },
-              {
-                "videoId": "hpc5DO2dC-4",
-                "title": "What is Agentic AI and AI Agents. Only video you need to watch",
-                "url": "https://www.youtube.com/watch?v=hpc5DO2dC-4",
-                "publishedAt": "2025-11-07T16:13:04Z",
-                "thumbnail": "https://i.ytimg.com/vi/hpc5DO2dC-4/default.jpg"
-              },
-              {
-                "videoId": "7G-pYAtudZM",
-                "title": "Follow this for every system design interview",
-                "url": "https://www.youtube.com/watch?v=7G-pYAtudZM",
-                "publishedAt": "2025-11-06T13:53:15Z",
-                "thumbnail": "https://i.ytimg.com/vi/7G-pYAtudZM/default.jpg"
-              },
-              {
-                "videoId": "cSTl1LSyvjM",
-                "title": "Chai pe charcha",
-                "url": "https://www.youtube.com/watch?v=cSTl1LSyvjM",
-                "publishedAt": "2025-11-05T17:57:50Z",
-                "thumbnail": "https://i.ytimg.com/vi/cSTl1LSyvjM/default.jpg"
-              },
-              {
-                "videoId": "vzVbqXVID-Y",
-                "title": "0 to production (VPS) course in 1 video",
-                "url": "https://www.youtube.com/watch?v=vzVbqXVID-Y",
-                "publishedAt": "2025-11-03T17:14:29Z",
-                "thumbnail": "https://i.ytimg.com/vi/vzVbqXVID-Y/default.jpg"
-              },
-              {
-                "videoId": "6I1nr-T2Kbk",
-                "title": "Processing time do apne aap ko",
-                "url": "https://www.youtube.com/watch?v=6I1nr-T2Kbk",
-                "publishedAt": "2025-11-02T03:30:39Z",
-                "thumbnail": "https://i.ytimg.com/vi/6I1nr-T2Kbk/default.jpg"
-              },
-              {
-                "videoId": "5sQgJdAdNxo",
-                "title": "Gemini pro + 2 TB free for JIO users",
-                "url": "https://www.youtube.com/watch?v=5sQgJdAdNxo",
-                "publishedAt": "2025-10-30T19:05:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/5sQgJdAdNxo/default.jpg"
-              },
-              {
-                "videoId": "V8gGIMv5dWM",
-                "title": "Best Resume tip",
-                "url": "https://www.youtube.com/watch?v=V8gGIMv5dWM",
-                "publishedAt": "2025-10-26T12:26:50Z",
-                "thumbnail": "https://i.ytimg.com/vi/V8gGIMv5dWM/default.jpg"
-              },
-              {
-                "videoId": "Yh2ZyQuEdy0",
-                "title": "Welcome to Networking Masterclass 101",
-                "url": "https://www.youtube.com/watch?v=Yh2ZyQuEdy0",
-                "publishedAt": "2025-10-26T09:36:39Z",
-                "thumbnail": "https://i.ytimg.com/vi/Yh2ZyQuEdy0/default.jpg"
-              },
-              {
-                "videoId": "RY7T9zFsn-Y",
-                "title": "CSR vs SSR in react in Hindi",
-                "url": "https://www.youtube.com/watch?v=RY7T9zFsn-Y",
-                "publishedAt": "2025-10-24T15:01:19Z",
-                "thumbnail": "https://i.ytimg.com/vi/RY7T9zFsn-Y/default.jpg"
-              },
-              {
-                "videoId": "BgUMlyYldsw",
-                "title": "chai aur convex in live stream (No superchat)",
-                "url": "https://www.youtube.com/watch?v=BgUMlyYldsw",
-                "publishedAt": "2025-10-23T14:19:15Z",
-                "thumbnail": "https://i.ytimg.com/vi/BgUMlyYldsw/default.jpg"
-              },
-              {
-                "videoId": "boZeqXClUWQ",
-                "title": "IIT se btech kiya and 3 months me layoff ho gya",
-                "url": "https://www.youtube.com/watch?v=boZeqXClUWQ",
-                "publishedAt": "2025-10-23T13:42:00Z",
-                "thumbnail": "https://i.ytimg.com/vi/boZeqXClUWQ/default.jpg"
-              },
-              {
-                "videoId": "WzSz5cBeSQE",
-                "title": "Chai aur bun series kb aayegi",
-                "url": "https://www.youtube.com/watch?v=WzSz5cBeSQE",
-                "publishedAt": "2025-10-23T12:39:00Z",
-                "thumbnail": "https://i.ytimg.com/vi/WzSz5cBeSQE/default.jpg"
-              },
-              {
-                "videoId": "FRwHYMazo5w",
-                "title": "What is RAG",
-                "url": "https://www.youtube.com/watch?v=FRwHYMazo5w",
-                "publishedAt": "2025-10-23T08:40:01Z",
-                "thumbnail": "https://i.ytimg.com/vi/FRwHYMazo5w/default.jpg"
-              },
-              {
-                "videoId": "J-SEJyD-1Nw",
-                "title": "Live batch vs udemy",
-                "url": "https://www.youtube.com/watch?v=J-SEJyD-1Nw",
-                "publishedAt": "2025-10-23T02:30:15Z",
-                "thumbnail": "https://i.ytimg.com/vi/J-SEJyD-1Nw/default.jpg"
-              },
-              {
-                "videoId": "ZtXx9omiwq0",
-                "title": "chai pr charcha",
-                "url": "https://www.youtube.com/watch?v=ZtXx9omiwq0",
-                "publishedAt": "2025-10-22T18:25:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/ZtXx9omiwq0/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764185875678,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channelName": "Chai aur Code",
-          "videos": [
-            {
-              "videoId": "inCx7Zolorg",
-              "title": "Chai pe charcha",
-              "url": "https://www.youtube.com/watch?v=inCx7Zolorg",
-              "publishedAt": "2025-11-26T16:58:40Z",
-              "thumbnail": "https://i.ytimg.com/vi/inCx7Zolorg/default.jpg"
-            },
-            {
-              "videoId": "I4HEpowCM20",
-              "title": "Masterji Platform tour",
-              "url": "https://www.youtube.com/watch?v=I4HEpowCM20",
-              "publishedAt": "2025-11-26T13:30:31Z",
-              "thumbnail": "https://i.ytimg.com/vi/I4HEpowCM20/default.jpg"
-            },
-            {
-              "videoId": "DvPtxwFTA60",
-              "title": "Docker and k8 YT",
-              "url": "https://www.youtube.com/watch?v=DvPtxwFTA60",
-              "publishedAt": "2025-11-26T09:18:24Z",
-              "thumbnail": "https://i.ytimg.com/vi/DvPtxwFTA60/default.jpg"
-            },
-            {
-              "videoId": "zDOdlfbS0Ec",
-              "title": "You can learn GenAI here",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-              "publishedAt": "2025-11-25T08:50:06Z",
-              "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-            },
-            {
-              "videoId": "5RjiIu7bknI",
-              "title": "The boring websites that I love",
-              "url": "https://www.youtube.com/watch?v=5RjiIu7bknI",
-              "publishedAt": "2025-11-22T13:44:29Z",
-              "thumbnail": "https://i.ytimg.com/vi/5RjiIu7bknI/default.jpg"
-            },
-            {
-              "videoId": "sQuuemyiA1g",
-              "title": "Masterji app is available at your nearest App/play store",
-              "url": "https://www.youtube.com/watch?v=sQuuemyiA1g",
-              "publishedAt": "2025-11-20T13:52:28Z",
-              "thumbnail": "https://i.ytimg.com/vi/sQuuemyiA1g/default.jpg"
-            },
-            {
-              "videoId": "8ashfLSm3tc",
-              "title": "opportunities are not equal for everyone",
-              "url": "https://www.youtube.com/watch?v=8ashfLSm3tc",
-              "publishedAt": "2025-11-19T10:32:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/8ashfLSm3tc/default.jpg"
-            },
-            {
-              "videoId": "9A8Xv7UAkOE",
-              "title": "Open source done right",
-              "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE",
-              "publishedAt": "2025-11-18T12:21:08Z",
-              "thumbnail": "https://i.ytimg.com/vi/9A8Xv7UAkOE/default.jpg"
-            },
-            {
-              "videoId": "8cshn2IIkbY",
-              "title": "The hidden chrome performance tools",
-              "url": "https://www.youtube.com/watch?v=8cshn2IIkbY",
-              "publishedAt": "2025-11-13T15:04:13Z",
-              "thumbnail": "https://i.ytimg.com/vi/8cshn2IIkbY/default.jpg"
-            },
-            {
-              "videoId": "Dc8uJTrGK9w",
-              "title": "What is Back of Envelope calculation with examples",
-              "url": "https://www.youtube.com/watch?v=Dc8uJTrGK9w",
-              "publishedAt": "2025-11-08T17:45:27Z",
-              "thumbnail": "https://i.ytimg.com/vi/Dc8uJTrGK9w/default.jpg"
-            },
-            {
-              "videoId": "hpc5DO2dC-4",
-              "title": "What is Agentic AI and AI Agents. Only video you need to watch",
-              "url": "https://www.youtube.com/watch?v=hpc5DO2dC-4",
-              "publishedAt": "2025-11-07T16:13:04Z",
-              "thumbnail": "https://i.ytimg.com/vi/hpc5DO2dC-4/default.jpg"
-            },
-            {
-              "videoId": "7G-pYAtudZM",
-              "title": "Follow this for every system design interview",
-              "url": "https://www.youtube.com/watch?v=7G-pYAtudZM",
-              "publishedAt": "2025-11-06T13:53:15Z",
-              "thumbnail": "https://i.ytimg.com/vi/7G-pYAtudZM/default.jpg"
-            },
-            {
-              "videoId": "cSTl1LSyvjM",
-              "title": "Chai pe charcha",
-              "url": "https://www.youtube.com/watch?v=cSTl1LSyvjM",
-              "publishedAt": "2025-11-05T17:57:50Z",
-              "thumbnail": "https://i.ytimg.com/vi/cSTl1LSyvjM/default.jpg"
-            },
-            {
-              "videoId": "vzVbqXVID-Y",
-              "title": "0 to production (VPS) course in 1 video",
-              "url": "https://www.youtube.com/watch?v=vzVbqXVID-Y",
-              "publishedAt": "2025-11-03T17:14:29Z",
-              "thumbnail": "https://i.ytimg.com/vi/vzVbqXVID-Y/default.jpg"
-            },
-            {
-              "videoId": "6I1nr-T2Kbk",
-              "title": "Processing time do apne aap ko",
-              "url": "https://www.youtube.com/watch?v=6I1nr-T2Kbk",
-              "publishedAt": "2025-11-02T03:30:39Z",
-              "thumbnail": "https://i.ytimg.com/vi/6I1nr-T2Kbk/default.jpg"
-            },
-            {
-              "videoId": "5sQgJdAdNxo",
-              "title": "Gemini pro + 2 TB free for JIO users",
-              "url": "https://www.youtube.com/watch?v=5sQgJdAdNxo",
-              "publishedAt": "2025-10-30T19:05:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/5sQgJdAdNxo/default.jpg"
-            },
-            {
-              "videoId": "V8gGIMv5dWM",
-              "title": "Best Resume tip",
-              "url": "https://www.youtube.com/watch?v=V8gGIMv5dWM",
-              "publishedAt": "2025-10-26T12:26:50Z",
-              "thumbnail": "https://i.ytimg.com/vi/V8gGIMv5dWM/default.jpg"
-            },
-            {
-              "videoId": "Yh2ZyQuEdy0",
-              "title": "Welcome to Networking Masterclass 101",
-              "url": "https://www.youtube.com/watch?v=Yh2ZyQuEdy0",
-              "publishedAt": "2025-10-26T09:36:39Z",
-              "thumbnail": "https://i.ytimg.com/vi/Yh2ZyQuEdy0/default.jpg"
-            },
-            {
-              "videoId": "RY7T9zFsn-Y",
-              "title": "CSR vs SSR in react in Hindi",
-              "url": "https://www.youtube.com/watch?v=RY7T9zFsn-Y",
-              "publishedAt": "2025-10-24T15:01:19Z",
-              "thumbnail": "https://i.ytimg.com/vi/RY7T9zFsn-Y/default.jpg"
-            },
-            {
-              "videoId": "BgUMlyYldsw",
-              "title": "chai aur convex in live stream (No superchat)",
-              "url": "https://www.youtube.com/watch?v=BgUMlyYldsw",
-              "publishedAt": "2025-10-23T14:19:15Z",
-              "thumbnail": "https://i.ytimg.com/vi/BgUMlyYldsw/default.jpg"
-            },
-            {
-              "videoId": "boZeqXClUWQ",
-              "title": "IIT se btech kiya and 3 months me layoff ho gya",
-              "url": "https://www.youtube.com/watch?v=boZeqXClUWQ",
-              "publishedAt": "2025-10-23T13:42:00Z",
-              "thumbnail": "https://i.ytimg.com/vi/boZeqXClUWQ/default.jpg"
-            },
-            {
-              "videoId": "WzSz5cBeSQE",
-              "title": "Chai aur bun series kb aayegi",
-              "url": "https://www.youtube.com/watch?v=WzSz5cBeSQE",
-              "publishedAt": "2025-10-23T12:39:00Z",
-              "thumbnail": "https://i.ytimg.com/vi/WzSz5cBeSQE/default.jpg"
-            },
-            {
-              "videoId": "FRwHYMazo5w",
-              "title": "What is RAG",
-              "url": "https://www.youtube.com/watch?v=FRwHYMazo5w",
-              "publishedAt": "2025-10-23T08:40:01Z",
-              "thumbnail": "https://i.ytimg.com/vi/FRwHYMazo5w/default.jpg"
-            },
-            {
-              "videoId": "J-SEJyD-1Nw",
-              "title": "Live batch vs udemy",
-              "url": "https://www.youtube.com/watch?v=J-SEJyD-1Nw",
-              "publishedAt": "2025-10-23T02:30:15Z",
-              "thumbnail": "https://i.ytimg.com/vi/J-SEJyD-1Nw/default.jpg"
-            },
-            {
-              "videoId": "ZtXx9omiwq0",
-              "title": "chai pr charcha",
-              "url": "https://www.youtube.com/watch?v=ZtXx9omiwq0",
-              "publishedAt": "2025-10-22T18:25:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/ZtXx9omiwq0/default.jpg"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "YRSW1-5870770:0627906c-8840-4e95-90a3-a860d2f3ea51": {
-    "id": "0627906c-8840-4e95-90a3-a860d2f3ea51",
-    "name": "GenerateTitles",
-    "parentTraceId": "YRSW1-5870770",
-    "status": "completed",
-    "startTime": 1764185875682,
-    "endTime": 1764185906652,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764185876184,
-        "level": "info",
-        "message": "GenerateTitles: Starting title generation",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "GenerateTitles",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "videoCount": 25,
-          "level": "info",
-          "time": 1764185876182,
-          "msg": "GenerateTitles: Starting title generation"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185876186,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185876189,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764185906378,
-        "level": "info",
-        "message": "Gemini API Response received",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "GenerateTitles",
-          "hasResponse": true,
-          "hasCandidates": true,
-          "level": "info",
-          "time": 1764185906375,
-          "msg": "Gemini API Response received"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764185906394,
-        "level": "info",
-        "message": "Parsing AI response",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "GenerateTitles",
-          "textLength": 9393,
-          "level": "info",
-          "time": 1764185906377,
-          "msg": "Parsing AI response"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764185906410,
-        "level": "info",
-        "message": "GenerateTitles: Titles generated successfully",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "GenerateTitles",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "titleCount": 25,
-          "level": "info",
-          "time": 1764185906378,
-          "msg": "GenerateTitles: Titles generated successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185906431,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "titles ready",
-            "improvedTitles": [
-              {
-                "original": "Chai pe charcha",
-                "improved": "Chai Pe Charcha: Unfiltered Tech Talk 🔥 | What's Next in AI?",
-                "rationale": "The original is too generic. Added context (Tech Talk), a specific topic (AI), and an emoji for visual appeal to make it more intriguing and searchable.",
-                "url": "https://www.youtube.com/watch?v=inCx7Zolorg"
-              },
-              {
-                "original": "Masterji Platform tour",
-                "improved": "Masterji Platform DEMO: Your ULTIMATE Guide to [Platform's Core Benefit]! (Full Walkthrough)",
-                "rationale": "Changed 'tour' to 'DEMO' for action, added 'ULTIMATE Guide' for SEO and value, and included a placeholder to highlight the platform's main benefit, making it more click-attractive.",
-                "url": "https://www.youtube.com/watch?v=I4HEpowCM20"
-              },
-              {
-                "original": "Docker and k8 YT",
-                "improved": "Docker & Kubernetes Explained: The ONLY Guide You Need to Master K8s & Containers!",
-                "rationale": "The original is too cryptic and short. Expanded 'k8' to 'Kubernetes' and removed 'YT'. Added benefit-driven language ('ONLY Guide', 'Master K8s') for strong SEO and clickbait appeal.",
-                "url": "https://www.youtube.com/watch?v=DvPtxwFTA60"
-              },
-              {
-                "original": "You can learn GenAI here",
-                "improved": "GenAI Masterclass: Learn Generative AI From ZERO to EXPERT in [X] Days! (Full Course)",
-                "rationale": "The original is a flat statement. Transformed it into a 'Masterclass' promising a clear learning path ('ZERO to EXPERT') and a structured timeframe ('in [X] Days') to attract learners.",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec"
-              },
-              {
-                "original": "The boring websites that I love",
-                "improved": "Don't Judge a Book! My TOP 5 'Boring' Websites I CAN'T Live Without (Hidden Gems!)",
-                "rationale": "The original has a good hook but can be stronger. Added a number ('TOP 5'), an element of surprise ('Don't Judge a Book!'), and curiosity ('Hidden Gems!') to boost clicks.",
-                "url": "https://www.youtube.com/watch?v=5RjiIu7bknI"
-              },
-              {
-                "original": "Masterji app is available at your nearest App/play store",
-                "improved": "Masterji App: Unlock [Core Benefit]! Download NOW on App/Play Store! (Full Features Walkthrough)",
-                "rationale": "This is an announcement, not a video title. Focused on the app's 'Core Benefit' and promised a 'Full Features Walkthrough' to give viewers a reason to watch and download.",
-                "url": "https://www.youtube.com/watch?v=sQuuemyiA1g"
-              },
-              {
-                "original": "opportunities are not equal for everyone",
-                "improved": "The Harsh Truth: Why Opportunities AREN'T Equal & How to STILL SUCCEED (My Story)",
-                "rationale": "The original is a statement of fact, potentially negative. Pivoted to a solution-oriented approach ('How to STILL SUCCEED') and added a personal element ('My Story') for relatability and hope.",
-                "url": "https://www.youtube.com/watch?v=8ashfLSm3tc"
-              },
-              {
-                "original": "Open source done right",
-                "improved": "Mastering Open Source: How to Contribute & Build Your Portfolio (The RIGHT Way!)",
-                "rationale": "Too vague. Specified the benefits ('Contribute & Build Your Portfolio') and framed it as a skill-building opportunity ('Mastering Open Source') to attract developers.",
-                "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE"
-              },
-              {
-                "original": "The hidden chrome performance tools",
-                "improved": "Unlock Chrome's SECRETS: Hidden Dev Tools to Boost Website Performance (You WON'T Believe These!)",
-                "rationale": "'Hidden' is good. Emphasized 'SECRETS' and the tangible benefit ('Boost Website Performance'). Added a powerful curiosity trigger ('You WON'T Believe These!') for higher click-through.",
-                "url": "https://www.youtube.com/watch?v=8cshn2IIkbY"
-              },
-              {
-                "original": "What is Back of Envelope calculation with examples",
-                "improved": "Back-of-the-Envelope Calculation: The Engineer's SECRET Weapon for Quick Estimates (Real Examples!)",
-                "rationale": "The original is informative but dry. Positioned it as a 'SECRET Weapon' for a specific audience ('Engineer's') to make it sound more impactful and desirable, while still promising 'Real Examples'.",
-                "url": "https://www.youtube.com/watch?v=Dc8uJTrGK9w"
-              },
-              {
-                "original": "What is Agentic AI and AI Agents. Only video you need to watch",
-                "improved": "Agentic AI & AI Agents EXPLAINED: The ULTIMATE Guide (You'll NEVER Need Another Video!)",
-                "rationale": "Good original promise, but enhanced it. Used 'EXPLAINED' for clarity, 'ULTIMATE Guide' for SEO, and amplified the promise with 'NEVER Need Another Video!' for stronger clickbait.",
-                "url": "https://www.youtube.com/watch?v=hpc5DO2dC-4"
-              },
-              {
-                "original": "Follow this for every system design interview",
-                "improved": "System Design Interview: The ONLY Framework You NEED to CRACK Any Question! (MUST-WATCH)",
-                "rationale": "Strong call to action. Added 'ONLY Framework' and 'CRACK Any Question' to convey a definitive solution and high impact. 'MUST-WATCH' adds urgency and emphasizes importance.",
-                "url": "https://www.youtube.com/watch?v=7G-pYAtudZM"
-              },
-              {
-                "original": "Chai pe charcha",
-                "improved": "Chai Pe Charcha: My Career Journey & What I Learned (Uncut & Unfiltered)",
-                "rationale": "Duplicate of title 1. Provided a different context for 'Chai Pe Charcha,' focusing on a personal 'Career Journey' and lessons learned, which tends to be highly engaging and relatable.",
-                "url": "https://www.youtube.com/watch?v=cSTl1LSyvjM"
-              },
-              {
-                "original": "0 to production (VPS) course in 1 video",
-                "improved": "Deploy ANYTHING to Production (VPS): ZERO to LIVE in 1 Video! (Complete Guide)",
-                "rationale": "Already a strong title. Enhanced '0 to production' to 'ZERO to LIVE' for more impact, added 'Deploy ANYTHING' for broader appeal, and 'Complete Guide' for SEO.",
-                "url": "https://www.youtube.com/watch?v=vzVbqXVID-Y"
-              },
-              {
-                "original": "Processing time do apne aap ko",
-                "improved": "Overwhelmed? Give Yourself 'Processing Time': My Secret to Focus & Productivity! (Hindi/Hinglish)",
-                "rationale": "The original is an abstract Hindi phrase. Connected it to a common problem ('Overwhelmed?'), offered a solution/secret ('My Secret to Focus & Productivity'), and indicated language.",
-                "url": "https://www.youtube.com/watch?v=6I1nr-T2Kbk"
-              },
-              {
-                "original": "Gemini pro + 2 TB free for JIO users",
-                "improved": "JIO Users! 🔥 Get FREE Gemini Pro + 2 TB Cloud Storage! (LIMITED TIME Offer - ACT FAST!)",
-                "rationale": "This is an announcement. Added urgency ('LIMITED TIME Offer - ACT FAST!'), clarified 'FREE,' used an emoji for attention, and directly targeted 'JIO Users!' for relevance.",
-                "url": "https://www.youtube.com/watch?v=5sQgJdAdNxo"
-              },
-              {
-                "original": "Best Resume tip",
-                "improved": "The #1 Resume Secret That Lands INTERVIEWS (Stop Making This Mistake!)",
-                "rationale": "Too generic. Elevated 'tip' to a '#1 Secret' with a clear benefit ('Lands INTERVIEWS'). Added a common pain point ('Stop Making This Mistake!') to create an immediate connection.",
-                "url": "https://www.youtube.com/watch?v=V8gGIMv5dWM"
-              },
-              {
-                "original": "Welcome to Networking Masterclass 101",
-                "improved": "Networking Masterclass: Go From ZERO to PRO in 2024! (Your ULTIMATE Guide)",
-                "rationale": "Removed 'Welcome to' as it's filler. 'Masterclass 101' is somewhat redundant. Focused on a clear progression ('ZERO to PRO'), added a timeframe ('in 2024'), and 'ULTIMATE Guide' for SEO.",
-                "url": "https://www.youtube.com/watch?v=Yh2ZyQuEdy0"
-              },
-              {
-                "original": "CSR vs SSR in react in Hindi",
-                "improved": "CSR vs SSR React Explained (Hindi): Which is BETTER for Your Project? (With LIVE Examples!)",
-                "rationale": "Good original. Added a comparative question ('Which is BETTER?') to encourage decision-making, and 'LIVE Examples!' to promise practical, hands-on value.",
-                "url": "https://www.youtube.com/watch?v=RY7T9zFsn-Y"
-              },
-              {
-                "original": "chai aur convex in live stream (No superchat)",
-                "improved": "Chai aur Convex Optimization (LIVE): Solving Complex Problems Together (No Superchat Needed!)",
-                "rationale": "Clarified 'convex' to 'Convex Optimization' (assuming a technical context) for better searchability. Emphasized collaborative problem-solving and retained the viewer-friendly 'No Superchat Needed!'.",
-                "url": "https://www.youtube.com/watch?v=BgUMlyYldsw"
-              },
-              {
-                "original": "IIT se btech kiya and 3 months me layoff ho gya",
-                "improved": "IIT Grad, Laid Off in 3 Months! 💔 My SHOCKING Reality Check & What I Did Next (Hinglish)",
-                "rationale": "Powerful original. Enhanced emotional impact with an emoji ('💔') and stronger adjectives ('SHOCKING Reality Check'). Added a promise of resolution ('What I Did Next') to drive curiosity.",
-                "url": "https://www.youtube.com/watch?v=boZeqXClUWQ"
-              },
-              {
-                "original": "Chai aur bun series kb aayegi",
-                "improved": "Chai Aur Bun Series RETURNS! 🔥 All Your Questions Answered & What's Next! (BIG ANNOUNCEMENT!)",
-                "rationale": "This is a viewer question, not a title. Framed it as an exciting announcement about the series' return, promising answers and future plans to build anticipation.",
-                "url": "https://www.youtube.com/watch?v=WzSz5cBeSQE"
-              },
-              {
-                "original": "What is RAG",
-                "improved": "What is RAG? (Retrieval Augmented Generation) EXPLAINED for Beginners & Experts! (Real-World Use Cases)",
-                "rationale": "Too basic. Expanded the acronym for clarity and SEO. Specified the target audience ('Beginners & Experts') and promised practical value ('Real-World Use Cases') for broader appeal.",
-                "url": "https://www.youtube.com/watch?v=FRwHYMazo5w"
-              },
-              {
-                "original": "Live batch vs udemy",
-                "improved": "Live Batch vs Udemy: Which is BETTER for Learning & Placements? (My HONEST Review!)",
-                "rationale": "Clear comparison. Added a direct question ('Which is BETTER?') for immediate viewer engagement and specified key comparison factors ('Learning & Placements'). 'My HONEST Review!' adds authenticity.",
-                "url": "https://www.youtube.com/watch?v=J-SEJyD-1Nw"
-              },
-              {
-                "original": "chai pr charcha",
-                "improved": "Chai Par Charcha: Decoding the LATEST Tech News & Future Trends! (Unbiased Analysis)",
-                "rationale": "Duplicate of titles 1 & 13. Provided another context for 'Chai Par Charcha,' focusing on current events ('LATEST Tech News & Future Trends') and offering 'Unbiased Analysis' for a distinct value proposition.",
-                "url": "https://www.youtube.com/watch?v=ZtXx9omiwq0"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764185906447,
-        "topic": "yt.titles.ready",
-        "success": true,
-        "data": {
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "channelName": "Chai aur Code",
-          "improvedTitles": [
-            {
-              "original": "Chai pe charcha",
-              "improved": "Chai Pe Charcha: Unfiltered Tech Talk 🔥 | What's Next in AI?",
-              "rationale": "The original is too generic. Added context (Tech Talk), a specific topic (AI), and an emoji for visual appeal to make it more intriguing and searchable.",
-              "url": "https://www.youtube.com/watch?v=inCx7Zolorg"
-            },
-            {
-              "original": "Masterji Platform tour",
-              "improved": "Masterji Platform DEMO: Your ULTIMATE Guide to [Platform's Core Benefit]! (Full Walkthrough)",
-              "rationale": "Changed 'tour' to 'DEMO' for action, added 'ULTIMATE Guide' for SEO and value, and included a placeholder to highlight the platform's main benefit, making it more click-attractive.",
-              "url": "https://www.youtube.com/watch?v=I4HEpowCM20"
-            },
-            {
-              "original": "Docker and k8 YT",
-              "improved": "Docker & Kubernetes Explained: The ONLY Guide You Need to Master K8s & Containers!",
-              "rationale": "The original is too cryptic and short. Expanded 'k8' to 'Kubernetes' and removed 'YT'. Added benefit-driven language ('ONLY Guide', 'Master K8s') for strong SEO and clickbait appeal.",
-              "url": "https://www.youtube.com/watch?v=DvPtxwFTA60"
-            },
-            {
-              "original": "You can learn GenAI here",
-              "improved": "GenAI Masterclass: Learn Generative AI From ZERO to EXPERT in [X] Days! (Full Course)",
-              "rationale": "The original is a flat statement. Transformed it into a 'Masterclass' promising a clear learning path ('ZERO to EXPERT') and a structured timeframe ('in [X] Days') to attract learners.",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec"
-            },
-            {
-              "original": "The boring websites that I love",
-              "improved": "Don't Judge a Book! My TOP 5 'Boring' Websites I CAN'T Live Without (Hidden Gems!)",
-              "rationale": "The original has a good hook but can be stronger. Added a number ('TOP 5'), an element of surprise ('Don't Judge a Book!'), and curiosity ('Hidden Gems!') to boost clicks.",
-              "url": "https://www.youtube.com/watch?v=5RjiIu7bknI"
-            },
-            {
-              "original": "Masterji app is available at your nearest App/play store",
-              "improved": "Masterji App: Unlock [Core Benefit]! Download NOW on App/Play Store! (Full Features Walkthrough)",
-              "rationale": "This is an announcement, not a video title. Focused on the app's 'Core Benefit' and promised a 'Full Features Walkthrough' to give viewers a reason to watch and download.",
-              "url": "https://www.youtube.com/watch?v=sQuuemyiA1g"
-            },
-            {
-              "original": "opportunities are not equal for everyone",
-              "improved": "The Harsh Truth: Why Opportunities AREN'T Equal & How to STILL SUCCEED (My Story)",
-              "rationale": "The original is a statement of fact, potentially negative. Pivoted to a solution-oriented approach ('How to STILL SUCCEED') and added a personal element ('My Story') for relatability and hope.",
-              "url": "https://www.youtube.com/watch?v=8ashfLSm3tc"
-            },
-            {
-              "original": "Open source done right",
-              "improved": "Mastering Open Source: How to Contribute & Build Your Portfolio (The RIGHT Way!)",
-              "rationale": "Too vague. Specified the benefits ('Contribute & Build Your Portfolio') and framed it as a skill-building opportunity ('Mastering Open Source') to attract developers.",
-              "url": "https://www.youtube.com/watch?v=9A8Xv7UAkOE"
-            },
-            {
-              "original": "The hidden chrome performance tools",
-              "improved": "Unlock Chrome's SECRETS: Hidden Dev Tools to Boost Website Performance (You WON'T Believe These!)",
-              "rationale": "'Hidden' is good. Emphasized 'SECRETS' and the tangible benefit ('Boost Website Performance'). Added a powerful curiosity trigger ('You WON'T Believe These!') for higher click-through.",
-              "url": "https://www.youtube.com/watch?v=8cshn2IIkbY"
-            },
-            {
-              "original": "What is Back of Envelope calculation with examples",
-              "improved": "Back-of-the-Envelope Calculation: The Engineer's SECRET Weapon for Quick Estimates (Real Examples!)",
-              "rationale": "The original is informative but dry. Positioned it as a 'SECRET Weapon' for a specific audience ('Engineer's') to make it sound more impactful and desirable, while still promising 'Real Examples'.",
-              "url": "https://www.youtube.com/watch?v=Dc8uJTrGK9w"
-            },
-            {
-              "original": "What is Agentic AI and AI Agents. Only video you need to watch",
-              "improved": "Agentic AI & AI Agents EXPLAINED: The ULTIMATE Guide (You'll NEVER Need Another Video!)",
-              "rationale": "Good original promise, but enhanced it. Used 'EXPLAINED' for clarity, 'ULTIMATE Guide' for SEO, and amplified the promise with 'NEVER Need Another Video!' for stronger clickbait.",
-              "url": "https://www.youtube.com/watch?v=hpc5DO2dC-4"
-            },
-            {
-              "original": "Follow this for every system design interview",
-              "improved": "System Design Interview: The ONLY Framework You NEED to CRACK Any Question! (MUST-WATCH)",
-              "rationale": "Strong call to action. Added 'ONLY Framework' and 'CRACK Any Question' to convey a definitive solution and high impact. 'MUST-WATCH' adds urgency and emphasizes importance.",
-              "url": "https://www.youtube.com/watch?v=7G-pYAtudZM"
-            },
-            {
-              "original": "Chai pe charcha",
-              "improved": "Chai Pe Charcha: My Career Journey & What I Learned (Uncut & Unfiltered)",
-              "rationale": "Duplicate of title 1. Provided a different context for 'Chai Pe Charcha,' focusing on a personal 'Career Journey' and lessons learned, which tends to be highly engaging and relatable.",
-              "url": "https://www.youtube.com/watch?v=cSTl1LSyvjM"
-            },
-            {
-              "original": "0 to production (VPS) course in 1 video",
-              "improved": "Deploy ANYTHING to Production (VPS): ZERO to LIVE in 1 Video! (Complete Guide)",
-              "rationale": "Already a strong title. Enhanced '0 to production' to 'ZERO to LIVE' for more impact, added 'Deploy ANYTHING' for broader appeal, and 'Complete Guide' for SEO.",
-              "url": "https://www.youtube.com/watch?v=vzVbqXVID-Y"
-            },
-            {
-              "original": "Processing time do apne aap ko",
-              "improved": "Overwhelmed? Give Yourself 'Processing Time': My Secret to Focus & Productivity! (Hindi/Hinglish)",
-              "rationale": "The original is an abstract Hindi phrase. Connected it to a common problem ('Overwhelmed?'), offered a solution/secret ('My Secret to Focus & Productivity'), and indicated language.",
-              "url": "https://www.youtube.com/watch?v=6I1nr-T2Kbk"
-            },
-            {
-              "original": "Gemini pro + 2 TB free for JIO users",
-              "improved": "JIO Users! 🔥 Get FREE Gemini Pro + 2 TB Cloud Storage! (LIMITED TIME Offer - ACT FAST!)",
-              "rationale": "This is an announcement. Added urgency ('LIMITED TIME Offer - ACT FAST!'), clarified 'FREE,' used an emoji for attention, and directly targeted 'JIO Users!' for relevance.",
-              "url": "https://www.youtube.com/watch?v=5sQgJdAdNxo"
-            },
-            {
-              "original": "Best Resume tip",
-              "improved": "The #1 Resume Secret That Lands INTERVIEWS (Stop Making This Mistake!)",
-              "rationale": "Too generic. Elevated 'tip' to a '#1 Secret' with a clear benefit ('Lands INTERVIEWS'). Added a common pain point ('Stop Making This Mistake!') to create an immediate connection.",
-              "url": "https://www.youtube.com/watch?v=V8gGIMv5dWM"
-            },
-            {
-              "original": "Welcome to Networking Masterclass 101",
-              "improved": "Networking Masterclass: Go From ZERO to PRO in 2024! (Your ULTIMATE Guide)",
-              "rationale": "Removed 'Welcome to' as it's filler. 'Masterclass 101' is somewhat redundant. Focused on a clear progression ('ZERO to PRO'), added a timeframe ('in 2024'), and 'ULTIMATE Guide' for SEO.",
-              "url": "https://www.youtube.com/watch?v=Yh2ZyQuEdy0"
-            },
-            {
-              "original": "CSR vs SSR in react in Hindi",
-              "improved": "CSR vs SSR React Explained (Hindi): Which is BETTER for Your Project? (With LIVE Examples!)",
-              "rationale": "Good original. Added a comparative question ('Which is BETTER?') to encourage decision-making, and 'LIVE Examples!' to promise practical, hands-on value.",
-              "url": "https://www.youtube.com/watch?v=RY7T9zFsn-Y"
-            },
-            {
-              "original": "chai aur convex in live stream (No superchat)",
-              "improved": "Chai aur Convex Optimization (LIVE): Solving Complex Problems Together (No Superchat Needed!)",
-              "rationale": "Clarified 'convex' to 'Convex Optimization' (assuming a technical context) for better searchability. Emphasized collaborative problem-solving and retained the viewer-friendly 'No Superchat Needed!'.",
-              "url": "https://www.youtube.com/watch?v=BgUMlyYldsw"
-            },
-            {
-              "original": "IIT se btech kiya and 3 months me layoff ho gya",
-              "improved": "IIT Grad, Laid Off in 3 Months! 💔 My SHOCKING Reality Check & What I Did Next (Hinglish)",
-              "rationale": "Powerful original. Enhanced emotional impact with an emoji ('💔') and stronger adjectives ('SHOCKING Reality Check'). Added a promise of resolution ('What I Did Next') to drive curiosity.",
-              "url": "https://www.youtube.com/watch?v=boZeqXClUWQ"
-            },
-            {
-              "original": "Chai aur bun series kb aayegi",
-              "improved": "Chai Aur Bun Series RETURNS! 🔥 All Your Questions Answered & What's Next! (BIG ANNOUNCEMENT!)",
-              "rationale": "This is a viewer question, not a title. Framed it as an exciting announcement about the series' return, promising answers and future plans to build anticipation.",
-              "url": "https://www.youtube.com/watch?v=WzSz5cBeSQE"
-            },
-            {
-              "original": "What is RAG",
-              "improved": "What is RAG? (Retrieval Augmented Generation) EXPLAINED for Beginners & Experts! (Real-World Use Cases)",
-              "rationale": "Too basic. Expanded the acronym for clarity and SEO. Specified the target audience ('Beginners & Experts') and promised practical value ('Real-World Use Cases') for broader appeal.",
-              "url": "https://www.youtube.com/watch?v=FRwHYMazo5w"
-            },
-            {
-              "original": "Live batch vs udemy",
-              "improved": "Live Batch vs Udemy: Which is BETTER for Learning & Placements? (My HONEST Review!)",
-              "rationale": "Clear comparison. Added a direct question ('Which is BETTER?') for immediate viewer engagement and specified key comparison factors ('Learning & Placements'). 'My HONEST Review!' adds authenticity.",
-              "url": "https://www.youtube.com/watch?v=J-SEJyD-1Nw"
-            },
-            {
-              "original": "chai pr charcha",
-              "improved": "Chai Par Charcha: Decoding the LATEST Tech News & Future Trends! (Unbiased Analysis)",
-              "rationale": "Duplicate of titles 1 & 13. Provided another context for 'Chai Par Charcha,' focusing on current events ('LATEST Tech News & Future Trends') and offering 'Unbiased Analysis' for a distinct value proposition.",
-              "url": "https://www.youtube.com/watch?v=ZtXx9omiwq0"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "YRSW1-5870770:a36f183d-256d-4a44-aca0-44894c986ca7": {
-    "id": "a36f183d-256d-4a44-aca0-44894c986ca7",
-    "name": "SendEmail",
-    "parentTraceId": "YRSW1-5870770",
-    "status": "completed",
-    "startTime": 1764185906454,
-    "endTime": 1764185908399,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "SendEmail"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764185907255,
-        "level": "info",
-        "message": "Sending email",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "SendEmail",
-          "jobId": "job_1764185871607_ki7xgh19x",
-          "email": "test@test.com",
-          "titleCount": 25,
-          "level": "info",
-          "time": 1764185907252,
-          "msg": "Sending email"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185907265,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185907272,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "sending email"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764185908045,
-        "level": "error",
-        "message": "Error sending email",
-        "metadata": {
-          "traceId": "YRSW1-5870770",
-          "step": "SendEmail",
-          "message": "Resend API error: undefined ||\n            Unknown email error",
-          "level": "error",
-          "time": 1764185908039,
-          "msg": "Error sending email"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185908055,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764185908068,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764185871607_ki7xgh19x",
-          "key": {
-            "status": "failed",
-            "error": "Email sending failed: Resend API error: undefined ||\n            Unknown email error"
-          }
-        }
-      }
-    ]
-  },
   "WA2BE-6944453:5634b292-69bd-4bb5-9281-41ea72a9c0a7": {
     "id": "5634b292-69bd-4bb5-9281-41ea72a9c0a7",
     "name": "SubmitChannel",
@@ -20828,6 +19285,1038 @@
           "jobId": "job_1766242232558_xjbf9i23g",
           "email": "pruturaj3003@gmail.com",
           "emailId": "63561737-0dee-45f4-9881-07f8b0c23ee0"
+        }
+      }
+    ]
+  },
+  "DN35H-2653608:a75cda8c-9e1f-4254-b17e-5a35a4d2b30b": {
+    "id": "a75cda8c-9e1f-4254-b17e-5a35a4d2b30b",
+    "name": "SubmitChannel",
+    "parentTraceId": "DN35H-2653608",
+    "status": "completed",
+    "startTime": 1766242653615,
+    "endTime": 1766242654807,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766242654661,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "DN35H-2653608",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@CodeWithHarry",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1766242654426,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242654675,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl",
+          "key": {
+            "jobId": "job_1766242654427_n1wp8f2rl",
+            "channel": "@CodeWithHarry",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2025-12-20T14:57:34.427Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766242654695,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "DN35H-2653608",
+          "step": "SubmitChannel",
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channel": "@CodeWithHarry",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1766242654680,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242654705,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channel": "@CodeWithHarry",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DN35H-2653608:daaff651-40be-499c-96c3-ba2fd7ef3b91": {
+    "id": "daaff651-40be-499c-96c3-ba2fd7ef3b91",
+    "name": "ResolveChannel",
+    "parentTraceId": "DN35H-2653608",
+    "status": "completed",
+    "startTime": 1766242654727,
+    "endTime": 1766242656172,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766242655518,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "DN35H-2653608",
+          "step": "ResolveChannel",
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channel": "@CodeWithHarry",
+          "level": "info",
+          "time": 1766242655512,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242655528,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242655536,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242655928,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channelId": "UCeVMnSShP_Iviwkknt83cww",
+          "channelName": "CodeWithHarry",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DN35H-2653608:2fed343d-a3c7-4403-8102-e26daba02c44": {
+    "id": "2fed343d-a3c7-4403-8102-e26daba02c44",
+    "name": "fetchVideos",
+    "parentTraceId": "DN35H-2653608",
+    "status": "completed",
+    "startTime": 1766242655933,
+    "endTime": 1766242657579,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766242656655,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "DN35H-2653608",
+          "step": "fetchVideos",
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channelId": "UCeVMnSShP_Iviwkknt83cww",
+          "level": "info",
+          "time": 1766242656652,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242656660,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242656663,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766242657324,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "DN35H-2653608",
+          "step": "fetchVideos",
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "videoCount": 1,
+          "level": "info",
+          "time": 1766242657321,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242657331,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "9UNIK5wIKBU",
+                "title": "Top 5 Programming Languages to learn in 2026! (Important)",
+                "url": "https://www.youtube.com/watch?v=9UNIK5wIKBU",
+                "publishedAt": "2025-12-11T15:12:25Z",
+                "thumbnail": "https://i.ytimg.com/vi/9UNIK5wIKBU/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242657346,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channelName": "CodeWithHarry",
+          "videos": [
+            {
+              "videoId": "9UNIK5wIKBU",
+              "title": "Top 5 Programming Languages to learn in 2026! (Important)",
+              "url": "https://www.youtube.com/watch?v=9UNIK5wIKBU",
+              "publishedAt": "2025-12-11T15:12:25Z",
+              "thumbnail": "https://i.ytimg.com/vi/9UNIK5wIKBU/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DN35H-2653608:2cf88593-478e-49ba-a5d2-a12d74292ff7": {
+    "id": "2cf88593-478e-49ba-a5d2-a12d74292ff7",
+    "name": "GenerateTitles",
+    "parentTraceId": "DN35H-2653608",
+    "status": "completed",
+    "startTime": 1766242657356,
+    "endTime": 1766242663990,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1766242658049,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242658055,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242663750,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242654427_n1wp8f2rl",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Top 5 Programming Languages to learn in 2026! (Important)",
+                "variants": {
+                  "viral": "STOP Learning The Wrong Code! Top 5 Languages for 2026",
+                  "seo": "Best Programming Languages to Learn 2026: Future-Proof Your Career",
+                  "professional": "Strategic Programming Languages for 2026: An Expert Analysis"
+                },
+                "reasons": {
+                  "viral": "Evokes urgency and fear of missing out, driving clicks through strong curiosity about avoiding mistakes.",
+                  "seo": "Rich in high-intent keywords like 'Best Programming Languages,' 'Learn,' and '2026' to rank high in search results.",
+                  "professional": "Conveys authority and a structured, informed perspective, appealing to a professional audience seeking reliable guidance."
+                },
+                "thumbnailTexts": [
+                  "2026: Learn THIS!",
+                  "Future Proof!",
+                  "Top 5 Code"
+                ],
+                "scores": {
+                  "viral": 90,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=9UNIK5wIKBU"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242663760,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "channelName": "CodeWithHarry",
+          "improvedTitles": [
+            {
+              "original": "Top 5 Programming Languages to learn in 2026! (Important)",
+              "variants": {
+                "viral": "STOP Learning The Wrong Code! Top 5 Languages for 2026",
+                "seo": "Best Programming Languages to Learn 2026: Future-Proof Your Career",
+                "professional": "Strategic Programming Languages for 2026: An Expert Analysis"
+              },
+              "reasons": {
+                "viral": "Evokes urgency and fear of missing out, driving clicks through strong curiosity about avoiding mistakes.",
+                "seo": "Rich in high-intent keywords like 'Best Programming Languages,' 'Learn,' and '2026' to rank high in search results.",
+                "professional": "Conveys authority and a structured, informed perspective, appealing to a professional audience seeking reliable guidance."
+              },
+              "thumbnailTexts": [
+                "2026: Learn THIS!",
+                "Future Proof!",
+                "Top 5 Code"
+              ],
+              "scores": {
+                "viral": 90,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=9UNIK5wIKBU"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DN35H-2653608:0bca8f53-1fde-4b09-9e21-8ff6d1d17918": {
+    "id": "0bca8f53-1fde-4b09-9e21-8ff6d1d17918",
+    "name": "SendEmail",
+    "parentTraceId": "DN35H-2653608",
+    "status": "completed",
+    "startTime": 1766242663771,
+    "endTime": 1766242665209,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1766242664979,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242654427_n1wp8f2rl",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "20dc6897-a3ee-4a05-a309-fad9c2322d9d"
+        }
+      }
+    ]
+  },
+  "GCXEQ-2711547:9c070485-c3de-4efc-a0af-330ca251f622": {
+    "id": "9c070485-c3de-4efc-a0af-330ca251f622",
+    "name": "SubmitChannel",
+    "parentTraceId": "GCXEQ-2711547",
+    "status": "completed",
+    "startTime": 1766242711561,
+    "endTime": 1766242712369,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766242712255,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "GCXEQ-2711547",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1766242712254,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242712262,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal",
+          "key": {
+            "jobId": "job_1766242712254_364c0fwal",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2025-12-20T14:58:32.254Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766242712277,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "GCXEQ-2711547",
+          "step": "SubmitChannel",
+          "jobId": "job_1766242712254_364c0fwal",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1766242712266,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242712290,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242712254_364c0fwal",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "GCXEQ-2711547:798f8dc6-49cf-44a0-81a2-a41f1406a90f": {
+    "id": "798f8dc6-49cf-44a0-81a2-a41f1406a90f",
+    "name": "ResolveChannel",
+    "parentTraceId": "GCXEQ-2711547",
+    "status": "completed",
+    "startTime": 1766242712297,
+    "endTime": 1766242713593,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766242712971,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "GCXEQ-2711547",
+          "step": "ResolveChannel",
+          "jobId": "job_1766242712254_364c0fwal",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1766242712969,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242712979,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242712991,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242713347,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242712254_364c0fwal",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "channelName": "Chai aur Code",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "GCXEQ-2711547:5086fc15-5992-48fd-9da1-d48b30f41007": {
+    "id": "5086fc15-5992-48fd-9da1-d48b30f41007",
+    "name": "fetchVideos",
+    "parentTraceId": "GCXEQ-2711547",
+    "status": "completed",
+    "startTime": 1766242713361,
+    "endTime": 1766242715081,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766242714049,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "GCXEQ-2711547",
+          "step": "fetchVideos",
+          "jobId": "job_1766242712254_364c0fwal",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "level": "info",
+          "time": 1766242714047,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242714069,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242714093,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766242714824,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "GCXEQ-2711547",
+          "step": "fetchVideos",
+          "jobId": "job_1766242712254_364c0fwal",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766242714822,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242714839,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "0RNOaDO4rWY",
+                "title": "Late night Chai",
+                "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY",
+                "publishedAt": "2025-12-19T19:09:52Z",
+                "thumbnail": "https://i.ytimg.com/vi/0RNOaDO4rWY/default.jpg"
+              },
+              {
+                "videoId": "roc5eWHU8PY",
+                "title": "Morning me DSA, evening me Development",
+                "url": "https://www.youtube.com/watch?v=roc5eWHU8PY",
+                "publishedAt": "2025-12-19T08:31:04Z",
+                "thumbnail": "https://i.ytimg.com/vi/roc5eWHU8PY/default.jpg"
+              },
+              {
+                "videoId": "kvP6hDXWy88",
+                "title": "Typescript Course in 1 Shot in Hindi",
+                "url": "https://www.youtube.com/watch?v=kvP6hDXWy88",
+                "publishedAt": "2025-12-18T15:42:55Z",
+                "thumbnail": "https://i.ytimg.com/vi/kvP6hDXWy88/default.jpg"
+              },
+              {
+                "videoId": "aCEC8X0r0L4",
+                "title": "Creator Fund Announcement",
+                "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4",
+                "publishedAt": "2025-12-18T12:17:23Z",
+                "thumbnail": "https://i.ytimg.com/vi/aCEC8X0r0L4/default.jpg"
+              },
+              {
+                "videoId": "rvlQp6Vn8K4",
+                "title": "Late night live",
+                "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4",
+                "publishedAt": "2025-12-17T19:06:24Z",
+                "thumbnail": "https://i.ytimg.com/vi/rvlQp6Vn8K4/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242714857,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242712254_364c0fwal",
+          "channelName": "Chai aur Code",
+          "videos": [
+            {
+              "videoId": "0RNOaDO4rWY",
+              "title": "Late night Chai",
+              "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY",
+              "publishedAt": "2025-12-19T19:09:52Z",
+              "thumbnail": "https://i.ytimg.com/vi/0RNOaDO4rWY/default.jpg"
+            },
+            {
+              "videoId": "roc5eWHU8PY",
+              "title": "Morning me DSA, evening me Development",
+              "url": "https://www.youtube.com/watch?v=roc5eWHU8PY",
+              "publishedAt": "2025-12-19T08:31:04Z",
+              "thumbnail": "https://i.ytimg.com/vi/roc5eWHU8PY/default.jpg"
+            },
+            {
+              "videoId": "kvP6hDXWy88",
+              "title": "Typescript Course in 1 Shot in Hindi",
+              "url": "https://www.youtube.com/watch?v=kvP6hDXWy88",
+              "publishedAt": "2025-12-18T15:42:55Z",
+              "thumbnail": "https://i.ytimg.com/vi/kvP6hDXWy88/default.jpg"
+            },
+            {
+              "videoId": "aCEC8X0r0L4",
+              "title": "Creator Fund Announcement",
+              "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4",
+              "publishedAt": "2025-12-18T12:17:23Z",
+              "thumbnail": "https://i.ytimg.com/vi/aCEC8X0r0L4/default.jpg"
+            },
+            {
+              "videoId": "rvlQp6Vn8K4",
+              "title": "Late night live",
+              "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4",
+              "publishedAt": "2025-12-17T19:06:24Z",
+              "thumbnail": "https://i.ytimg.com/vi/rvlQp6Vn8K4/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "GCXEQ-2711547:47f0a363-6e1e-4a1a-a105-b74034427436": {
+    "id": "47f0a363-6e1e-4a1a-a105-b74034427436",
+    "name": "GenerateTitles",
+    "parentTraceId": "GCXEQ-2711547",
+    "status": "completed",
+    "startTime": 1766242714869,
+    "endTime": 1766242727680,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1766242715543,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242715553,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766242727448,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766242712254_364c0fwal",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Late night Chai",
+                "variants": {
+                  "viral": "This Midnight Chai Will Reveal My Deepest Secret...",
+                  "seo": "How to Make Authentic Indian Masala Chai | Late Night Comfort Drink Recipe",
+                  "professional": "The Comfort of Late-Night Chai: A Simple Ritual"
+                },
+                "reasons": {
+                  "viral": "Evokes strong curiosity and hints at a personal, unexpected revelation.",
+                  "seo": "Includes primary keywords like 'Masala Chai,' 'Indian,' 'Recipe,' and 'Late Night' for searchability.",
+                  "professional": "Presents a calm, reflective, and brand-safe image focusing on a pleasant experience."
+                },
+                "thumbnailTexts": [
+                  "Midnight Brew",
+                  "Secret Comfort",
+                  "Chai Time"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY"
+              },
+              {
+                "original": "Morning me DSA, evening me Development",
+                "variants": {
+                  "viral": "My INSANE Daily Schedule: DSA & Dev in One Day!",
+                  "seo": "Mastering DSA & Web Development Simultaneously: A Daily Study Plan",
+                  "professional": "Optimizing Your Day: DSA and Development Integration"
+                },
+                "reasons": {
+                  "viral": "Uses strong emotional words ('INSANE') and highlights the challenging accomplishment, creating curiosity.",
+                  "seo": "Targets keywords like 'DSA,' 'Web Development,' 'Study Plan,' and 'Simultaneously' for relevant searches.",
+                  "professional": "Sounds structured, strategic, and appeals to a professional audience seeking productivity tips."
+                },
+                "thumbnailTexts": [
+                  "DSA Morning",
+                  "Dev Evening",
+                  "Crush Both"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=roc5eWHU8PY"
+              },
+              {
+                "original": "Typescript Course in 1 Shot in Hindi",
+                "variants": {
+                  "viral": "Master TypeScript in ONE Day (Hindi) | My Secret Revealed!",
+                  "seo": "TypeScript Full Course in Hindi: Master TS from Scratch (Beginner-Friendly)",
+                  "professional": "Complete TypeScript Essentials Course in Hindi: A Comprehensive Guide"
+                },
+                "reasons": {
+                  "viral": "Emphasizes extreme speed and offers a 'secret,' appealing to impatience and curiosity.",
+                  "seo": "Includes multiple relevant keywords like 'TypeScript Course,' 'Hindi,' 'Full Course,' 'Master,' and 'Beginner' for broad search queries.",
+                  "professional": "Highlights completeness and professionalism, ideal for an educational context."
+                },
+                "thumbnailTexts": [
+                  "TS One Shot",
+                  "Learn Fast!",
+                  "Hindi Course"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 50,
+                  "professional": 50
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=kvP6hDXWy88"
+              },
+              {
+                "original": "Creator Fund Announcement",
+                "variants": {
+                  "viral": "My Creator Fund SHOCK: You WON'T Believe The News!",
+                  "seo": "YouTube Creator Fund Update: Eligibility, Earnings, and How to Apply",
+                  "professional": "Official Creator Fund Announcement & Program Details"
+                },
+                "reasons": {
+                  "viral": "Uses strong emotional words ('SHOCK') and creates suspense ('WON'T Believe') to drive clicks.",
+                  "seo": "Incorporates key terms like 'YouTube Creator Fund,' 'Update,' 'Eligibility,' and 'Earnings' for search intent.",
+                  "professional": "Clearly states the purpose in a formal, informative, and brand-safe manner."
+                },
+                "thumbnailTexts": [
+                  "Fund News",
+                  "Big Update",
+                  "$$$"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4"
+              },
+              {
+                "original": "Late night live",
+                "variants": {
+                  "viral": "You WON'T Believe What Happened on My Late Night Live Stream!",
+                  "seo": "Late Night Live Stream: Q&A, Chat & Community Hangout",
+                  "professional": "After-Hours Live Session: Engaging with the Community"
+                },
+                "reasons": {
+                  "viral": "Creates intense curiosity and implies something significant or shocking occurred during the stream.",
+                  "seo": "Includes 'Late Night Live Stream' and popular interactive elements like 'Q&A' and 'Community' for search.",
+                  "professional": "Presents a refined and inclusive image, suitable for a professional brand engaging its audience."
+                },
+                "thumbnailTexts": [
+                  "Live Now",
+                  "Night Chat",
+                  "Ask Me!"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766242727459,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242712254_364c0fwal",
+          "channelName": "Chai aur Code",
+          "improvedTitles": [
+            {
+              "original": "Late night Chai",
+              "variants": {
+                "viral": "This Midnight Chai Will Reveal My Deepest Secret...",
+                "seo": "How to Make Authentic Indian Masala Chai | Late Night Comfort Drink Recipe",
+                "professional": "The Comfort of Late-Night Chai: A Simple Ritual"
+              },
+              "reasons": {
+                "viral": "Evokes strong curiosity and hints at a personal, unexpected revelation.",
+                "seo": "Includes primary keywords like 'Masala Chai,' 'Indian,' 'Recipe,' and 'Late Night' for searchability.",
+                "professional": "Presents a calm, reflective, and brand-safe image focusing on a pleasant experience."
+              },
+              "thumbnailTexts": [
+                "Midnight Brew",
+                "Secret Comfort",
+                "Chai Time"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY"
+            },
+            {
+              "original": "Morning me DSA, evening me Development",
+              "variants": {
+                "viral": "My INSANE Daily Schedule: DSA & Dev in One Day!",
+                "seo": "Mastering DSA & Web Development Simultaneously: A Daily Study Plan",
+                "professional": "Optimizing Your Day: DSA and Development Integration"
+              },
+              "reasons": {
+                "viral": "Uses strong emotional words ('INSANE') and highlights the challenging accomplishment, creating curiosity.",
+                "seo": "Targets keywords like 'DSA,' 'Web Development,' 'Study Plan,' and 'Simultaneously' for relevant searches.",
+                "professional": "Sounds structured, strategic, and appeals to a professional audience seeking productivity tips."
+              },
+              "thumbnailTexts": [
+                "DSA Morning",
+                "Dev Evening",
+                "Crush Both"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=roc5eWHU8PY"
+            },
+            {
+              "original": "Typescript Course in 1 Shot in Hindi",
+              "variants": {
+                "viral": "Master TypeScript in ONE Day (Hindi) | My Secret Revealed!",
+                "seo": "TypeScript Full Course in Hindi: Master TS from Scratch (Beginner-Friendly)",
+                "professional": "Complete TypeScript Essentials Course in Hindi: A Comprehensive Guide"
+              },
+              "reasons": {
+                "viral": "Emphasizes extreme speed and offers a 'secret,' appealing to impatience and curiosity.",
+                "seo": "Includes multiple relevant keywords like 'TypeScript Course,' 'Hindi,' 'Full Course,' 'Master,' and 'Beginner' for broad search queries.",
+                "professional": "Highlights completeness and professionalism, ideal for an educational context."
+              },
+              "thumbnailTexts": [
+                "TS One Shot",
+                "Learn Fast!",
+                "Hindi Course"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 50,
+                "professional": 50
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=kvP6hDXWy88"
+            },
+            {
+              "original": "Creator Fund Announcement",
+              "variants": {
+                "viral": "My Creator Fund SHOCK: You WON'T Believe The News!",
+                "seo": "YouTube Creator Fund Update: Eligibility, Earnings, and How to Apply",
+                "professional": "Official Creator Fund Announcement & Program Details"
+              },
+              "reasons": {
+                "viral": "Uses strong emotional words ('SHOCK') and creates suspense ('WON'T Believe') to drive clicks.",
+                "seo": "Incorporates key terms like 'YouTube Creator Fund,' 'Update,' 'Eligibility,' and 'Earnings' for search intent.",
+                "professional": "Clearly states the purpose in a formal, informative, and brand-safe manner."
+              },
+              "thumbnailTexts": [
+                "Fund News",
+                "Big Update",
+                "$$$"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4"
+            },
+            {
+              "original": "Late night live",
+              "variants": {
+                "viral": "You WON'T Believe What Happened on My Late Night Live Stream!",
+                "seo": "Late Night Live Stream: Q&A, Chat & Community Hangout",
+                "professional": "After-Hours Live Session: Engaging with the Community"
+              },
+              "reasons": {
+                "viral": "Creates intense curiosity and implies something significant or shocking occurred during the stream.",
+                "seo": "Includes 'Late Night Live Stream' and popular interactive elements like 'Q&A' and 'Community' for search.",
+                "professional": "Presents a refined and inclusive image, suitable for a professional brand engaging its audience."
+              },
+              "thumbnailTexts": [
+                "Live Now",
+                "Night Chat",
+                "Ask Me!"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "GCXEQ-2711547:84e92906-ab50-421a-a58e-ceb619c5e03b": {
+    "id": "84e92906-ab50-421a-a58e-ceb619c5e03b",
+    "name": "SendEmail",
+    "parentTraceId": "GCXEQ-2711547",
+    "status": "completed",
+    "startTime": 1766242727469,
+    "endTime": 1766242728683,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1766242728501,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1766242712254_364c0fwal",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "f37758e2-d443-4869-999c-8ea26dc32f38"
         }
       }
     ]
