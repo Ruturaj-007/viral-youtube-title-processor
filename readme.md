@@ -6,13 +6,12 @@ Turn raw YouTube titles into **viral, SEO-optimized, and brand-safe recommendati
 
 ---
 
+
 ## 🎥 Execution Walkthrough (Screen Recordings)
 
 📌 **Full-quality screen recordings are hosted via GitHub Releases**  
-(Recommended for judges — no compression, no broken previews)
 
 ---
-## 🎥 Execution Walkthrough
 
 ### 🔄 Motia Workflow Execution (Workbench)
 ![Motia Workflow](screenrecordings/motia_workbench.gif)
