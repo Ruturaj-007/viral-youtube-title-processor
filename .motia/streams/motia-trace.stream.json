@@ -1,631 +1,4 @@
 {
-  "8HBFX-9911061:e7c1632b-5564-46d2-8076-a7434c04f18b": {
-    "id": "e7c1632b-5564-46d2-8076-a7434c04f18b",
-    "name": "SubmitChannel",
-    "parentTraceId": "8HBFX-9911061",
-    "status": "completed",
-    "startTime": 1764099911069,
-    "endTime": 1764099911541,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764099911469,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@SaurabhJoshiVlogs",
-            "email": "test@test.com"
-          },
-          "level": "info",
-          "time": 1764099911467,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099911475,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764099911468_j1jxc0fd7",
-          "key": {
-            "jobId": "job_1764099911468_j1jxc0fd7",
-            "channel": "@SaurabhJoshiVlogs",
-            "email": "test@test.com",
-            "status": "queued",
-            "createdAt": "2025-11-25T19:45:11.468Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764099911483,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "SubmitChannel",
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channel": "@SaurabhJoshiVlogs",
-          "email": "test@test.com",
-          "level": "info",
-          "time": 1764099911478,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764099911490,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channel": "@SaurabhJoshiVlogs",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "8HBFX-9911061:8554731f-6fc3-4c98-9ef1-5322f9657fe8": {
-    "id": "8554731f-6fc3-4c98-9ef1-5322f9657fe8",
-    "name": "ResolveChannel",
-    "parentTraceId": "8HBFX-9911061",
-    "status": "completed",
-    "startTime": 1764099911497,
-    "endTime": 1764099912449,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764099912005,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "ResolveChannel",
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channel": "@SaurabhJoshiVlogs",
-          "level": "info",
-          "time": 1764099912002,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099912011,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099912017,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764099912285,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channelId": "UC1MR1rtDkXJDjkzXdvwZtjw",
-          "channelName": "SAURABH JOSHI 2.0",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "8HBFX-9911061:5615eef6-f5d7-4642-b14e-7e580d65c06c": {
-    "id": "5615eef6-f5d7-4642-b14e-7e580d65c06c",
-    "name": "fetchVideos",
-    "parentTraceId": "8HBFX-9911061",
-    "status": "completed",
-    "startTime": 1764099912292,
-    "endTime": 1764099913522,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764099912757,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "fetchVideos",
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channelId": "UC1MR1rtDkXJDjkzXdvwZtjw",
-          "level": "info",
-          "time": 1764099912755,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099912763,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099912769,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764099913331,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "fetchVideos",
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764099913330,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099913339,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "QFAGobZhZ7s",
-                "title": "saurabh Joshi brothers video editing",
-                "url": "https://www.youtube.com/watch?v=QFAGobZhZ7s",
-                "publishedAt": "2022-10-03T15:13:35Z",
-                "thumbnail": "https://i.ytimg.com/vi/QFAGobZhZ7s/default.jpg"
-              },
-              {
-                "videoId": "8E3ROQsZkMY",
-                "title": "saurabh Joshi panting fitting",
-                "url": "https://www.youtube.com/watch?v=8E3ROQsZkMY",
-                "publishedAt": "2022-10-03T15:12:09Z",
-                "thumbnail": "https://i.ytimg.com/vi/8E3ROQsZkMY/default.jpg"
-              },
-              {
-                "videoId": "BzGk73TvN5g",
-                "title": "road show Narendra Modi",
-                "url": "https://www.youtube.com/watch?v=BzGk73TvN5g",
-                "publishedAt": "2022-10-03T15:10:06Z",
-                "thumbnail": "https://i.ytimg.com/vi/BzGk73TvN5g/default.jpg"
-              },
-              {
-                "videoId": "FHGO-W-IpSc",
-                "title": "Narendra Modi go to ambaji",
-                "url": "https://www.youtube.com/watch?v=FHGO-W-IpSc",
-                "publishedAt": "2022-10-03T15:09:31Z",
-                "thumbnail": "https://i.ytimg.com/vi/FHGO-W-IpSc/default.jpg"
-              },
-              {
-                "videoId": "2Wtue2_UX88",
-                "title": "pubg ban. hogaya ab kya hoga saurav ka ..____",
-                "url": "https://www.youtube.com/watch?v=2Wtue2_UX88",
-                "publishedAt": "2022-09-27T08:47:06Z",
-                "thumbnail": "https://i.ytimg.com/vi/2Wtue2_UX88/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764099913350,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channelName": "SAURABH JOSHI 2.0",
-          "videos": [
-            {
-              "videoId": "QFAGobZhZ7s",
-              "title": "saurabh Joshi brothers video editing",
-              "url": "https://www.youtube.com/watch?v=QFAGobZhZ7s",
-              "publishedAt": "2022-10-03T15:13:35Z",
-              "thumbnail": "https://i.ytimg.com/vi/QFAGobZhZ7s/default.jpg"
-            },
-            {
-              "videoId": "8E3ROQsZkMY",
-              "title": "saurabh Joshi panting fitting",
-              "url": "https://www.youtube.com/watch?v=8E3ROQsZkMY",
-              "publishedAt": "2022-10-03T15:12:09Z",
-              "thumbnail": "https://i.ytimg.com/vi/8E3ROQsZkMY/default.jpg"
-            },
-            {
-              "videoId": "BzGk73TvN5g",
-              "title": "road show Narendra Modi",
-              "url": "https://www.youtube.com/watch?v=BzGk73TvN5g",
-              "publishedAt": "2022-10-03T15:10:06Z",
-              "thumbnail": "https://i.ytimg.com/vi/BzGk73TvN5g/default.jpg"
-            },
-            {
-              "videoId": "FHGO-W-IpSc",
-              "title": "Narendra Modi go to ambaji",
-              "url": "https://www.youtube.com/watch?v=FHGO-W-IpSc",
-              "publishedAt": "2022-10-03T15:09:31Z",
-              "thumbnail": "https://i.ytimg.com/vi/FHGO-W-IpSc/default.jpg"
-            },
-            {
-              "videoId": "2Wtue2_UX88",
-              "title": "pubg ban. hogaya ab kya hoga saurav ka ..____",
-              "url": "https://www.youtube.com/watch?v=2Wtue2_UX88",
-              "publishedAt": "2022-09-27T08:47:06Z",
-              "thumbnail": "https://i.ytimg.com/vi/2Wtue2_UX88/default.jpg"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "8HBFX-9911061:ada74bd5-ec64-40e8-b0aa-62b15a765c75": {
-    "id": "ada74bd5-ec64-40e8-b0aa-62b15a765c75",
-    "name": "GenerateTitles",
-    "parentTraceId": "8HBFX-9911061",
-    "status": "completed",
-    "startTime": 1764099913358,
-    "endTime": 1764099925199,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764099913809,
-        "level": "info",
-        "message": "GenerateTitles: Starting title generation",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "GenerateTitles",
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764099913808,
-          "msg": "GenerateTitles: Starting title generation"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099913816,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099913821,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764099925018,
-        "level": "info",
-        "message": "Gemini API Response received",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "GenerateTitles",
-          "hasResponse": true,
-          "hasCandidates": true,
-          "level": "info",
-          "time": 1764099925018,
-          "msg": "Gemini API Response received"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764099925028,
-        "level": "info",
-        "message": "Parsing AI response",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "GenerateTitles",
-          "textLength": 2276,
-          "level": "info",
-          "time": 1764099925018,
-          "msg": "Parsing AI response"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764099925043,
-        "level": "info",
-        "message": "GenerateTitles: Titles generated successfully",
-        "metadata": {
-          "traceId": "8HBFX-9911061",
-          "step": "GenerateTitles",
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "titleCount": 5,
-          "level": "info",
-          "time": 1764099925018,
-          "msg": "GenerateTitles: Titles generated successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764099925053,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764099911468_j1jxc0fd7",
-          "key": {
-            "status": "titles ready",
-            "improvedTitles": [
-              {
-                "original": "saurabh Joshi brothers video editing",
-                "improved": "HOW Saurabh Joshi & Brothers Edit Their VIRAL Vlogs! (SECRET Revealed)",
-                "rationale": "The improved title uses strong action verbs ('HOW'), highlights a key benefit ('VIRAL Vlogs'), and creates intrigue with 'SECRET Revealed'. Capitalization of key terms (HOW, VIRAL, SECRET) enhances clickability and search visibility for fans of Saurabh Joshi.",
-                "url": "https://www.youtube.com/watch?v=QFAGobZhZ7s"
-              },
-              {
-                "original": "saurabh Joshi panting fitting",
-                "improved": "Saurabh Joshi's NEW Look! My Epic Pant Fitting Shopping Spree!",
-                "rationale": "Assuming 'panting fitting' was a typo for 'pant fitting' (e.g., trying on clothes), this title generates excitement with 'NEW Look' and 'Epic Shopping Spree'. It suggests personal transformation and a fun, extensive shopping experience, making it more appealing than a plain description.",
-                "url": "https://www.youtube.com/watch?v=8E3ROQsZkMY"
-              },
-              {
-                "original": "road show Narendra Modi",
-                "improved": "Narendra Modi's MASSIVE Roadshow! The Crowd Went WILD! (Must See Moments)",
-                "rationale": "This title adds scale ('MASSIVE'), evokes emotion and spectacle ('Crowd Went WILD!'), and promises compelling content ('Must See Moments'). It transforms a factual statement into a more engaging and clickable event description.",
-                "url": "https://www.youtube.com/watch?v=BzGk73TvN5g"
-              },
-              {
-                "original": "Narendra Modi go to ambaji",
-                "improved": "Narendra Modi's HISTORIC Visit to Ambaji Temple! (Rare Darshan & Insights)",
-                "rationale": "The improved title uses stronger, more significant language ('HISTORIC Visit' instead of 'go to'), adds cultural relevance ('Rare Darshan'), and promises in-depth content ('Insights'). This elevates the video from a simple travel log to a significant event.",
-                "url": "https://www.youtube.com/watch?v=FHGO-W-IpSc"
-              },
-              {
-                "original": "pubg ban. hogaya ab kya hoga saurav ka ..____",
-                "improved": "PUBG BAN: What Now?! 💔 The END of Saurav's Gaming Career?",
-                "rationale": "This title amplifies the existing drama and emotional tone. It uses strong capitalization for impact ('PUBG BAN'), creates urgency with a direct question ('What Now?!'), employs an emoji for emotional connection, and adds a cliffhanger with a rhetorical question ('The END of Saurav's Gaming Career?') to maximize curiosity and clicks.",
-                "url": "https://www.youtube.com/watch?v=2Wtue2_UX88"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764099925065,
-        "topic": "yt.titles.ready",
-        "success": true,
-        "data": {
-          "jobId": "job_1764099911468_j1jxc0fd7",
-          "channelName": "SAURABH JOSHI 2.0",
-          "improvedTitles": [
-            {
-              "original": "saurabh Joshi brothers video editing",
-              "improved": "HOW Saurabh Joshi & Brothers Edit Their VIRAL Vlogs! (SECRET Revealed)",
-              "rationale": "The improved title uses strong action verbs ('HOW'), highlights a key benefit ('VIRAL Vlogs'), and creates intrigue with 'SECRET Revealed'. Capitalization of key terms (HOW, VIRAL, SECRET) enhances clickability and search visibility for fans of Saurabh Joshi.",
-              "url": "https://www.youtube.com/watch?v=QFAGobZhZ7s"
-            },
-            {
-              "original": "saurabh Joshi panting fitting",
-              "improved": "Saurabh Joshi's NEW Look! My Epic Pant Fitting Shopping Spree!",
-              "rationale": "Assuming 'panting fitting' was a typo for 'pant fitting' (e.g., trying on clothes), this title generates excitement with 'NEW Look' and 'Epic Shopping Spree'. It suggests personal transformation and a fun, extensive shopping experience, making it more appealing than a plain description.",
-              "url": "https://www.youtube.com/watch?v=8E3ROQsZkMY"
-            },
-            {
-              "original": "road show Narendra Modi",
-              "improved": "Narendra Modi's MASSIVE Roadshow! The Crowd Went WILD! (Must See Moments)",
-              "rationale": "This title adds scale ('MASSIVE'), evokes emotion and spectacle ('Crowd Went WILD!'), and promises compelling content ('Must See Moments'). It transforms a factual statement into a more engaging and clickable event description.",
-              "url": "https://www.youtube.com/watch?v=BzGk73TvN5g"
-            },
-            {
-              "original": "Narendra Modi go to ambaji",
-              "improved": "Narendra Modi's HISTORIC Visit to Ambaji Temple! (Rare Darshan & Insights)",
-              "rationale": "The improved title uses stronger, more significant language ('HISTORIC Visit' instead of 'go to'), adds cultural relevance ('Rare Darshan'), and promises in-depth content ('Insights'). This elevates the video from a simple travel log to a significant event.",
-              "url": "https://www.youtube.com/watch?v=FHGO-W-IpSc"
-            },
-            {
-              "original": "pubg ban. hogaya ab kya hoga saurav ka ..____",
-              "improved": "PUBG BAN: What Now?! 💔 The END of Saurav's Gaming Career?",
-              "rationale": "This title amplifies the existing drama and emotional tone. It uses strong capitalization for impact ('PUBG BAN'), creates urgency with a direct question ('What Now?!'), employs an emoji for emotional connection, and adds a cliffhanger with a rhetorical question ('The END of Saurav's Gaming Career?') to maximize curiosity and clicks.",
-              "url": "https://www.youtube.com/watch?v=2Wtue2_UX88"
-            }
-          ],
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "TH2XP-0112599:fd78f05a-ad25-4f15-bddb-1cb21f5471f3": {
-    "id": "fd78f05a-ad25-4f15-bddb-1cb21f5471f3",
-    "name": "SubmitChannel",
-    "parentTraceId": "TH2XP-0112599",
-    "status": "completed",
-    "startTime": 1764100112604,
-    "endTime": 1764100113158,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764100113065,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "TH2XP-0112599",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@ashishchanchlani",
-            "email": "test@test.com"
-          },
-          "level": "info",
-          "time": 1764100113063,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100113075,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764100113064_z6oy35hxv",
-          "key": {
-            "jobId": "job_1764100113064_z6oy35hxv",
-            "channel": "@ashishchanchlani",
-            "email": "test@test.com",
-            "status": "queued",
-            "createdAt": "2025-11-25T19:48:33.064Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100113086,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "TH2XP-0112599",
-          "step": "SubmitChannel",
-          "jobId": "job_1764100113064_z6oy35hxv",
-          "channel": "@ashishchanchlani",
-          "email": "test@test.com",
-          "level": "info",
-          "time": 1764100113077,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764100113097,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764100113064_z6oy35hxv",
-          "channel": "@ashishchanchlani",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
-  "TH2XP-0112599:1c793a03-7755-4268-b771-6465e124a015": {
-    "id": "1c793a03-7755-4268-b771-6465e124a015",
-    "name": "ResolveChannel",
-    "parentTraceId": "TH2XP-0112599",
-    "status": "completed",
-    "startTime": 1764100113107,
-    "endTime": 1764100114220,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764100113757,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "TH2XP-0112599",
-          "step": "ResolveChannel",
-          "jobId": "job_1764100113064_z6oy35hxv",
-          "channel": "@ashishchanchlani",
-          "level": "info",
-          "time": 1764100113755,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100113765,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764100113064_z6oy35hxv"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100113775,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764100113064_z6oy35hxv",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764100114069,
-        "level": "error",
-        "message": "Channel not found",
-        "metadata": {
-          "traceId": "TH2XP-0112599",
-          "step": "ResolveChannel",
-          "channel": "@ashishchanchlani",
-          "level": "error",
-          "time": 1764100114068,
-          "msg": "Channel not found"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764100114076,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764100113064_z6oy35hxv",
-          "key": {
-            "status": "failed",
-            "error": "Channel not found"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764100114085,
-        "topic": "yt.channel.error",
-        "success": true,
-        "data": {
-          "jobId": "job_1764100113064_z6oy35hxv",
-          "email": "test@test.com"
-        }
-      }
-    ]
-  },
   "VW2D8-0140349:aed49907-c107-4025-b27d-6c2bf6db903e": {
     "id": "aed49907-c107-4025-b27d-6c2bf6db903e",
     "name": "SubmitChannel",
@@ -20291,6 +19664,1318 @@
           "jobId": "job_1766197711093_3jks1nwo8",
           "email": "pruturaj3003@gmail.com",
           "emailId": "0fe72ce0-76d4-416c-9c38-e9316278adc0"
+        }
+      }
+    ]
+  },
+  "DRZWZ-7941316:0297f4ad-159b-4df7-ab50-fc9cde866227": {
+    "id": "0297f4ad-159b-4df7-ab50-fc9cde866227",
+    "name": "SubmitChannel",
+    "parentTraceId": "DRZWZ-7941316",
+    "status": "completed",
+    "startTime": 1766237941328,
+    "endTime": 1766237942346,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766237942229,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "DRZWZ-7941316",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1766237942017,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237942239,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6",
+          "key": {
+            "jobId": "job_1766237942017_o6qmbprh6",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2025-12-20T13:39:02.017Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766237942262,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "DRZWZ-7941316",
+          "step": "SubmitChannel",
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1766237942248,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766237942273,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DRZWZ-7941316:821d11c0-8bf0-4aed-8a74-98ef2cbf16e5": {
+    "id": "821d11c0-8bf0-4aed-8a74-98ef2cbf16e5",
+    "name": "ResolveChannel",
+    "parentTraceId": "DRZWZ-7941316",
+    "status": "completed",
+    "startTime": 1766237942282,
+    "endTime": 1766237943517,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766237942868,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "DRZWZ-7941316",
+          "step": "ResolveChannel",
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1766237942866,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237942875,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237942879,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766237943251,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "channelName": "Chai aur Code",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DRZWZ-7941316:5c415f41-2f57-439b-9a21-642d03d97a69": {
+    "id": "5c415f41-2f57-439b-9a21-642d03d97a69",
+    "name": "fetchVideos",
+    "parentTraceId": "DRZWZ-7941316",
+    "status": "completed",
+    "startTime": 1766237943259,
+    "endTime": 1766237944826,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766237943858,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "DRZWZ-7941316",
+          "step": "fetchVideos",
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "level": "info",
+          "time": 1766237943856,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237943862,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237943867,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766237944576,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "DRZWZ-7941316",
+          "step": "fetchVideos",
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766237944574,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237944589,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "0RNOaDO4rWY",
+                "title": "Late night Chai",
+                "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY",
+                "publishedAt": "2025-12-19T19:09:52Z",
+                "thumbnail": "https://i.ytimg.com/vi/0RNOaDO4rWY/default.jpg"
+              },
+              {
+                "videoId": "roc5eWHU8PY",
+                "title": "Morning me DSA, evening me Development",
+                "url": "https://www.youtube.com/watch?v=roc5eWHU8PY",
+                "publishedAt": "2025-12-19T08:31:04Z",
+                "thumbnail": "https://i.ytimg.com/vi/roc5eWHU8PY/default.jpg"
+              },
+              {
+                "videoId": "kvP6hDXWy88",
+                "title": "Typescript Course in 1 Shot in Hindi",
+                "url": "https://www.youtube.com/watch?v=kvP6hDXWy88",
+                "publishedAt": "2025-12-18T15:42:55Z",
+                "thumbnail": "https://i.ytimg.com/vi/kvP6hDXWy88/default.jpg"
+              },
+              {
+                "videoId": "aCEC8X0r0L4",
+                "title": "Creator Fund Announcement",
+                "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4",
+                "publishedAt": "2025-12-18T12:17:23Z",
+                "thumbnail": "https://i.ytimg.com/vi/aCEC8X0r0L4/default.jpg"
+              },
+              {
+                "videoId": "rvlQp6Vn8K4",
+                "title": "Late night live",
+                "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4",
+                "publishedAt": "2025-12-17T19:06:24Z",
+                "thumbnail": "https://i.ytimg.com/vi/rvlQp6Vn8K4/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766237944599,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channelName": "Chai aur Code",
+          "videos": [
+            {
+              "videoId": "0RNOaDO4rWY",
+              "title": "Late night Chai",
+              "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY",
+              "publishedAt": "2025-12-19T19:09:52Z",
+              "thumbnail": "https://i.ytimg.com/vi/0RNOaDO4rWY/default.jpg"
+            },
+            {
+              "videoId": "roc5eWHU8PY",
+              "title": "Morning me DSA, evening me Development",
+              "url": "https://www.youtube.com/watch?v=roc5eWHU8PY",
+              "publishedAt": "2025-12-19T08:31:04Z",
+              "thumbnail": "https://i.ytimg.com/vi/roc5eWHU8PY/default.jpg"
+            },
+            {
+              "videoId": "kvP6hDXWy88",
+              "title": "Typescript Course in 1 Shot in Hindi",
+              "url": "https://www.youtube.com/watch?v=kvP6hDXWy88",
+              "publishedAt": "2025-12-18T15:42:55Z",
+              "thumbnail": "https://i.ytimg.com/vi/kvP6hDXWy88/default.jpg"
+            },
+            {
+              "videoId": "aCEC8X0r0L4",
+              "title": "Creator Fund Announcement",
+              "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4",
+              "publishedAt": "2025-12-18T12:17:23Z",
+              "thumbnail": "https://i.ytimg.com/vi/aCEC8X0r0L4/default.jpg"
+            },
+            {
+              "videoId": "rvlQp6Vn8K4",
+              "title": "Late night live",
+              "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4",
+              "publishedAt": "2025-12-17T19:06:24Z",
+              "thumbnail": "https://i.ytimg.com/vi/rvlQp6Vn8K4/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DRZWZ-7941316:da629ac9-8128-4742-a9df-f694af9cee21": {
+    "id": "da629ac9-8128-4742-a9df-f694af9cee21",
+    "name": "GenerateTitles",
+    "parentTraceId": "DRZWZ-7941316",
+    "status": "completed",
+    "startTime": 1766237944614,
+    "endTime": 1766237959693,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1766237945331,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237945338,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766237959468,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766237942017_o6qmbprh6",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Late night Chai",
+                "variants": {
+                  "viral": "My Midnight Secret: Why Chai Changes Everything",
+                  "seo": "Late Night Chai Recipe: Perfect Masala Tea for Comfort",
+                  "professional": "Evening Brew: A Moment of Calm with Chai"
+                },
+                "reasons": {
+                  "viral": "Evokes curiosity and hints at a personal transformation or unique experience connected to a common act.",
+                  "seo": "Includes popular search terms like 'Late Night Chai Recipe' and 'Masala Tea,' indicating what the video offers.",
+                  "professional": "Presents the content in a sophisticated and soothing manner, focusing on the experience."
+                },
+                "thumbnailTexts": [
+                  "Midnight Brew",
+                  "Chai Comfort",
+                  "My Secret"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY"
+              },
+              {
+                "original": "Morning me DSA, evening me Development",
+                "variants": {
+                  "viral": "My Insane Coding Grind: DSA by Day, Dev by Night",
+                  "seo": "Daily Coding Routine: Balancing DSA & Development Productivity",
+                  "professional": "Structured Learning: Integrating DSA and Development Daily"
+                },
+                "reasons": {
+                  "viral": "Highlights an extreme, relatable struggle for aspiring developers, creating urgency and curiosity.",
+                  "seo": "Incorporates key search terms like 'Coding Routine,' 'DSA,' and 'Development,' targeting learners.",
+                  "professional": "Offers a clear, educational approach to managing a demanding technical learning schedule."
+                },
+                "thumbnailTexts": [
+                  "DSA & Dev",
+                  "Code Hustle",
+                  "My Schedule"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=roc5eWHU8PY"
+              },
+              {
+                "original": "Typescript Course in 1 Shot in Hindi",
+                "variants": {
+                  "viral": "Master TypeScript in ONE Go (Hindi): The ONLY Video You Need",
+                  "seo": "Complete TypeScript Course Hindi: Full Tutorial in One Video",
+                  "professional": "TypeScript Fundamentals: A Comprehensive Hindi Tutorial"
+                },
+                "reasons": {
+                  "viral": "Creates a sense of ultimate completeness and efficiency, appealing to learners seeking quick mastery.",
+                  "seo": "Maximizes searchability by including 'Complete TypeScript Course,' 'Hindi,' and 'Full Tutorial in One Video.'",
+                  "professional": "Clearly states the educational content and target audience in a straightforward, authoritative way."
+                },
+                "thumbnailTexts": [
+                  "TS in 1 Shot",
+                  "Hindi Course",
+                  "Master TS!"
+                ],
+                "scores": {
+                  "viral": 50,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "PROFESSIONAL",
+                  "reason": "Most brand-safe and professional tone"
+                },
+                "url": "https://www.youtube.com/watch?v=kvP6hDXWy88"
+              },
+              {
+                "original": "Creator Fund Announcement",
+                "variants": {
+                  "viral": "SHOCKING Creator Fund Update: Will YOU Get Paid?",
+                  "seo": "Creator Fund Update 2024: Eligibility & Earnings Explained",
+                  "professional": "Creator Fund Announcement: Key Updates for Content Creators"
+                },
+                "reasons": {
+                  "viral": "Uses strong emotional words ('SHOCKING') and directly addresses the viewer's potential benefit, creating urgency.",
+                  "seo": "Includes key search terms like 'Creator Fund Update' and 'Eligibility & Earnings,' targeting creators seeking information.",
+                  "professional": "Provides a clear, informative title suitable for a professional platform, detailing the content for creators."
+                },
+                "thumbnailTexts": [
+                  "GET PAID!",
+                  "New Fund",
+                  "Money Now?"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 70,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4"
+              },
+              {
+                "original": "Late night live",
+                "variants": {
+                  "viral": "UNFILTERED Late Night Live: You Won't Believe What Happened!",
+                  "seo": "Late Night Live Stream: Q&A & Community Chat",
+                  "professional": "Evening Live Session: Community Interaction & Discussion"
+                },
+                "reasons": {
+                  "viral": "Promises raw, uncensored content and generates curiosity about unexpected events.",
+                  "seo": "Clearly describes the content using searchable terms like 'Late Night Live Stream' and 'Q&A,' attracting viewers looking for interaction.",
+                  "professional": "Presents the live stream as a structured, engaging event for the audience."
+                },
+                "thumbnailTexts": [
+                  "Live Now!",
+                  "After Hours",
+                  "Unfiltered"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766237959482,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "channelName": "Chai aur Code",
+          "improvedTitles": [
+            {
+              "original": "Late night Chai",
+              "variants": {
+                "viral": "My Midnight Secret: Why Chai Changes Everything",
+                "seo": "Late Night Chai Recipe: Perfect Masala Tea for Comfort",
+                "professional": "Evening Brew: A Moment of Calm with Chai"
+              },
+              "reasons": {
+                "viral": "Evokes curiosity and hints at a personal transformation or unique experience connected to a common act.",
+                "seo": "Includes popular search terms like 'Late Night Chai Recipe' and 'Masala Tea,' indicating what the video offers.",
+                "professional": "Presents the content in a sophisticated and soothing manner, focusing on the experience."
+              },
+              "thumbnailTexts": [
+                "Midnight Brew",
+                "Chai Comfort",
+                "My Secret"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=0RNOaDO4rWY"
+            },
+            {
+              "original": "Morning me DSA, evening me Development",
+              "variants": {
+                "viral": "My Insane Coding Grind: DSA by Day, Dev by Night",
+                "seo": "Daily Coding Routine: Balancing DSA & Development Productivity",
+                "professional": "Structured Learning: Integrating DSA and Development Daily"
+              },
+              "reasons": {
+                "viral": "Highlights an extreme, relatable struggle for aspiring developers, creating urgency and curiosity.",
+                "seo": "Incorporates key search terms like 'Coding Routine,' 'DSA,' and 'Development,' targeting learners.",
+                "professional": "Offers a clear, educational approach to managing a demanding technical learning schedule."
+              },
+              "thumbnailTexts": [
+                "DSA & Dev",
+                "Code Hustle",
+                "My Schedule"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=roc5eWHU8PY"
+            },
+            {
+              "original": "Typescript Course in 1 Shot in Hindi",
+              "variants": {
+                "viral": "Master TypeScript in ONE Go (Hindi): The ONLY Video You Need",
+                "seo": "Complete TypeScript Course Hindi: Full Tutorial in One Video",
+                "professional": "TypeScript Fundamentals: A Comprehensive Hindi Tutorial"
+              },
+              "reasons": {
+                "viral": "Creates a sense of ultimate completeness and efficiency, appealing to learners seeking quick mastery.",
+                "seo": "Maximizes searchability by including 'Complete TypeScript Course,' 'Hindi,' and 'Full Tutorial in One Video.'",
+                "professional": "Clearly states the educational content and target audience in a straightforward, authoritative way."
+              },
+              "thumbnailTexts": [
+                "TS in 1 Shot",
+                "Hindi Course",
+                "Master TS!"
+              ],
+              "scores": {
+                "viral": 50,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "PROFESSIONAL",
+                "reason": "Most brand-safe and professional tone"
+              },
+              "url": "https://www.youtube.com/watch?v=kvP6hDXWy88"
+            },
+            {
+              "original": "Creator Fund Announcement",
+              "variants": {
+                "viral": "SHOCKING Creator Fund Update: Will YOU Get Paid?",
+                "seo": "Creator Fund Update 2024: Eligibility & Earnings Explained",
+                "professional": "Creator Fund Announcement: Key Updates for Content Creators"
+              },
+              "reasons": {
+                "viral": "Uses strong emotional words ('SHOCKING') and directly addresses the viewer's potential benefit, creating urgency.",
+                "seo": "Includes key search terms like 'Creator Fund Update' and 'Eligibility & Earnings,' targeting creators seeking information.",
+                "professional": "Provides a clear, informative title suitable for a professional platform, detailing the content for creators."
+              },
+              "thumbnailTexts": [
+                "GET PAID!",
+                "New Fund",
+                "Money Now?"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 70,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=aCEC8X0r0L4"
+            },
+            {
+              "original": "Late night live",
+              "variants": {
+                "viral": "UNFILTERED Late Night Live: You Won't Believe What Happened!",
+                "seo": "Late Night Live Stream: Q&A & Community Chat",
+                "professional": "Evening Live Session: Community Interaction & Discussion"
+              },
+              "reasons": {
+                "viral": "Promises raw, uncensored content and generates curiosity about unexpected events.",
+                "seo": "Clearly describes the content using searchable terms like 'Late Night Live Stream' and 'Q&A,' attracting viewers looking for interaction.",
+                "professional": "Presents the live stream as a structured, engaging event for the audience."
+              },
+              "thumbnailTexts": [
+                "Live Now!",
+                "After Hours",
+                "Unfiltered"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=rvlQp6Vn8K4"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "DRZWZ-7941316:c9b7b8e7-e1ff-4432-99d6-f0accef59516": {
+    "id": "c9b7b8e7-e1ff-4432-99d6-f0accef59516",
+    "name": "SendEmail",
+    "parentTraceId": "DRZWZ-7941316",
+    "status": "completed",
+    "startTime": 1766237959493,
+    "endTime": 1766237960763,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1766237960539,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1766237942017_o6qmbprh6",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "c5d31637-b96f-47e1-b12f-c25a993d8571"
+        }
+      }
+    ]
+  },
+  "5VQWP-9351904:3e274253-f985-47f8-9b37-8c499191bcfa": {
+    "id": "3e274253-f985-47f8-9b37-8c499191bcfa",
+    "name": "SubmitChannel",
+    "parentTraceId": "5VQWP-9351904",
+    "status": "completed",
+    "startTime": 1766239351916,
+    "endTime": 1766239352844,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766239352717,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "5VQWP-9351904",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@CarryMinati",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1766239352711,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239352727,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4",
+          "key": {
+            "jobId": "job_1766239352711_g3fvsdle4",
+            "channel": "@CarryMinati",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2025-12-20T14:02:32.711Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766239352740,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "5VQWP-9351904",
+          "step": "SubmitChannel",
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channel": "@CarryMinati",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1766239352733,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766239352750,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channel": "@CarryMinati",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5VQWP-9351904:66cc5438-836a-43fc-ae6e-c8eebb219273": {
+    "id": "66cc5438-836a-43fc-ae6e-c8eebb219273",
+    "name": "ResolveChannel",
+    "parentTraceId": "5VQWP-9351904",
+    "status": "completed",
+    "startTime": 1766239352760,
+    "endTime": 1766239354048,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766239353361,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "5VQWP-9351904",
+          "step": "ResolveChannel",
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channel": "@CarryMinati",
+          "level": "info",
+          "time": 1766239353359,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239353365,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239353371,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766239353765,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channelId": "UCj22tfcQrWG7EMEKS0qLeEg",
+          "channelName": "CarryMinati",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5VQWP-9351904:8a2c35d6-094c-44c1-a61b-8ab61a92e583": {
+    "id": "8a2c35d6-094c-44c1-a61b-8ab61a92e583",
+    "name": "fetchVideos",
+    "parentTraceId": "5VQWP-9351904",
+    "status": "completed",
+    "startTime": 1766239353785,
+    "endTime": 1766239355518,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1766239354523,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "5VQWP-9351904",
+          "step": "fetchVideos",
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channelId": "UCj22tfcQrWG7EMEKS0qLeEg",
+          "level": "info",
+          "time": 1766239354518,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239354534,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239354546,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1766239355225,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "5VQWP-9351904",
+          "step": "fetchVideos",
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1766239355220,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239355239,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "465iEeNOEBg",
+                "title": "SAAS BAHU AUR SAANP | CARRYMINATI",
+                "url": "https://www.youtube.com/watch?v=465iEeNOEBg",
+                "publishedAt": "2025-06-06T08:26:47Z",
+                "thumbnail": "https://i.ytimg.com/vi/465iEeNOEBg/default.jpg"
+              },
+              {
+                "videoId": "k4vkJ9PdXwI",
+                "title": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+                "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI",
+                "publishedAt": "2025-06-05T08:30:18Z",
+                "thumbnail": "https://i.ytimg.com/vi/k4vkJ9PdXwI/default.jpg"
+              },
+              {
+                "videoId": "QoqokgcX96M",
+                "title": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+                "url": "https://www.youtube.com/watch?v=QoqokgcX96M",
+                "publishedAt": "2024-12-14T08:18:16Z",
+                "thumbnail": "https://i.ytimg.com/vi/QoqokgcX96M/default.jpg"
+              },
+              {
+                "videoId": "Zfc5rKZhyfw",
+                "title": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+                "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw",
+                "publishedAt": "2024-12-13T09:35:11Z",
+                "thumbnail": "https://i.ytimg.com/vi/Zfc5rKZhyfw/default.jpg"
+              },
+              {
+                "videoId": "vX0CF2VybHs",
+                "title": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+                "url": "https://www.youtube.com/watch?v=vX0CF2VybHs",
+                "publishedAt": "2024-10-25T09:16:56Z",
+                "thumbnail": "https://i.ytimg.com/vi/vX0CF2VybHs/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766239355257,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channelName": "CarryMinati",
+          "videos": [
+            {
+              "videoId": "465iEeNOEBg",
+              "title": "SAAS BAHU AUR SAANP | CARRYMINATI",
+              "url": "https://www.youtube.com/watch?v=465iEeNOEBg",
+              "publishedAt": "2025-06-06T08:26:47Z",
+              "thumbnail": "https://i.ytimg.com/vi/465iEeNOEBg/default.jpg"
+            },
+            {
+              "videoId": "k4vkJ9PdXwI",
+              "title": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+              "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI",
+              "publishedAt": "2025-06-05T08:30:18Z",
+              "thumbnail": "https://i.ytimg.com/vi/k4vkJ9PdXwI/default.jpg"
+            },
+            {
+              "videoId": "QoqokgcX96M",
+              "title": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+              "url": "https://www.youtube.com/watch?v=QoqokgcX96M",
+              "publishedAt": "2024-12-14T08:18:16Z",
+              "thumbnail": "https://i.ytimg.com/vi/QoqokgcX96M/default.jpg"
+            },
+            {
+              "videoId": "Zfc5rKZhyfw",
+              "title": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+              "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw",
+              "publishedAt": "2024-12-13T09:35:11Z",
+              "thumbnail": "https://i.ytimg.com/vi/Zfc5rKZhyfw/default.jpg"
+            },
+            {
+              "videoId": "vX0CF2VybHs",
+              "title": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+              "url": "https://www.youtube.com/watch?v=vX0CF2VybHs",
+              "publishedAt": "2024-10-25T09:16:56Z",
+              "thumbnail": "https://i.ytimg.com/vi/vX0CF2VybHs/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5VQWP-9351904:19fcec2b-5ea4-4fff-8d10-7032b20bbd31": {
+    "id": "19fcec2b-5ea4-4fff-8d10-7032b20bbd31",
+    "name": "GenerateTitles",
+    "parentTraceId": "5VQWP-9351904",
+    "status": "completed",
+    "startTime": 1766239355273,
+    "endTime": 1766239370205,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1766239356052,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239356062,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1766239369916,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1766239352711_g3fvsdle4",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "SAAS BAHU AUR SAANP | CARRYMINATI",
+                "variants": {
+                  "viral": "You WON'T Believe Indian TV Did THIS!",
+                  "seo": "CarryMinati Roasts 'Saas Bahu Aur Saanp' | Indian TV Show Review",
+                  "professional": "CarryMinati's Take on Indian TV Dramas: A Commentary"
+                },
+                "reasons": {
+                  "viral": "Creates immediate intrigue and challenges viewer expectation with a shocking claim.",
+                  "seo": "Uses specific show title, creator name, and common search terms like 'roast' and 'review' for high discoverability.",
+                  "professional": "Focuses on analysis and commentary, maintaining a respectful and descriptive tone."
+                },
+                "thumbnailTexts": [
+                  "WHAT?!",
+                  "TV GONE WILD",
+                  "CARRY REACTS"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=465iEeNOEBg"
+              },
+              {
+                "original": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+                "variants": {
+                  "viral": "My NEXT Roast Is HERE... Are You Ready?",
+                  "seo": "CarryMinati's New Roast Video Teaser | Upcoming Comedy Content",
+                  "professional": "CarryMinati: Announcing My Next Video Release"
+                },
+                "reasons": {
+                  "viral": "Builds anticipation and directly engages the viewer with a question, creating urgency.",
+                  "seo": "Clearly states the creator, content type, and purpose (teaser), using searchable terms.",
+                  "professional": "A straightforward and professional announcement from the creator about new content."
+                },
+                "thumbnailTexts": [
+                  "NEW ROAST!",
+                  "SOON!",
+                  "GET READY"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI"
+              },
+              {
+                "original": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+                "variants": {
+                  "viral": "My Wedding Plans?! Q&A Reveals ALL! 😭",
+                  "seo": "CarryMinati Q&A 2024: Answering Wedding Rumors & Fan Questions",
+                  "professional": "CarryMinati: Answering Your Top Questions (2024)"
+                },
+                "reasons": {
+                  "viral": "Uses a shocking question and an emotional emoji to create urgency and curiosity, promising answers.",
+                  "seo": "Combines specific keywords like 'Q&A 2024,' 'CarryMinati,' and 'wedding rumors' for discoverability.",
+                  "professional": "A direct and professional title for a Q&A session, clearly stating the content."
+                },
+                "thumbnailTexts": [
+                  "MY WEDDING?!",
+                  "Q&A 2024",
+                  "THE TRUTH"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=QoqokgcX96M"
+              },
+              {
+                "original": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+                "variants": {
+                  "viral": "Get Ready: My Q&A Is About To Drop!",
+                  "seo": "CarryMinati Q&A Teaser | Submit Your Questions!",
+                  "professional": "CarryMinati: Announcing My Next Q&A Video"
+                },
+                "reasons": {
+                  "viral": "Builds excitement and implies imminent release, creating urgency and anticipation.",
+                  "seo": "Uses 'CarryMinati,' 'Q&A,' and 'teaser,' while also inviting viewer interaction.",
+                  "professional": "A straightforward and professional way to announce an upcoming Q&A video."
+                },
+                "thumbnailTexts": [
+                  "Q&A SOON!",
+                  "ASK ME!",
+                  "COMING FAST"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 70,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw"
+              },
+              {
+                "original": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+                "variants": {
+                  "viral": "Mr. Beast Saw My CRAZY Parody?!",
+                  "seo": "CarryMinati's 'Mr Least' Parody | Mr. Beast Reaction Comedy",
+                  "professional": "CarryMinati's Parody: A Tribute to Mr. Beast"
+                },
+                "reasons": {
+                  "viral": "Sparks curiosity by linking two popular personalities and hinting at a humorous, unexpected reaction.",
+                  "seo": "Clearly includes both creator names, 'parody,' 'reaction,' and 'comedy' for maximum searchability.",
+                  "professional": "Uses terms like 'parody' and 'tribute' to describe the humorous content respectfully and professionally."
+                },
+                "thumbnailTexts": [
+                  "MR. LEAST",
+                  "BEAST REACTS",
+                  "HILARIOUS!"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=vX0CF2VybHs"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1766239369929,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "channelName": "CarryMinati",
+          "improvedTitles": [
+            {
+              "original": "SAAS BAHU AUR SAANP | CARRYMINATI",
+              "variants": {
+                "viral": "You WON'T Believe Indian TV Did THIS!",
+                "seo": "CarryMinati Roasts 'Saas Bahu Aur Saanp' | Indian TV Show Review",
+                "professional": "CarryMinati's Take on Indian TV Dramas: A Commentary"
+              },
+              "reasons": {
+                "viral": "Creates immediate intrigue and challenges viewer expectation with a shocking claim.",
+                "seo": "Uses specific show title, creator name, and common search terms like 'roast' and 'review' for high discoverability.",
+                "professional": "Focuses on analysis and commentary, maintaining a respectful and descriptive tone."
+              },
+              "thumbnailTexts": [
+                "WHAT?!",
+                "TV GONE WILD",
+                "CARRY REACTS"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=465iEeNOEBg"
+            },
+            {
+              "original": "New Roast Video coming out soon!  #carryminati #roast #comedy #indiantvshow #shorts",
+              "variants": {
+                "viral": "My NEXT Roast Is HERE... Are You Ready?",
+                "seo": "CarryMinati's New Roast Video Teaser | Upcoming Comedy Content",
+                "professional": "CarryMinati: Announcing My Next Video Release"
+              },
+              "reasons": {
+                "viral": "Builds anticipation and directly engages the viewer with a question, creating urgency.",
+                "seo": "Clearly states the creator, content type, and purpose (teaser), using searchable terms.",
+                "professional": "A straightforward and professional announcement from the creator about new content."
+              },
+              "thumbnailTexts": [
+                "NEW ROAST!",
+                "SOON!",
+                "GET READY"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=k4vkJ9PdXwI"
+            },
+            {
+              "original": "CARRY KI SHAADI 😭 | Q&amp;A 2024 CARRYMINATI",
+              "variants": {
+                "viral": "My Wedding Plans?! Q&A Reveals ALL! 😭",
+                "seo": "CarryMinati Q&A 2024: Answering Wedding Rumors & Fan Questions",
+                "professional": "CarryMinati: Answering Your Top Questions (2024)"
+              },
+              "reasons": {
+                "viral": "Uses a shocking question and an emotional emoji to create urgency and curiosity, promising answers.",
+                "seo": "Combines specific keywords like 'Q&A 2024,' 'CarryMinati,' and 'wedding rumors' for discoverability.",
+                "professional": "A direct and professional title for a Q&A session, clearly stating the content."
+              },
+              "thumbnailTexts": [
+                "MY WEDDING?!",
+                "Q&A 2024",
+                "THE TRUTH"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=QoqokgcX96M"
+            },
+            {
+              "original": "QnA Video coming soon!! #shorts #carryminati #comedy #roast",
+              "variants": {
+                "viral": "Get Ready: My Q&A Is About To Drop!",
+                "seo": "CarryMinati Q&A Teaser | Submit Your Questions!",
+                "professional": "CarryMinati: Announcing My Next Q&A Video"
+              },
+              "reasons": {
+                "viral": "Builds excitement and implies imminent release, creating urgency and anticipation.",
+                "seo": "Uses 'CarryMinati,' 'Q&A,' and 'teaser,' while also inviting viewer interaction.",
+                "professional": "A straightforward and professional way to announce an upcoming Q&A video."
+              },
+              "thumbnailTexts": [
+                "Q&A SOON!",
+                "ASK ME!",
+                "COMING FAST"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 70,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=Zfc5rKZhyfw"
+            },
+            {
+              "original": "Mr Beast reacts to Mr Least🙃🤑  #carryminati #mrbeast #shorts #comedy",
+              "variants": {
+                "viral": "Mr. Beast Saw My CRAZY Parody?!",
+                "seo": "CarryMinati's 'Mr Least' Parody | Mr. Beast Reaction Comedy",
+                "professional": "CarryMinati's Parody: A Tribute to Mr. Beast"
+              },
+              "reasons": {
+                "viral": "Sparks curiosity by linking two popular personalities and hinting at a humorous, unexpected reaction.",
+                "seo": "Clearly includes both creator names, 'parody,' 'reaction,' and 'comedy' for maximum searchability.",
+                "professional": "Uses terms like 'parody' and 'tribute' to describe the humorous content respectfully and professionally."
+              },
+              "thumbnailTexts": [
+                "MR. LEAST",
+                "BEAST REACTS",
+                "HILARIOUS!"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=vX0CF2VybHs"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5VQWP-9351904:68e0c2b3-bea7-43b3-a66b-086d80df1092": {
+    "id": "68e0c2b3-bea7-43b3-a66b-086d80df1092",
+    "name": "SendEmail",
+    "parentTraceId": "5VQWP-9351904",
+    "status": "completed",
+    "startTime": 1766239369942,
+    "endTime": 1766239372042,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1766239371763,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1766239352711_g3fvsdle4",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "22b8120a-c642-4eba-ae19-dfc3400e8ed1"
         }
       }
     ]
