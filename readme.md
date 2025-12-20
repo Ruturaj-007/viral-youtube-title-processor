@@ -80,17 +80,32 @@ No extra queues, cron jobs, or background services required.
 
 All orchestrated using **Motia workflows**.
 
+## 🎥 Execution Walkthrough (Screen Recordings)
+
+📌 **Full-quality screen recordings are hosted via GitHub Releases**  
+(Recommended for judges — no compression, no broken previews)
+
 ---
 
-### 🎥 Execution Walkthrough (Screen Recordings)
-### Motia workflow / steps running  
-<video src="screenrecordings/motia_workbench.mp4" controls width="100%"></video>
+### ▶️ Motia Workflow Execution (Workbench)
+Shows the unified workflow and step execution inside Motia.
 
-### Terminal logs (Motia CLI execution)  
-<video src="screenrecordings/terminal_logs.mp4" controls width="100%"></video>
-3️⃣ Email output (Walkthrough)
-<video src="screenrecordings/email_system.mp4" controls width="100%"></video>
+🔗 https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/motia_workbench.mp4
+
 ---
+
+### ▶️ Motia CLI Logs (Runtime)
+Demonstrates real-time execution, state transitions, and observability.
+
+🔗 https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/terminal_logs.mp4
+
+---
+
+### ▶️ Final Email Output & AI Recommendation
+Walkthrough of the generated report, summary, and **AI-selected best title**.
+
+🔗 https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/email_system.mp4
+
 
 ## 🛠 Tech Stack
 
