@@ -6,6 +6,39 @@ Turn raw YouTube titles into **viral, SEO-optimized, and brand-safe recommendati
 
 ---
 
+## 🎥 Execution Walkthrough (Screen Recordings)
+
+📌 **Full-quality screen recordings are hosted via GitHub Releases**  
+(Recommended for judges — no compression, no broken previews)
+
+---
+## 🎥 Execution Walkthrough
+
+### 🔄 Motia Workflow Execution (Workbench)
+![Motia Workflow](screenrecordings/motia_workbench.gif)
+🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/motia_workbench.mp4
+
+---
+
+### 🧾 Motia CLI Logs (Runtime)
+![Motia CLI Logs](screenrecordings/terminal_logs.gif)
+🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/terminal_logs.mp4
+
+---
+
+### 📬 Final Email Output & AI Recommendation
+![Email Output](screenrecordings/email_system.gif)
+🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/email_system.mp4
+
+## 🛠 Tech Stack
+
+- **Motia** – workflows & steps
+- **Gemini API** – AI title generation
+- **Resend** – email delivery
+- **TypeScript**
+
+---
+
 ## 🚨 Problem
 Creators struggle with:
 
@@ -79,39 +112,6 @@ No extra queues, cron jobs, or background services required.
 6. **Error Handler Step** – Graceful failure handling
 
 All orchestrated using **Motia workflows**.
-
-## 🎥 Execution Walkthrough (Screen Recordings)
-
-📌 **Full-quality screen recordings are hosted via GitHub Releases**  
-(Recommended for judges — no compression, no broken previews)
-
----
-## 🎥 Execution Walkthrough
-
-### 🔄 Motia Workflow Execution (Workbench)
-![Motia Workflow](screenrecordings/motia_workbench.gif)
-🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/motia_workbench.mp4
-
----
-
-### 🧾 Motia CLI Logs (Runtime)
-![Motia CLI Logs](screenrecordings/terminal_logs.gif)
-🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/terminal_logs.mp4
-
----
-
-### 📬 Final Email Output & AI Recommendation
-![Email Output](screenrecordings/email_system.gif)
-🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/email_system.mp4
-
-## 🛠 Tech Stack
-
-- **Motia** – workflows & steps
-- **Gemini API** – AI title generation
-- **Resend** – email delivery
-- **TypeScript**
-
----
 
 ## 🚀 Future Improvements
 
