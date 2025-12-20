@@ -4,7 +4,6 @@ import { EventConfig} from "motia"
     // This file listens after the channel is verified, fetches recent videos from YouTube, cleans the data, stores it, and triggers the next AI step.
     // yt.channel.resolved → fetch latest videos of that channel → emit videos or error
 
-
 export const config = {
     name: "fetchVideos",
     type: "event",

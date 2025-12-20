@@ -33,7 +33,15 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
 
   try {
     logger.info("Received submission request", { body: req.body });
-    const { channel, email } = req.body as SubmitRequest;
+
+    // const { channel, email } = req.body as SubmitRequest;
+         const body =
+  typeof req.body === "string"
+    ? JSON.parse(req.body)
+    : req.body;
+
+const { channel, email } = body;
+
 
     if (!channel || !email) {
       return {
