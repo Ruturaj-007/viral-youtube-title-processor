@@ -21,7 +21,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
   // ✅ CORS PREFLIGHT HANDLER (handles OPTIONS requests)
   if (req.method === "OPTIONS") {
     return {
-      status: 204,
+      status: 202,
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
