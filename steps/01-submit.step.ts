@@ -1,9 +1,5 @@
 import { ApiRouteConfig } from "motia";
 
-// step 1:
-// Accepting channel name and email to start the workflow
-// Client → /submit API → validate → create job → emit event → other steps run later
-
 export const config: ApiRouteConfig = {
   name: "SubmitChannel",
   type: "api",
@@ -18,10 +14,10 @@ interface SubmitRequest {
 }
 
 export const handler = async (req: any, { emit, logger, state }: any) => {
-  // ✅ CORS PREFLIGHT HANDLER (handles OPTIONS requests)
+  // ✅ CORS PREFLIGHT HANDLER
   if (req.method === "OPTIONS") {
     return {
-      status: 202,
+      status: 204,
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -34,14 +30,12 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
   try {
     logger.info("Received submission request", { body: req.body });
 
-    // const { channel, email } = req.body as SubmitRequest;
-         const body =
-  typeof req.body === "string"
-    ? JSON.parse(req.body)
-    : req.body;
+    // Parse body
+    const body = typeof req.body === "string" 
+      ? JSON.parse(req.body) 
+      : req.body;
 
-const { channel, email } = body;
-
+    const { channel, email } = body;
 
     if (!channel || !email) {
       return {
@@ -56,7 +50,7 @@ const { channel, email } = body;
       };
     }
 
-    // Validating the email
+    // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return {
@@ -71,11 +65,11 @@ const { channel, email } = body;
       };
     }
 
-    // Job ID - keeping track of job
+    // Generate job ID
     const jobId = `job_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // STATE STORAGE - saving job info
-    await state.set(`job:${jobId}`, {
+    // ✅ FIXED: Use jobId directly as key (no "job:" prefix)
+    await state.set(jobId, {
       jobId,
       channel,
       email,
@@ -85,7 +79,7 @@ const { channel, email } = body;
     
     logger.info("Job created", { jobId, channel, email });
 
-    // Emit event to trigger workflow
+    // Emit event
     await emit({
       topic: "yt.submit",
       data: {
@@ -96,7 +90,7 @@ const { channel, email } = body;
     });
 
     return {
-      status: 202, // Accepted but not completed
+      status: 202,
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
@@ -108,7 +102,10 @@ const { channel, email } = body;
       },
     };
   } catch (error: any) {
-    logger.error("Error in submission handler", { error: error.message });
+    logger.error("Error in submission handler", { 
+      error: error.message,
+      stack: error.stack 
+    });
     return {
       status: 500,
       headers: {
@@ -117,6 +114,7 @@ const { channel, email } = body;
       },
       body: {
         error: "Internal server error",
+        details: error.message
       },
     };
   }
