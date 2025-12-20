@@ -86,26 +86,23 @@ All orchestrated using **Motia workflows**.
 (Recommended for judges — no compression, no broken previews)
 
 ---
+## 🎥 Execution Walkthrough
 
-### ▶️ Motia Workflow Execution (Workbench)
-Shows the unified workflow and step execution inside Motia.
-
-🔗 https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/motia_workbench.mp4
-
----
-
-### ▶️ Motia CLI Logs (Runtime)
-Demonstrates real-time execution, state transitions, and observability.
-
-🔗 https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/terminal_logs.mp4
+### 🔄 Motia Workflow Execution (Workbench)
+![Motia Workflow](screenrecordings/motia_workbench.gif)
+🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/motia_workbench.mp4
 
 ---
 
-### ▶️ Final Email Output & AI Recommendation
-Walkthrough of the generated report, summary, and **AI-selected best title**.
+### 🧾 Motia CLI Logs (Runtime)
+![Motia CLI Logs](screenrecordings/terminal_logs.gif)
+🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/terminal_logs.mp4
 
-🔗 https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/email_system.mp4
+---
 
+### 📬 Final Email Output & AI Recommendation
+![Email Output](screenrecordings/email_system.gif)
+🔗 Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/email_system.mp4
 
 ## 🛠 Tech Stack
 
