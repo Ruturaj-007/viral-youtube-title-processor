@@ -1,5 +1,9 @@
 import { ApiRouteConfig } from "motia";
 
+// step 1:
+// Accepting channel name and email to start the workflow
+// Client → /submit API → validate → create job → emit event → other steps run later
+
 export const config: ApiRouteConfig = {
   name: "SubmitChannel",
   type: "api",
@@ -14,10 +18,9 @@ interface SubmitRequest {
 }
 
 export const handler = async (req: any, { emit, logger, state }: any) => {
-  // ✅ CORS PREFLIGHT HANDLER
   if (req.method === "OPTIONS") {
     return {
-      status: 204,
+      status: 202,
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
@@ -30,12 +33,13 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
   try {
     logger.info("Received submission request", { body: req.body });
 
-    // Parse body
-    const body = typeof req.body === "string" 
-      ? JSON.parse(req.body) 
-      : req.body;
+         const body =
+        typeof req.body === "string"
+         ? JSON.parse(req.body)
+         : req.body;
 
-    const { channel, email } = body;
+  const { channel, email } = body;
+
 
     if (!channel || !email) {
       return {
@@ -50,7 +54,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
       };
     }
 
-    // Validate email
+    // Validating the email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return {
@@ -65,11 +69,11 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
       };
     }
 
-    // Generate job ID
+    // *Job ID - keeping track of job
     const jobId = `job_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // ✅ FIXED: Use jobId directly as key (no "job:" prefix)
-    await state.set(jobId, {
+    // STATE STORAGE - saving job info
+    await state.set(`job:${jobId}`, {
       jobId,
       channel,
       email,
@@ -79,7 +83,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
     
     logger.info("Job created", { jobId, channel, email });
 
-    // Emit event
+    // Emit event to trigger workflow
     await emit({
       topic: "yt.submit",
       data: {
@@ -90,7 +94,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
     });
 
     return {
-      status: 202,
+      status: 202, 
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
@@ -102,10 +106,7 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
       },
     };
   } catch (error: any) {
-    logger.error("Error in submission handler", { 
-      error: error.message,
-      stack: error.stack 
-    });
+    logger.error("Error in submission handler", { error: error.message });
     return {
       status: 500,
       headers: {
@@ -114,7 +115,6 @@ export const handler = async (req: any, { emit, logger, state }: any) => {
       },
       body: {
         error: "Internal server error",
-        details: error.message
       },
     };
   }

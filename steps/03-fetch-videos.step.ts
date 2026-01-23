@@ -44,7 +44,7 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
             status: 'fetching videos'
         });
 
-        // YT search API retuns recent uploads sorted by date
+        // * YT search API retuns recent uploads sorted by date
         const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&maxResults=10&key=${YOUTUBE_API_KEY}`;
 
         const response = await fetch(searchUrl);
@@ -68,7 +68,7 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
             return;
         }
 
-        // DATA NORMALIZATION Filter to only include videos from this channel
+        // * DATA NORMALIZATION Filter to only include videos from this channel
         const videos : Video[] = youtubeData.items
             .filter((item: any) => item.snippet.channelId === channelId) // Only videos from THIS channel
             .slice(0, 5) // Take only 5 videos
@@ -146,18 +146,3 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
         });
     }
 }
-
-/*
-
-FULL PIPELINE SO FAR 
-
-Client
- → /submit
-   → yt.submit
-     → resolve channel
-       → yt.channel.resolved
-         → fetch videos (THIS FILE)
-           → yt.videos.fetched
-             → AI title generation (next)
-
-*/

@@ -1,9 +1,9 @@
 import { EventConfig } from "motia";
 import "dotenv/config";
 
-// 05-send-email.step.ts
-// This step takes the AI-generated titles formats them nicely sends them to the user by email and marks the job as completed.
-// (yt.submit → yt.channel.resolved → yt.videos.fetched → yt.titles.ready → SendEmail → yt.email.sent)
+// * 05-send-email.step.ts
+// * This step takes the AI-generated titles formats them nicely sends them to the user by email and marks the job as completed.
+// * (yt.submit → yt.channel.resolved → yt.videos.fetched → yt.titles.ready → SendEmail → yt.email.sent)
 
 export const config: EventConfig = {
   name: "SendEmail",

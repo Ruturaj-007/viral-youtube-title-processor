@@ -22,7 +22,7 @@ function calculateViralScore(title: string): number {
   let score = 50;
 
   if (/\d/.test(title)) score += 10;
-  if (title.length < 60) score += 10;     // short title better on mob 
+  if (title.length < 60) score += 10;     // short title better on mobile 
   if (/[!?]/.test(title)) score += 10;
   if (/(secret|mistake|truth|hack|power|insane|crazy|stop|unlock|fast)/i.test(title)) {
     score += 10;
@@ -63,38 +63,38 @@ export const handler = async (eventData: any, { emit, logger, state }: any) => {
       .join("\n");
 
     const prompt = `
-You are a YouTube growth expert.
+            You are a YouTube growth expert.
 
-For EACH video title below, generate:
+            For EACH video title below, generate:
 
-1. VIRAL title (emotional, curiosity-driven)
-2. SEO title (keyword-rich, searchable)
-3. PROFESSIONAL title (brand-safe, clean)
+            1. VIRAL title (emotional, curiosity-driven)
+            2. SEO title (keyword-rich, searchable)
+            3. PROFESSIONAL title (brand-safe, clean)
 
-Also:
-- Give ONE LINE reason for each title
-- Suggest 3 thumbnail texts (MAX 4 words each)
-- Do NOT repeat original title
+            Also:
+            - Give ONE LINE reason for each title
+            - Suggest 3 thumbnail texts (MAX 4 words each)
+            - Do NOT repeat original title
 
-Titles:
-${videoTitles}
+                Titles:
+                ${videoTitles}
 
-Return STRICT JSON ONLY in this exact format:
+                Return STRICT JSON ONLY in this exact format:
 
-{
-  "results": [
-    {
-      "viral": "",
-      "viralReason": "",
-      "seo": "",
-      "seoReason": "",
-      "professional": "",
-      "professionalReason": "",
-      "thumbnailTexts": ["", "", ""]
-    }
-  ]
-}
-`;
+                {
+                  "results": [
+                    {
+                      "viral": "",
+                      "viralReason": "",
+                      "seo": "",
+                      "seoReason": "",
+                      "professional": "",
+                      "professionalReason": "",
+                      "thumbnailTexts": ["", "", ""]
+                    }
+                  ]
+                }
+                `;
 
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
