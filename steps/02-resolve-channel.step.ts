@@ -51,8 +51,7 @@ export const handler = async(eventData:any, {emit, logger, state}:any) => {
                     channelName = data.items[0].snippet.title;
                 }
                 } else {
-                const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q = 
-                ${encodeURIComponent(channel)}&key=${YOUTUBE_API_KEY}`;
+                const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=${encodeURIComponent(channel)}&key=${YOUTUBE_API_KEY}`;
 
                 const searchResponse = await fetch(searchUrl)
                 const searchData = await searchResponse.json()

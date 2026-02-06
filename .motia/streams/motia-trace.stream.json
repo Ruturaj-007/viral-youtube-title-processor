@@ -1,1104 +1,4 @@
 {
-  "BQV9H-8706610:9bbbedc8-79f0-464d-b5fc-37f7d6c10ee2": {
-    "id": "9bbbedc8-79f0-464d-b5fc-37f7d6c10ee2",
-    "name": "HomePage",
-    "parentTraceId": "BQV9H-8706610",
-    "status": "completed",
-    "startTime": 1764268706614,
-    "endTime": 1764268707739,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "HomePage"
-    },
-    "events": []
-  },
-  "YWCP7-9648256:a7caac15-a160-4da3-801d-48f05af29903": {
-    "id": "a7caac15-a160-4da3-801d-48f05af29903",
-    "name": "HomePage",
-    "parentTraceId": "YWCP7-9648256",
-    "status": "completed",
-    "startTime": 1764269648259,
-    "endTime": 1764269649255,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "HomePage"
-    },
-    "events": []
-  },
-  "FWZGK-9862545:35db8449-3364-4553-b2c8-d051dbcf3b06": {
-    "id": "35db8449-3364-4553-b2c8-d051dbcf3b06",
-    "name": "HomePage",
-    "parentTraceId": "FWZGK-9862545",
-    "status": "completed",
-    "startTime": 1764269862548,
-    "endTime": 1764269863636,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "HomePage"
-    },
-    "events": []
-  },
-  "T8N1H-0286620:d45ac36d-bcfc-416d-ad06-9933e302f473": {
-    "id": "d45ac36d-bcfc-416d-ad06-9933e302f473",
-    "name": "HomePage",
-    "parentTraceId": "T8N1H-0286620",
-    "status": "completed",
-    "startTime": 1764270286632,
-    "endTime": 1764270287817,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "HomePage"
-    },
-    "events": []
-  },
-  "RKZ4U-0525036:8dc076b2-0063-4f4f-a92e-143f84473110": {
-    "id": "8dc076b2-0063-4f4f-a92e-143f84473110",
-    "name": "HomePage",
-    "parentTraceId": "RKZ4U-0525036",
-    "status": "completed",
-    "startTime": 1764270525052,
-    "endTime": 1764270526136,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "HomePage"
-    },
-    "events": []
-  },
-  "1URU5-0569281:d5d7b6a8-999b-4402-89b9-d88328973cde": {
-    "id": "d5d7b6a8-999b-4402-89b9-d88328973cde",
-    "name": "SubmitChannel",
-    "parentTraceId": "1URU5-0569281",
-    "status": "completed",
-    "startTime": 1764270569285,
-    "endTime": 1764270570549,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270570478,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@chaiaurcode",
-            "email": "pruturaj3003@gmail.com"
-          },
-          "level": "info",
-          "time": 1764270570278,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270570480,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764270570279_0r8xxcosu",
-          "key": {
-            "jobId": "job_1764270570279_0r8xxcosu",
-            "channel": "@chaiaurcode",
-            "email": "pruturaj3003@gmail.com",
-            "status": "queued",
-            "createdAt": "2025-11-27T19:09:30.279Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270570486,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "SubmitChannel",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "channel": "@chaiaurcode",
-          "email": "pruturaj3003@gmail.com",
-          "level": "info",
-          "time": 1764270570485,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270570490,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "channel": "@chaiaurcode",
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "1URU5-0569281:83fa54fc-45cc-4f78-9198-208423c94831": {
-    "id": "83fa54fc-45cc-4f78-9198-208423c94831",
-    "name": "ResolveChannel",
-    "parentTraceId": "1URU5-0569281",
-    "status": "completed",
-    "startTime": 1764270570494,
-    "endTime": 1764270572405,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270571445,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "ResolveChannel",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "channel": "@chaiaurcode",
-          "level": "info",
-          "time": 1764270571441,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270571447,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270571451,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270572025,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "channelName": "Chai aur Code",
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "1URU5-0569281:515cf5db-fff8-445a-835a-310e2771f945": {
-    "id": "515cf5db-fff8-445a-835a-310e2771f945",
-    "name": "fetchVideos",
-    "parentTraceId": "1URU5-0569281",
-    "status": "completed",
-    "startTime": 1764270572026,
-    "endTime": 1764270574088,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270573033,
-        "level": "info",
-        "message": "Fetching youtube videos",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "fetchVideos",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "level": "info",
-          "time": 1764270573031,
-          "msg": "Fetching youtube videos"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270573034,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270573039,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270573721,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "fetchVideos",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764270573719,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270573723,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "pfFVpdIE-uw",
-                "title": "Live quiz on Linux with chai",
-                "url": "https://www.youtube.com/watch?v=pfFVpdIE-uw",
-                "publishedAt": "2025-11-27T17:34:20Z",
-                "thumbnail": "https://i.ytimg.com/vi/pfFVpdIE-uw/default.jpg"
-              },
-              {
-                "videoId": "inCx7Zolorg",
-                "title": "Chai pe charcha",
-                "url": "https://www.youtube.com/watch?v=inCx7Zolorg",
-                "publishedAt": "2025-11-26T16:58:40Z",
-                "thumbnail": "https://i.ytimg.com/vi/inCx7Zolorg/default.jpg"
-              },
-              {
-                "videoId": "I4HEpowCM20",
-                "title": "Masterji Platform tour",
-                "url": "https://www.youtube.com/watch?v=I4HEpowCM20",
-                "publishedAt": "2025-11-26T13:30:31Z",
-                "thumbnail": "https://i.ytimg.com/vi/I4HEpowCM20/default.jpg"
-              },
-              {
-                "videoId": "DvPtxwFTA60",
-                "title": "Docker and k8 YT",
-                "url": "https://www.youtube.com/watch?v=DvPtxwFTA60",
-                "publishedAt": "2025-11-26T09:18:24Z",
-                "thumbnail": "https://i.ytimg.com/vi/DvPtxwFTA60/default.jpg"
-              },
-              {
-                "videoId": "zDOdlfbS0Ec",
-                "title": "You can learn GenAI here",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-                "publishedAt": "2025-11-25T08:50:06Z",
-                "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270573726,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "channelName": "Chai aur Code",
-          "videos": [
-            {
-              "videoId": "pfFVpdIE-uw",
-              "title": "Live quiz on Linux with chai",
-              "url": "https://www.youtube.com/watch?v=pfFVpdIE-uw",
-              "publishedAt": "2025-11-27T17:34:20Z",
-              "thumbnail": "https://i.ytimg.com/vi/pfFVpdIE-uw/default.jpg"
-            },
-            {
-              "videoId": "inCx7Zolorg",
-              "title": "Chai pe charcha",
-              "url": "https://www.youtube.com/watch?v=inCx7Zolorg",
-              "publishedAt": "2025-11-26T16:58:40Z",
-              "thumbnail": "https://i.ytimg.com/vi/inCx7Zolorg/default.jpg"
-            },
-            {
-              "videoId": "I4HEpowCM20",
-              "title": "Masterji Platform tour",
-              "url": "https://www.youtube.com/watch?v=I4HEpowCM20",
-              "publishedAt": "2025-11-26T13:30:31Z",
-              "thumbnail": "https://i.ytimg.com/vi/I4HEpowCM20/default.jpg"
-            },
-            {
-              "videoId": "DvPtxwFTA60",
-              "title": "Docker and k8 YT",
-              "url": "https://www.youtube.com/watch?v=DvPtxwFTA60",
-              "publishedAt": "2025-11-26T09:18:24Z",
-              "thumbnail": "https://i.ytimg.com/vi/DvPtxwFTA60/default.jpg"
-            },
-            {
-              "videoId": "zDOdlfbS0Ec",
-              "title": "You can learn GenAI here",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-              "publishedAt": "2025-11-25T08:50:06Z",
-              "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-            }
-          ],
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "1URU5-0569281:cca0bb57-041d-4fe5-926e-b7a62a5ffe24": {
-    "id": "cca0bb57-041d-4fe5-926e-b7a62a5ffe24",
-    "name": "GenerateTitles",
-    "parentTraceId": "1URU5-0569281",
-    "status": "completed",
-    "startTime": 1764270573728,
-    "endTime": 1764270575734,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270574885,
-        "level": "info",
-        "message": "GenerateTitles: Starting title generation",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "GenerateTitles",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764270574882,
-          "msg": "GenerateTitles: Starting title generation"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270574886,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270574890,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270575359,
-        "level": "error",
-        "message": "Gemini API Response Error",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "GenerateTitles",
-          "status": 403,
-          "error": {
-            "error": {
-              "code": 403,
-              "message": "Your API key was reported as leaked. Please use another API key.",
-              "status": "PERMISSION_DENIED"
-            }
-          },
-          "level": "error",
-          "time": 1764270575357,
-          "msg": "Gemini API Response Error"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270575376,
-        "level": "error",
-        "message": "GenerateTitles Error",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "GenerateTitles",
-          "message": "Gemini API error: Your API key was reported as leaked. Please use another API key.",
-          "stack": "Error: Gemini API error: Your API key was reported as leaked. Please use another API key.\n    at Object.handler (C:\\Users\\noobe\\Desktop\\react_sikho\\YOUTUBE-TITLE-MOTIA\\steps\\04-ai-title.step.ts:102:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async runTypescriptModule (C:\\Users\\noobe\\Desktop\\react_sikho\\YOUTUBE-TITLE-MOTIA\\node_modules\\@motiadev\\core\\dist\\src\\node\\node-runner.js:55:24)",
-          "level": "error",
-          "time": 1764270575372,
-          "msg": "GenerateTitles Error"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270575378,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270575380,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270570279_0r8xxcosu",
-          "key": {
-            "status": "failed",
-            "error": "Gemini API error: Your API key was reported as leaked. Please use another API key."
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270575385,
-        "topic": "yt.videos.error",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "email": "pruturaj3003@gmail.com",
-          "error": "Gemini API error: Your API key was reported as leaked. Please use another API key."
-        }
-      }
-    ]
-  },
-  "1URU5-0569281:19110abe-8a76-4c9a-a67a-80fd48d238b3": {
-    "id": "19110abe-8a76-4c9a-a67a-80fd48d238b3",
-    "name": "ErrorHandler",
-    "parentTraceId": "1URU5-0569281",
-    "status": "completed",
-    "startTime": 1764270575386,
-    "endTime": 1764270578053,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ErrorHandler"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270576333,
-        "level": "info",
-        "message": "Handling error notification",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "ErrorHandler",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "email": "pruturaj3003@gmail.com",
-          "error": "Gemini API error: Your API key was reported as leaked. Please use another API key.",
-          "level": "info",
-          "time": 1764270576330,
-          "msg": "Handling error notification"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270577707,
-        "level": "info",
-        "message": "Error notification sent successfully",
-        "metadata": {
-          "traceId": "1URU5-0569281",
-          "step": "ErrorHandler",
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "emailId": "ac30d8db-2ed0-401a-ada5-cbc8e6a1a0fc",
-          "level": "info",
-          "time": 1764270577705,
-          "msg": "Error notification sent successfully"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270577709,
-        "topic": "yt.error.notified",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270570279_0r8xxcosu",
-          "email": "pruturaj3003@gmail.com",
-          "emailId": "ac30d8db-2ed0-401a-ada5-cbc8e6a1a0fc"
-        }
-      }
-    ]
-  },
-  "JJ4W4-0830039:a96f6d80-49ea-460d-924a-c3c3bebf0767": {
-    "id": "a96f6d80-49ea-460d-924a-c3c3bebf0767",
-    "name": "SubmitChannel",
-    "parentTraceId": "JJ4W4-0830039",
-    "status": "completed",
-    "startTime": 1764270830044,
-    "endTime": 1764270831760,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270831254,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@chaiaurcode",
-            "email": "pruturaj3003@gmail.com"
-          },
-          "level": "info",
-          "time": 1764270831152,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270831256,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764270831153_r3htv4iq3",
-          "key": {
-            "jobId": "job_1764270831153_r3htv4iq3",
-            "channel": "@chaiaurcode",
-            "email": "pruturaj3003@gmail.com",
-            "status": "queued",
-            "createdAt": "2025-11-27T19:13:51.153Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270831262,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "SubmitChannel",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channel": "@chaiaurcode",
-          "email": "pruturaj3003@gmail.com",
-          "level": "info",
-          "time": 1764270831260,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270831265,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channel": "@chaiaurcode",
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "JJ4W4-0830039:28b5212e-6fb4-48e4-a11d-4a052d3336d5": {
-    "id": "28b5212e-6fb4-48e4-a11d-4a052d3336d5",
-    "name": "ResolveChannel",
-    "parentTraceId": "JJ4W4-0830039",
-    "status": "completed",
-    "startTime": 1764270831268,
-    "endTime": 1764270833680,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270832720,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "ResolveChannel",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channel": "@chaiaurcode",
-          "level": "info",
-          "time": 1764270832718,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270832724,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270832729,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270833317,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "channelName": "Chai aur Code",
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "JJ4W4-0830039:63904320-fea1-4f2a-830c-8cb8fda6e005": {
-    "id": "63904320-fea1-4f2a-830c-8cb8fda6e005",
-    "name": "fetchVideos",
-    "parentTraceId": "JJ4W4-0830039",
-    "status": "completed",
-    "startTime": 1764270833320,
-    "endTime": 1764270835498,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270834340,
-        "level": "info",
-        "message": "Fetching youtube videos",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "fetchVideos",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
-          "level": "info",
-          "time": 1764270834338,
-          "msg": "Fetching youtube videos"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270834341,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270834344,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270835108,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "fetchVideos",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764270835105,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270835109,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "pfFVpdIE-uw",
-                "title": "Live quiz on Linux with chai",
-                "url": "https://www.youtube.com/watch?v=pfFVpdIE-uw",
-                "publishedAt": "2025-11-27T17:34:20Z",
-                "thumbnail": "https://i.ytimg.com/vi/pfFVpdIE-uw/default.jpg"
-              },
-              {
-                "videoId": "inCx7Zolorg",
-                "title": "Chai pe charcha",
-                "url": "https://www.youtube.com/watch?v=inCx7Zolorg",
-                "publishedAt": "2025-11-26T16:58:40Z",
-                "thumbnail": "https://i.ytimg.com/vi/inCx7Zolorg/default.jpg"
-              },
-              {
-                "videoId": "I4HEpowCM20",
-                "title": "Masterji Platform tour",
-                "url": "https://www.youtube.com/watch?v=I4HEpowCM20",
-                "publishedAt": "2025-11-26T13:30:31Z",
-                "thumbnail": "https://i.ytimg.com/vi/I4HEpowCM20/default.jpg"
-              },
-              {
-                "videoId": "DvPtxwFTA60",
-                "title": "Docker and k8 YT",
-                "url": "https://www.youtube.com/watch?v=DvPtxwFTA60",
-                "publishedAt": "2025-11-26T09:18:24Z",
-                "thumbnail": "https://i.ytimg.com/vi/DvPtxwFTA60/default.jpg"
-              },
-              {
-                "videoId": "zDOdlfbS0Ec",
-                "title": "You can learn GenAI here",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-                "publishedAt": "2025-11-25T08:50:06Z",
-                "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270835111,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channelName": "Chai aur Code",
-          "videos": [
-            {
-              "videoId": "pfFVpdIE-uw",
-              "title": "Live quiz on Linux with chai",
-              "url": "https://www.youtube.com/watch?v=pfFVpdIE-uw",
-              "publishedAt": "2025-11-27T17:34:20Z",
-              "thumbnail": "https://i.ytimg.com/vi/pfFVpdIE-uw/default.jpg"
-            },
-            {
-              "videoId": "inCx7Zolorg",
-              "title": "Chai pe charcha",
-              "url": "https://www.youtube.com/watch?v=inCx7Zolorg",
-              "publishedAt": "2025-11-26T16:58:40Z",
-              "thumbnail": "https://i.ytimg.com/vi/inCx7Zolorg/default.jpg"
-            },
-            {
-              "videoId": "I4HEpowCM20",
-              "title": "Masterji Platform tour",
-              "url": "https://www.youtube.com/watch?v=I4HEpowCM20",
-              "publishedAt": "2025-11-26T13:30:31Z",
-              "thumbnail": "https://i.ytimg.com/vi/I4HEpowCM20/default.jpg"
-            },
-            {
-              "videoId": "DvPtxwFTA60",
-              "title": "Docker and k8 YT",
-              "url": "https://www.youtube.com/watch?v=DvPtxwFTA60",
-              "publishedAt": "2025-11-26T09:18:24Z",
-              "thumbnail": "https://i.ytimg.com/vi/DvPtxwFTA60/default.jpg"
-            },
-            {
-              "videoId": "zDOdlfbS0Ec",
-              "title": "You can learn GenAI here",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec",
-              "publishedAt": "2025-11-25T08:50:06Z",
-              "thumbnail": "https://i.ytimg.com/vi/zDOdlfbS0Ec/default.jpg"
-            }
-          ],
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "JJ4W4-0830039:b806af03-f982-4a18-9274-635e0d725fd4": {
-    "id": "b806af03-f982-4a18-9274-635e0d725fd4",
-    "name": "GenerateTitles",
-    "parentTraceId": "JJ4W4-0830039",
-    "status": "completed",
-    "startTime": 1764270835113,
-    "endTime": 1764270846043,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270836413,
-        "level": "info",
-        "message": "GenerateTitles: Starting title generation",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "GenerateTitles",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764270836410,
-          "msg": "GenerateTitles: Starting title generation"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270836416,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270836420,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270845868,
-        "level": "info",
-        "message": "Gemini API Response received",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "GenerateTitles",
-          "hasResponse": true,
-          "hasCandidates": true,
-          "level": "info",
-          "time": 1764270845867,
-          "msg": "Gemini API Response received"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270845871,
-        "level": "info",
-        "message": "Parsing AI response",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "GenerateTitles",
-          "textLength": 2147,
-          "level": "info",
-          "time": 1764270845867,
-          "msg": "Parsing AI response"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270845873,
-        "level": "info",
-        "message": "GenerateTitles: Titles generated successfully",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "GenerateTitles",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "titleCount": 5,
-          "level": "info",
-          "time": 1764270845868,
-          "msg": "GenerateTitles: Titles generated successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270845875,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "titles ready",
-            "improvedTitles": [
-              {
-                "original": "Live quiz on Linux with chai",
-                "improved": "Linux Mastermind Challenge LIVE: Test Your Skills (with Chai!)",
-                "rationale": "This improved title uses power words like 'Mastermind Challenge,' adds 'LIVE' for urgency, and a clear value proposition ('Test Your Skills'). It also maintains the 'Chai' branding while being highly searchable for Linux quizzes.",
-                "url": "https://www.youtube.com/watch?v=pfFVpdIE-uw"
-              },
-              {
-                "original": "Chai pe charcha",
-                "improved": "Chai pe Charcha: Your Tech Career Questions ANSWERED (Live Q&A!)",
-                "rationale": "This title retains the authentic 'Chai pe Charcha' branding but adds specific value by promising answers to 'Tech Career Questions' and clarifying it's a 'Live Q&A,' making it highly searchable and engaging for those seeking career advice.",
-                "url": "https://www.youtube.com/watch?v=inCx7Zolorg"
-              },
-              {
-                "original": "Masterji Platform tour",
-                "improved": "Unlock Your Coding Potential: A Masterji Platform Walkthrough (Full Tour & Features!)",
-                "rationale": "Starting with a strong value proposition ('Unlock Your Coding Potential') immediately grabs attention. It clearly states the content ('Masterji Platform Walkthrough') and adds specific benefits ('Full Tour & Features') to entice viewers and improve searchability for platform-related queries.",
-                "url": "https://www.youtube.com/watch?v=I4HEpowCM20"
-              },
-              {
-                "original": "Docker and k8 YT",
-                "improved": "Docker & Kubernetes EXPLAINED: Master K8s & Containerization for Beginners",
-                "rationale": "This title uses strong action verbs ('EXPLAINED,' 'Master'), clearly specifies the target audience ('for Beginners'), and includes essential keywords (Docker, Kubernetes, K8s, Containerization) for maximum searchability and clarity on a complex topic.",
-                "url": "https://www.youtube.com/watch?v=DvPtxwFTA60"
-              },
-              {
-                "original": "You can learn GenAI here",
-                "improved": "Master Generative AI NOW: Your Ultimate Guide to GenAI (Start Learning Today!)",
-                "rationale": "This title employs urgent action verbs ('Master,' 'NOW,' 'Start Learning Today!'), offers a clear value proposition ('Ultimate Guide'), and explicitly uses both 'Generative AI' and its acronym 'GenAI' for superior search engine optimization and urgency.",
-                "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270845878,
-        "topic": "yt.titles.ready",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "channelName": "Chai aur Code",
-          "improvedTitles": [
-            {
-              "original": "Live quiz on Linux with chai",
-              "improved": "Linux Mastermind Challenge LIVE: Test Your Skills (with Chai!)",
-              "rationale": "This improved title uses power words like 'Mastermind Challenge,' adds 'LIVE' for urgency, and a clear value proposition ('Test Your Skills'). It also maintains the 'Chai' branding while being highly searchable for Linux quizzes.",
-              "url": "https://www.youtube.com/watch?v=pfFVpdIE-uw"
-            },
-            {
-              "original": "Chai pe charcha",
-              "improved": "Chai pe Charcha: Your Tech Career Questions ANSWERED (Live Q&A!)",
-              "rationale": "This title retains the authentic 'Chai pe Charcha' branding but adds specific value by promising answers to 'Tech Career Questions' and clarifying it's a 'Live Q&A,' making it highly searchable and engaging for those seeking career advice.",
-              "url": "https://www.youtube.com/watch?v=inCx7Zolorg"
-            },
-            {
-              "original": "Masterji Platform tour",
-              "improved": "Unlock Your Coding Potential: A Masterji Platform Walkthrough (Full Tour & Features!)",
-              "rationale": "Starting with a strong value proposition ('Unlock Your Coding Potential') immediately grabs attention. It clearly states the content ('Masterji Platform Walkthrough') and adds specific benefits ('Full Tour & Features') to entice viewers and improve searchability for platform-related queries.",
-              "url": "https://www.youtube.com/watch?v=I4HEpowCM20"
-            },
-            {
-              "original": "Docker and k8 YT",
-              "improved": "Docker & Kubernetes EXPLAINED: Master K8s & Containerization for Beginners",
-              "rationale": "This title uses strong action verbs ('EXPLAINED,' 'Master'), clearly specifies the target audience ('for Beginners'), and includes essential keywords (Docker, Kubernetes, K8s, Containerization) for maximum searchability and clarity on a complex topic.",
-              "url": "https://www.youtube.com/watch?v=DvPtxwFTA60"
-            },
-            {
-              "original": "You can learn GenAI here",
-              "improved": "Master Generative AI NOW: Your Ultimate Guide to GenAI (Start Learning Today!)",
-              "rationale": "This title employs urgent action verbs ('Master,' 'NOW,' 'Start Learning Today!'), offers a clear value proposition ('Ultimate Guide'), and explicitly uses both 'Generative AI' and its acronym 'GenAI' for superior search engine optimization and urgency.",
-              "url": "https://www.youtube.com/watch?v=zDOdlfbS0Ec"
-            }
-          ],
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "JJ4W4-0830039:8c82640a-bfc2-4d8b-aeda-cb38b4c91917": {
-    "id": "8c82640a-bfc2-4d8b-aeda-cb38b4c91917",
-    "name": "SendEmail",
-    "parentTraceId": "JJ4W4-0830039",
-    "status": "completed",
-    "startTime": 1764270845879,
-    "endTime": 1764270847162,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "SendEmail"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764270846308,
-        "level": "info",
-        "message": "Sending email",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "SendEmail",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "email": "pruturaj3003@gmail.com",
-          "titleCount": 5,
-          "level": "info",
-          "time": 1764270846307,
-          "msg": "Sending email"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270846308,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270846309,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "sending email"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764270846907,
-        "level": "info",
-        "message": "Email sent successfully",
-        "metadata": {
-          "traceId": "JJ4W4-0830039",
-          "step": "SendEmail",
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "emailId": "a529b805-00ee-48a4-8e9d-24d219f5829c",
-          "level": "info",
-          "time": 1764270846905,
-          "msg": "Email sent successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764270846908,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764270831153_r3htv4iq3",
-          "key": {
-            "status": "completed",
-            "emailSent": true,
-            "emailId": "a529b805-00ee-48a4-8e9d-24d219f5829c",
-            "completedAt": "2025-11-27T19:14:06.905Z"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764270846912,
-        "topic": "yt.email.sent",
-        "success": true,
-        "data": {
-          "jobId": "job_1764270831153_r3htv4iq3",
-          "email": "pruturaj3003@gmail.com",
-          "emailId": "a529b805-00ee-48a4-8e9d-24d219f5829c"
-        }
-      }
-    ]
-  },
-  "FQT3Q-1198760:1cd4dd62-9f22-4966-aba6-6214b3e0ec13": {
-    "id": "1cd4dd62-9f22-4966-aba6-6214b3e0ec13",
-    "name": "HomePage",
-    "parentTraceId": "FQT3Q-1198760",
-    "status": "completed",
-    "startTime": 1764271198762,
-    "endTime": 1764271199471,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "HomePage"
-    },
-    "events": []
-  },
   "T576A-1230793:ce8b3248-08a3-48ce-923b-c836b26776fe": {
     "id": "ce8b3248-08a3-48ce-923b-c836b26776fe",
     "name": "SubmitChannel",
@@ -23821,6 +22721,3934 @@
           "jobId": "job_1767902486560_onbt937rg",
           "email": "pruturaj3003@gmail.com",
           "emailId": "5ded1793-b6af-4b57-b842-d584a56494a2"
+        }
+      }
+    ]
+  },
+  "C17P6-0481638:e366ebd3-93d2-4064-8683-f0d20ba31e9e": {
+    "id": "e366ebd3-93d2-4064-8683-f0d20ba31e9e",
+    "name": "SubmitChannel",
+    "parentTraceId": "C17P6-0481638",
+    "status": "completed",
+    "startTime": 1770390481645,
+    "endTime": 1770390483484,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390483336,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "C17P6-0481638",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770390482877,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390483344,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z",
+          "key": {
+            "jobId": "job_1770390482878_hv5a5hd3z",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:08:02.878Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770390483364,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "C17P6-0481638",
+          "step": "SubmitChannel",
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770390483356,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390483381,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "C17P6-0481638:2a46802f-df39-46ab-999b-37e6ef61d463": {
+    "id": "2a46802f-df39-46ab-999b-37e6ef61d463",
+    "name": "ResolveChannel",
+    "parentTraceId": "C17P6-0481638",
+    "status": "completed",
+    "startTime": 1770390483398,
+    "endTime": 1770390485107,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390484257,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "C17P6-0481638",
+          "step": "ResolveChannel",
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1770390484255,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390484261,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390484272,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390484748,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "channelName": "Chai aur Code",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "C17P6-0481638:e97da484-9ea6-43a1-8499-e52070b8fa08": {
+    "id": "e97da484-9ea6-43a1-8499-e52070b8fa08",
+    "name": "fetchVideos",
+    "parentTraceId": "C17P6-0481638",
+    "status": "completed",
+    "startTime": 1770390484755,
+    "endTime": 1770390486723,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390485632,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "C17P6-0481638",
+          "step": "fetchVideos",
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "level": "info",
+          "time": 1770390485629,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390485638,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390485648,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770390486397,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "C17P6-0481638",
+          "step": "fetchVideos",
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1770390486395,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390486407,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "FHCKOP25Z1A",
+                "title": "Books that I am going through these days",
+                "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A",
+                "publishedAt": "2026-02-04T15:33:30Z",
+                "thumbnail": "https://i.ytimg.com/vi/FHCKOP25Z1A/default.jpg"
+              },
+              {
+                "videoId": "EeCpMJ5chzE",
+                "title": "A chill live stream",
+                "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE",
+                "publishedAt": "2026-02-03T17:17:55Z",
+                "thumbnail": "https://i.ytimg.com/vi/EeCpMJ5chzE/default.jpg"
+              },
+              {
+                "videoId": "45VaOdYet3Y",
+                "title": "Open Claw reality test",
+                "url": "https://www.youtube.com/watch?v=45VaOdYet3Y",
+                "publishedAt": "2026-02-03T10:10:07Z",
+                "thumbnail": "https://i.ytimg.com/vi/45VaOdYet3Y/default.jpg"
+              },
+              {
+                "videoId": "RXskasE9Db4",
+                "title": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+                "url": "https://www.youtube.com/watch?v=RXskasE9Db4",
+                "publishedAt": "2026-01-28T13:30:06Z",
+                "thumbnail": "https://i.ytimg.com/vi/RXskasE9Db4/default.jpg"
+              },
+              {
+                "videoId": "uUgLw5LVTAg",
+                "title": "23. Greedy Algorithm",
+                "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg",
+                "publishedAt": "2026-01-27T13:30:06Z",
+                "thumbnail": "https://i.ytimg.com/vi/uUgLw5LVTAg/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390486427,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channelName": "Chai aur Code",
+          "videos": [
+            {
+              "videoId": "FHCKOP25Z1A",
+              "title": "Books that I am going through these days",
+              "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A",
+              "publishedAt": "2026-02-04T15:33:30Z",
+              "thumbnail": "https://i.ytimg.com/vi/FHCKOP25Z1A/default.jpg"
+            },
+            {
+              "videoId": "EeCpMJ5chzE",
+              "title": "A chill live stream",
+              "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE",
+              "publishedAt": "2026-02-03T17:17:55Z",
+              "thumbnail": "https://i.ytimg.com/vi/EeCpMJ5chzE/default.jpg"
+            },
+            {
+              "videoId": "45VaOdYet3Y",
+              "title": "Open Claw reality test",
+              "url": "https://www.youtube.com/watch?v=45VaOdYet3Y",
+              "publishedAt": "2026-02-03T10:10:07Z",
+              "thumbnail": "https://i.ytimg.com/vi/45VaOdYet3Y/default.jpg"
+            },
+            {
+              "videoId": "RXskasE9Db4",
+              "title": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+              "url": "https://www.youtube.com/watch?v=RXskasE9Db4",
+              "publishedAt": "2026-01-28T13:30:06Z",
+              "thumbnail": "https://i.ytimg.com/vi/RXskasE9Db4/default.jpg"
+            },
+            {
+              "videoId": "uUgLw5LVTAg",
+              "title": "23. Greedy Algorithm",
+              "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg",
+              "publishedAt": "2026-01-27T13:30:06Z",
+              "thumbnail": "https://i.ytimg.com/vi/uUgLw5LVTAg/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "C17P6-0481638:4b23509e-33f3-49e8-a8a4-bdb1acf39e44": {
+    "id": "4b23509e-33f3-49e8-a8a4-bdb1acf39e44",
+    "name": "GenerateTitles",
+    "parentTraceId": "C17P6-0481638",
+    "status": "completed",
+    "startTime": 1770390486441,
+    "endTime": 1770390501832,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1770390487431,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390487440,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390501432,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390482878_hv5a5hd3z",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Books that I am going through these days",
+                "variants": {
+                  "viral": "The Books That Changed My Life This Month (Must-Reads!)",
+                  "seo": "My Current Reads: Top Book Recommendations & What I'm Reading Now",
+                  "professional": "My Current Reading List: Books I'm Enjoying Recently"
+                },
+                "reasons": {
+                  "viral": "Evokes strong emotion ('changed my life'), creates urgency ('must-reads'), and offers a personal recommendation to pique curiosity.",
+                  "seo": "Uses clear keywords like 'Current Reads,' 'Book Recommendations,' and 'Reading Now' for high searchability.",
+                  "professional": "Presents the content in a straightforward, clean, and brand-safe manner, clearly stating the topic."
+                },
+                "thumbnailTexts": [
+                  "My Top Books",
+                  "What I Read",
+                  "Must-Reads"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A"
+              },
+              {
+                "original": "A chill live stream",
+                "variants": {
+                  "viral": "Escape Reality: Pure Chill VIBES Live Stream",
+                  "seo": "Relaxing Live Stream: Hangout & Chill With Me (ASMR Vibes)",
+                  "professional": "Community Hangout: A Relaxed Live Session"
+                },
+                "reasons": {
+                  "viral": "Uses strong emotional words ('Escape Reality,' 'Pure Chill VIBES') to attract viewers seeking relaxation and connection.",
+                  "seo": "Incorporates search terms like 'Relaxing Live Stream,' 'Hangout,' 'Chill,' and adds 'ASMR Vibes' for broader reach.",
+                  "professional": "Clearly communicates the nature of the content in a friendly, inviting, and brand-appropriate way."
+                },
+                "thumbnailTexts": [
+                  "Live Now!",
+                  "Chill Zone",
+                  "Just Vibe"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE"
+              },
+              {
+                "original": "Open Claw reality test",
+                "variants": {
+                  "viral": "The ULTIMATE Open Claw Reality Test (Did It WORK?!)",
+                  "seo": "Open Claw Robot Test: Reality Performance & Review",
+                  "professional": "Open Claw Mechanism: Performance & Reality Testing"
+                },
+                "reasons": {
+                  "viral": "Uses strong adjectives ('ULTIMATE'), creates suspense ('Did It WORK?!'), and appeals to curiosity about the unknown outcome.",
+                  "seo": "Features key search terms like 'Open Claw Robot,' 'Test,' 'Reality Performance,' and 'Review' for technical searches.",
+                  "professional": "Provides a clear, technical, and professional description of the video's content and purpose."
+                },
+                "thumbnailTexts": [
+                  "Claw Test!",
+                  "It Works?",
+                  "Robot Grip"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=45VaOdYet3Y"
+              },
+              {
+                "original": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+                "variants": {
+                  "viral": "Fractional Knapsack MASTERED! (Greedy Algorithm Solved Part 2)",
+                  "seo": "Fractional Knapsack Problem: Greedy Algorithm Tutorial (Part 2)",
+                  "professional": "Greedy Algorithms: Fractional Knapsack Implementation (Part 2)"
+                },
+                "reasons": {
+                  "viral": "Promises mastery and a solution, appealing to viewers struggling with the topic and creating a sense of achievement.",
+                  "seo": "Contains specific technical keywords 'Fractional Knapsack Problem,' 'Greedy Algorithm,' and 'Tutorial (Part 2)' for direct search.",
+                  "professional": "Clearly and precisely states the topic, method, and sequence in a formal, educational context."
+                },
+                "thumbnailTexts": [
+                  "Knapsack Part 2",
+                  "Greedy Solved",
+                  "Algorithm Explained"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=RXskasE9Db4"
+              },
+              {
+                "original": "23. Greedy Algorithm",
+                "variants": {
+                  "viral": "The Greedy Algorithm Explained (You WON'T Believe How Simple It Is!)",
+                  "seo": "Greedy Algorithm Tutorial: Full Explanation & Examples",
+                  "professional": "Introduction to Greedy Algorithms: Concepts & Basics"
+                },
+                "reasons": {
+                  "viral": "Creates curiosity with 'You WON'T Believe' and promises simplicity for a complex topic, encouraging clicks.",
+                  "seo": "Uses direct search terms like 'Greedy Algorithm,' 'Tutorial,' 'Explanation,' and 'Examples' for educational searches.",
+                  "professional": "Presents the topic in a clear, educational, and foundational manner, suitable for an academic audience."
+                },
+                "thumbnailTexts": [
+                  "Greedy Intro",
+                  "Algorithm Basics",
+                  "Learn Greedy"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390501447,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390482878_hv5a5hd3z",
+          "channelName": "Chai aur Code",
+          "improvedTitles": [
+            {
+              "original": "Books that I am going through these days",
+              "variants": {
+                "viral": "The Books That Changed My Life This Month (Must-Reads!)",
+                "seo": "My Current Reads: Top Book Recommendations & What I'm Reading Now",
+                "professional": "My Current Reading List: Books I'm Enjoying Recently"
+              },
+              "reasons": {
+                "viral": "Evokes strong emotion ('changed my life'), creates urgency ('must-reads'), and offers a personal recommendation to pique curiosity.",
+                "seo": "Uses clear keywords like 'Current Reads,' 'Book Recommendations,' and 'Reading Now' for high searchability.",
+                "professional": "Presents the content in a straightforward, clean, and brand-safe manner, clearly stating the topic."
+              },
+              "thumbnailTexts": [
+                "My Top Books",
+                "What I Read",
+                "Must-Reads"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A"
+            },
+            {
+              "original": "A chill live stream",
+              "variants": {
+                "viral": "Escape Reality: Pure Chill VIBES Live Stream",
+                "seo": "Relaxing Live Stream: Hangout & Chill With Me (ASMR Vibes)",
+                "professional": "Community Hangout: A Relaxed Live Session"
+              },
+              "reasons": {
+                "viral": "Uses strong emotional words ('Escape Reality,' 'Pure Chill VIBES') to attract viewers seeking relaxation and connection.",
+                "seo": "Incorporates search terms like 'Relaxing Live Stream,' 'Hangout,' 'Chill,' and adds 'ASMR Vibes' for broader reach.",
+                "professional": "Clearly communicates the nature of the content in a friendly, inviting, and brand-appropriate way."
+              },
+              "thumbnailTexts": [
+                "Live Now!",
+                "Chill Zone",
+                "Just Vibe"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE"
+            },
+            {
+              "original": "Open Claw reality test",
+              "variants": {
+                "viral": "The ULTIMATE Open Claw Reality Test (Did It WORK?!)",
+                "seo": "Open Claw Robot Test: Reality Performance & Review",
+                "professional": "Open Claw Mechanism: Performance & Reality Testing"
+              },
+              "reasons": {
+                "viral": "Uses strong adjectives ('ULTIMATE'), creates suspense ('Did It WORK?!'), and appeals to curiosity about the unknown outcome.",
+                "seo": "Features key search terms like 'Open Claw Robot,' 'Test,' 'Reality Performance,' and 'Review' for technical searches.",
+                "professional": "Provides a clear, technical, and professional description of the video's content and purpose."
+              },
+              "thumbnailTexts": [
+                "Claw Test!",
+                "It Works?",
+                "Robot Grip"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=45VaOdYet3Y"
+            },
+            {
+              "original": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+              "variants": {
+                "viral": "Fractional Knapsack MASTERED! (Greedy Algorithm Solved Part 2)",
+                "seo": "Fractional Knapsack Problem: Greedy Algorithm Tutorial (Part 2)",
+                "professional": "Greedy Algorithms: Fractional Knapsack Implementation (Part 2)"
+              },
+              "reasons": {
+                "viral": "Promises mastery and a solution, appealing to viewers struggling with the topic and creating a sense of achievement.",
+                "seo": "Contains specific technical keywords 'Fractional Knapsack Problem,' 'Greedy Algorithm,' and 'Tutorial (Part 2)' for direct search.",
+                "professional": "Clearly and precisely states the topic, method, and sequence in a formal, educational context."
+              },
+              "thumbnailTexts": [
+                "Knapsack Part 2",
+                "Greedy Solved",
+                "Algorithm Explained"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=RXskasE9Db4"
+            },
+            {
+              "original": "23. Greedy Algorithm",
+              "variants": {
+                "viral": "The Greedy Algorithm Explained (You WON'T Believe How Simple It Is!)",
+                "seo": "Greedy Algorithm Tutorial: Full Explanation & Examples",
+                "professional": "Introduction to Greedy Algorithms: Concepts & Basics"
+              },
+              "reasons": {
+                "viral": "Creates curiosity with 'You WON'T Believe' and promises simplicity for a complex topic, encouraging clicks.",
+                "seo": "Uses direct search terms like 'Greedy Algorithm,' 'Tutorial,' 'Explanation,' and 'Examples' for educational searches.",
+                "professional": "Presents the topic in a clear, educational, and foundational manner, suitable for an academic audience."
+              },
+              "thumbnailTexts": [
+                "Greedy Intro",
+                "Algorithm Basics",
+                "Learn Greedy"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "C17P6-0481638:92ac7be1-6e24-4223-9dfa-765c99880f63": {
+    "id": "92ac7be1-6e24-4223-9dfa-765c99880f63",
+    "name": "SendEmail",
+    "parentTraceId": "C17P6-0481638",
+    "status": "completed",
+    "startTime": 1770390501460,
+    "endTime": 1770390503662,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390503372,
+        "level": "error",
+        "message": "SendEmail Error",
+        "metadata": {
+          "traceId": "C17P6-0481638",
+          "step": "SendEmail",
+          "message": "API key is invalid",
+          "level": "error",
+          "time": 1770390503370,
+          "msg": "SendEmail Error"
+        }
+      }
+    ]
+  },
+  "5R4SW-0698612:204b967a-db5e-484c-8f2b-882545d269ae": {
+    "id": "204b967a-db5e-484c-8f2b-882545d269ae",
+    "name": "SubmitChannel",
+    "parentTraceId": "5R4SW-0698612",
+    "status": "completed",
+    "startTime": 1770390698626,
+    "endTime": 1770390699549,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390699427,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "5R4SW-0698612",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@mrbeast",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770390699425,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390699439,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de",
+          "key": {
+            "jobId": "job_1770390699426_9beur76de",
+            "channel": "@mrbeast",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:11:39.426Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770390699456,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "5R4SW-0698612",
+          "step": "SubmitChannel",
+          "jobId": "job_1770390699426_9beur76de",
+          "channel": "@mrbeast",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770390699443,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390699466,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390699426_9beur76de",
+          "channel": "@mrbeast",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5R4SW-0698612:666f408b-6162-4807-89db-6ff080b2336a": {
+    "id": "666f408b-6162-4807-89db-6ff080b2336a",
+    "name": "ResolveChannel",
+    "parentTraceId": "5R4SW-0698612",
+    "status": "completed",
+    "startTime": 1770390699480,
+    "endTime": 1770390701313,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390700355,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "5R4SW-0698612",
+          "step": "ResolveChannel",
+          "jobId": "job_1770390699426_9beur76de",
+          "channel": "@mrbeast",
+          "level": "info",
+          "time": 1770390700351,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390700364,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390700382,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390700882,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390699426_9beur76de",
+          "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          "channelName": "MrBeast",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5R4SW-0698612:13463dfc-d6ac-4022-b606-10422fad44e9": {
+    "id": "13463dfc-d6ac-4022-b606-10422fad44e9",
+    "name": "fetchVideos",
+    "parentTraceId": "5R4SW-0698612",
+    "status": "completed",
+    "startTime": 1770390700900,
+    "endTime": 1770390703045,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390701872,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "5R4SW-0698612",
+          "step": "fetchVideos",
+          "jobId": "job_1770390699426_9beur76de",
+          "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          "level": "info",
+          "time": 1770390701868,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390701883,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390701898,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770390702699,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "5R4SW-0698612",
+          "step": "fetchVideos",
+          "jobId": "job_1770390699426_9beur76de",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1770390702696,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390702709,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "_sBRk9ADpK8",
+                "title": "Flip a Coin, Win $30,000",
+                "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8",
+                "publishedAt": "2026-01-27T17:00:03Z",
+                "thumbnail": "https://i.ytimg.com/vi/_sBRk9ADpK8/default.jpg"
+              },
+              {
+                "videoId": "ZFoNBxpXen4",
+                "title": "Survive 30 Days Trapped In The Sky, Win $250,000",
+                "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4",
+                "publishedAt": "2025-12-20T17:00:01Z",
+                "thumbnail": "https://i.ytimg.com/vi/ZFoNBxpXen4/default.jpg"
+              },
+              {
+                "videoId": "HISfrcjiNPM",
+                "title": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+                "url": "https://www.youtube.com/watch?v=HISfrcjiNPM",
+                "publishedAt": "2025-11-21T19:40:01Z",
+                "thumbnail": "https://i.ytimg.com/vi/HISfrcjiNPM/default.jpg"
+              },
+              {
+                "videoId": "26QQE7EsnLA",
+                "title": "MrBeast Lab Disaster!",
+                "url": "https://www.youtube.com/watch?v=26QQE7EsnLA",
+                "publishedAt": "2025-11-03T17:00:01Z",
+                "thumbnail": "https://i.ytimg.com/vi/26QQE7EsnLA/default.jpg"
+              },
+              {
+                "videoId": "JgJrQnDIRgg",
+                "title": "First to Answer the Phone, Wins $10,000",
+                "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg",
+                "publishedAt": "2025-10-17T16:00:00Z",
+                "thumbnail": "https://i.ytimg.com/vi/JgJrQnDIRgg/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390702718,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390699426_9beur76de",
+          "channelName": "MrBeast",
+          "videos": [
+            {
+              "videoId": "_sBRk9ADpK8",
+              "title": "Flip a Coin, Win $30,000",
+              "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8",
+              "publishedAt": "2026-01-27T17:00:03Z",
+              "thumbnail": "https://i.ytimg.com/vi/_sBRk9ADpK8/default.jpg"
+            },
+            {
+              "videoId": "ZFoNBxpXen4",
+              "title": "Survive 30 Days Trapped In The Sky, Win $250,000",
+              "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4",
+              "publishedAt": "2025-12-20T17:00:01Z",
+              "thumbnail": "https://i.ytimg.com/vi/ZFoNBxpXen4/default.jpg"
+            },
+            {
+              "videoId": "HISfrcjiNPM",
+              "title": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+              "url": "https://www.youtube.com/watch?v=HISfrcjiNPM",
+              "publishedAt": "2025-11-21T19:40:01Z",
+              "thumbnail": "https://i.ytimg.com/vi/HISfrcjiNPM/default.jpg"
+            },
+            {
+              "videoId": "26QQE7EsnLA",
+              "title": "MrBeast Lab Disaster!",
+              "url": "https://www.youtube.com/watch?v=26QQE7EsnLA",
+              "publishedAt": "2025-11-03T17:00:01Z",
+              "thumbnail": "https://i.ytimg.com/vi/26QQE7EsnLA/default.jpg"
+            },
+            {
+              "videoId": "JgJrQnDIRgg",
+              "title": "First to Answer the Phone, Wins $10,000",
+              "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg",
+              "publishedAt": "2025-10-17T16:00:00Z",
+              "thumbnail": "https://i.ytimg.com/vi/JgJrQnDIRgg/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5R4SW-0698612:85b48d23-f807-40a5-9611-d8fea6b36f2e": {
+    "id": "85b48d23-f807-40a5-9611-d8fea6b36f2e",
+    "name": "GenerateTitles",
+    "parentTraceId": "5R4SW-0698612",
+    "status": "completed",
+    "startTime": 1770390702731,
+    "endTime": 1770390721412,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1770390703440,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390703446,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770390721139,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770390699426_9beur76de",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Flip a Coin, Win $30,000",
+                "variants": {
+                  "viral": "This Simple Flip Changed Everything.",
+                  "seo": "$30,000 Coin Flip Challenge: Can You Win?",
+                  "professional": "The $30,000 High-Stakes Coin Toss Event."
+                },
+                "reasons": {
+                  "viral": "Creates immense curiosity about the outcome of a simple action and its huge impact.",
+                  "seo": "Incorporates direct keywords like 'Coin Flip Challenge' and the prize amount for searchability.",
+                  "professional": "Presents the content as a professional event, highlighting the stakes without sensationalism."
+                },
+                "thumbnailTexts": [
+                  "Flip For $30K",
+                  "One Flip!",
+                  "Life-Changing Coin"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 80,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "SEO",
+                  "reason": "Best keyword coverage and long-term discoverability"
+                },
+                "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8"
+              },
+              {
+                "original": "Survive 30 Days Trapped In The Sky, Win $250,000",
+                "variants": {
+                  "viral": "We Survived 30 Days In The Sky! (Almost Died)",
+                  "seo": "30 Day Extreme Sky Survival Challenge $250,000.",
+                  "professional": "The 30-Day Aerial Confinement Endurance Test."
+                },
+                "reasons": {
+                  "viral": "Combines the extreme feat with a hint of danger, creating immediate emotional engagement and curiosity.",
+                  "seo": "Includes '30 Day,' 'Sky Survival Challenge,' 'Extreme,' and the prize money for maximum search relevance.",
+                  "professional": "Describes the event scientifically and formally, emphasizing endurance and professionalism."
+                },
+                "thumbnailTexts": [
+                  "30 Days Up!",
+                  "Sky Survival",
+                  "$250,000 Prize"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 70,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4"
+              },
+              {
+                "original": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+                "variants": {
+                  "viral": "Their Faces When I Surprised 50 Kids With Disneyland!",
+                  "seo": "Surprising Make-A-Wish Kids With Disneyland Trip.",
+                  "professional": "Granting 50 Wishes: A Disneyland Experience."
+                },
+                "reasons": {
+                  "viral": "Focuses on the heartwarming emotional reaction of the children, highly shareable and curiosity-inducing.",
+                  "seo": "Clearly states the key elements: 'Make-A-Wish Kids,' 'Disneyland Trip,' and 'Surprise' for searchability.",
+                  "professional": "Presents the act of charity respectfully and highlights the positive impact in a clean, professional manner."
+                },
+                "thumbnailTexts": [
+                  "Kids' Big Day!",
+                  "Disneyland Surprise!",
+                  "Pure Joy"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 60,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=HISfrcjiNPM"
+              },
+              {
+                "original": "MrBeast Lab Disaster!",
+                "variants": {
+                  "viral": "MrBeast's Lab: It All Went Horribly WRONG.",
+                  "seo": "MrBeast Science Lab Experiment Goes Wrong!",
+                  "professional": "Incident Report: MrBeast Scientific Experiment."
+                },
+                "reasons": {
+                  "viral": "Builds suspense and curiosity by hinting at a catastrophic failure within a recognizable setting.",
+                  "seo": "Combines 'MrBeast,' 'Science Lab,' 'Experiment,' and 'Goes Wrong' for direct search queries.",
+                  "professional": "Adopts a formal, documentary-style approach, professionalizing the content without sensationalism."
+                },
+                "thumbnailTexts": [
+                  "Lab Meltdown",
+                  "MrBeast Fail",
+                  "Danger Zone"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 70,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "SEO",
+                  "reason": "Best keyword coverage and long-term discoverability"
+                },
+                "url": "https://www.youtube.com/watch?v=26QQE7EsnLA"
+              },
+              {
+                "original": "First to Answer the Phone, Wins $10,000",
+                "variants": {
+                  "viral": "The Phone Rings... Win $10,000 INSTANTLY?!",
+                  "seo": "Phone Call Challenge: Answer Fast to Win $10,000 Cash.",
+                  "professional": "The $10,000 Rapid-Response Phone Competition."
+                },
+                "reasons": {
+                  "viral": "Creates immediate suspense and highlights the quick, high-value reward, enticing clicks.",
+                  "seo": "Includes specific keywords 'Phone Call Challenge,' 'Answer Fast,' and '$10,000 Cash' for searchability.",
+                  "professional": "Presents the event as a structured competition, maintaining a professional and clear description."
+                },
+                "thumbnailTexts": [
+                  "Pick Up!",
+                  "$10,000 CALL",
+                  "Answer Wins!"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 80,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770390721153,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1770390699426_9beur76de",
+          "channelName": "MrBeast",
+          "improvedTitles": [
+            {
+              "original": "Flip a Coin, Win $30,000",
+              "variants": {
+                "viral": "This Simple Flip Changed Everything.",
+                "seo": "$30,000 Coin Flip Challenge: Can You Win?",
+                "professional": "The $30,000 High-Stakes Coin Toss Event."
+              },
+              "reasons": {
+                "viral": "Creates immense curiosity about the outcome of a simple action and its huge impact.",
+                "seo": "Incorporates direct keywords like 'Coin Flip Challenge' and the prize amount for searchability.",
+                "professional": "Presents the content as a professional event, highlighting the stakes without sensationalism."
+              },
+              "thumbnailTexts": [
+                "Flip For $30K",
+                "One Flip!",
+                "Life-Changing Coin"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 80,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "SEO",
+                "reason": "Best keyword coverage and long-term discoverability"
+              },
+              "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8"
+            },
+            {
+              "original": "Survive 30 Days Trapped In The Sky, Win $250,000",
+              "variants": {
+                "viral": "We Survived 30 Days In The Sky! (Almost Died)",
+                "seo": "30 Day Extreme Sky Survival Challenge $250,000.",
+                "professional": "The 30-Day Aerial Confinement Endurance Test."
+              },
+              "reasons": {
+                "viral": "Combines the extreme feat with a hint of danger, creating immediate emotional engagement and curiosity.",
+                "seo": "Includes '30 Day,' 'Sky Survival Challenge,' 'Extreme,' and the prize money for maximum search relevance.",
+                "professional": "Describes the event scientifically and formally, emphasizing endurance and professionalism."
+              },
+              "thumbnailTexts": [
+                "30 Days Up!",
+                "Sky Survival",
+                "$250,000 Prize"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 70,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4"
+            },
+            {
+              "original": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+              "variants": {
+                "viral": "Their Faces When I Surprised 50 Kids With Disneyland!",
+                "seo": "Surprising Make-A-Wish Kids With Disneyland Trip.",
+                "professional": "Granting 50 Wishes: A Disneyland Experience."
+              },
+              "reasons": {
+                "viral": "Focuses on the heartwarming emotional reaction of the children, highly shareable and curiosity-inducing.",
+                "seo": "Clearly states the key elements: 'Make-A-Wish Kids,' 'Disneyland Trip,' and 'Surprise' for searchability.",
+                "professional": "Presents the act of charity respectfully and highlights the positive impact in a clean, professional manner."
+              },
+              "thumbnailTexts": [
+                "Kids' Big Day!",
+                "Disneyland Surprise!",
+                "Pure Joy"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 60,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=HISfrcjiNPM"
+            },
+            {
+              "original": "MrBeast Lab Disaster!",
+              "variants": {
+                "viral": "MrBeast's Lab: It All Went Horribly WRONG.",
+                "seo": "MrBeast Science Lab Experiment Goes Wrong!",
+                "professional": "Incident Report: MrBeast Scientific Experiment."
+              },
+              "reasons": {
+                "viral": "Builds suspense and curiosity by hinting at a catastrophic failure within a recognizable setting.",
+                "seo": "Combines 'MrBeast,' 'Science Lab,' 'Experiment,' and 'Goes Wrong' for direct search queries.",
+                "professional": "Adopts a formal, documentary-style approach, professionalizing the content without sensationalism."
+              },
+              "thumbnailTexts": [
+                "Lab Meltdown",
+                "MrBeast Fail",
+                "Danger Zone"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 70,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "SEO",
+                "reason": "Best keyword coverage and long-term discoverability"
+              },
+              "url": "https://www.youtube.com/watch?v=26QQE7EsnLA"
+            },
+            {
+              "original": "First to Answer the Phone, Wins $10,000",
+              "variants": {
+                "viral": "The Phone Rings... Win $10,000 INSTANTLY?!",
+                "seo": "Phone Call Challenge: Answer Fast to Win $10,000 Cash.",
+                "professional": "The $10,000 Rapid-Response Phone Competition."
+              },
+              "reasons": {
+                "viral": "Creates immediate suspense and highlights the quick, high-value reward, enticing clicks.",
+                "seo": "Includes specific keywords 'Phone Call Challenge,' 'Answer Fast,' and '$10,000 Cash' for searchability.",
+                "professional": "Presents the event as a structured competition, maintaining a professional and clear description."
+              },
+              "thumbnailTexts": [
+                "Pick Up!",
+                "$10,000 CALL",
+                "Answer Wins!"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 80,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "5R4SW-0698612:91605180-32c9-4044-a2c2-80bb0f213681": {
+    "id": "91605180-32c9-4044-a2c2-80bb0f213681",
+    "name": "SendEmail",
+    "parentTraceId": "5R4SW-0698612",
+    "status": "completed",
+    "startTime": 1770390721169,
+    "endTime": 1770390722871,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770390722580,
+        "level": "error",
+        "message": "SendEmail Error",
+        "metadata": {
+          "traceId": "5R4SW-0698612",
+          "step": "SendEmail",
+          "message": "API key is invalid",
+          "level": "error",
+          "time": 1770390722577,
+          "msg": "SendEmail Error"
+        }
+      }
+    ]
+  },
+  "N9FZ8-1072299:9c0a53ca-e890-4cc7-9862-70556fc057c4": {
+    "id": "9c0a53ca-e890-4cc7-9862-70556fc057c4",
+    "name": "SubmitChannel",
+    "parentTraceId": "N9FZ8-1072299",
+    "status": "completed",
+    "startTime": 1770391072312,
+    "endTime": 1770391073311,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391073137,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "N9FZ8-1072299",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@kunalkushwaha",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770391073136,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391073152,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn",
+          "key": {
+            "jobId": "job_1770391073136_da8w3jizn",
+            "channel": "@kunalkushwaha",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:17:53.136Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391073174,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "N9FZ8-1072299",
+          "step": "SubmitChannel",
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channel": "@kunalkushwaha",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770391073157,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391073192,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channel": "@kunalkushwaha",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "N9FZ8-1072299:c11629de-d091-4087-8d69-1d96a1109719": {
+    "id": "c11629de-d091-4087-8d69-1d96a1109719",
+    "name": "ResolveChannel",
+    "parentTraceId": "N9FZ8-1072299",
+    "status": "completed",
+    "startTime": 1770391073211,
+    "endTime": 1770391074719,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391073976,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "N9FZ8-1072299",
+          "step": "ResolveChannel",
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channel": "@kunalkushwaha",
+          "level": "info",
+          "time": 1770391073975,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391073989,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391074002,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391074418,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channelId": "UCBGOUQHNNtNGcGzVq5rIXjw",
+          "channelName": "Kunal Kushwaha",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "N9FZ8-1072299:8e4632aa-741b-4139-a1c3-7ae149d7a4d6": {
+    "id": "8e4632aa-741b-4139-a1c3-7ae149d7a4d6",
+    "name": "fetchVideos",
+    "parentTraceId": "N9FZ8-1072299",
+    "status": "completed",
+    "startTime": 1770391074429,
+    "endTime": 1770391076300,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391075225,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "N9FZ8-1072299",
+          "step": "fetchVideos",
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channelId": "UCBGOUQHNNtNGcGzVq5rIXjw",
+          "level": "info",
+          "time": 1770391075221,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391075235,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391075247,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391076057,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "N9FZ8-1072299",
+          "step": "fetchVideos",
+          "jobId": "job_1770391073136_da8w3jizn",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1770391076055,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391076072,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "9hYH1fW_c7w",
+                "title": "Your Kubernetes clusters are not optimized...",
+                "url": "https://www.youtube.com/watch?v=9hYH1fW_c7w",
+                "publishedAt": "2026-02-05T12:47:17Z",
+                "thumbnail": "https://i.ytimg.com/vi/9hYH1fW_c7w/default.jpg"
+              },
+              {
+                "videoId": "oJ_ytDEOjr4",
+                "title": "Register Now! ₹35 Lakh AI Hackathon Kicks Off Monday",
+                "url": "https://www.youtube.com/watch?v=oJ_ytDEOjr4",
+                "publishedAt": "2026-02-01T13:42:43Z",
+                "thumbnail": "https://i.ytimg.com/vi/oJ_ytDEOjr4/default.jpg"
+              },
+              {
+                "videoId": "yrsGjrAN_w8",
+                "title": "GitHub Just Killed the Hardest Part of Building AI Agents",
+                "url": "https://www.youtube.com/watch?v=yrsGjrAN_w8",
+                "publishedAt": "2026-01-31T11:01:11Z",
+                "thumbnail": "https://i.ytimg.com/vi/yrsGjrAN_w8/default.jpg"
+              },
+              {
+                "videoId": "Dg99rGaA__0",
+                "title": "Stop Using ChatGPT for Research! This NEW Airtable AI is 10x Better",
+                "url": "https://www.youtube.com/watch?v=Dg99rGaA__0",
+                "publishedAt": "2026-01-29T07:57:08Z",
+                "thumbnail": "https://i.ytimg.com/vi/Dg99rGaA__0/default.jpg"
+              },
+              {
+                "videoId": "ZCexrDFS7Rk",
+                "title": "Submit now to speak at our KubeCon Amsterdam co-located event",
+                "url": "https://www.youtube.com/watch?v=ZCexrDFS7Rk",
+                "publishedAt": "2026-01-28T18:25:19Z",
+                "thumbnail": "https://i.ytimg.com/vi/ZCexrDFS7Rk/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391076094,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channelName": "Kunal Kushwaha",
+          "videos": [
+            {
+              "videoId": "9hYH1fW_c7w",
+              "title": "Your Kubernetes clusters are not optimized...",
+              "url": "https://www.youtube.com/watch?v=9hYH1fW_c7w",
+              "publishedAt": "2026-02-05T12:47:17Z",
+              "thumbnail": "https://i.ytimg.com/vi/9hYH1fW_c7w/default.jpg"
+            },
+            {
+              "videoId": "oJ_ytDEOjr4",
+              "title": "Register Now! ₹35 Lakh AI Hackathon Kicks Off Monday",
+              "url": "https://www.youtube.com/watch?v=oJ_ytDEOjr4",
+              "publishedAt": "2026-02-01T13:42:43Z",
+              "thumbnail": "https://i.ytimg.com/vi/oJ_ytDEOjr4/default.jpg"
+            },
+            {
+              "videoId": "yrsGjrAN_w8",
+              "title": "GitHub Just Killed the Hardest Part of Building AI Agents",
+              "url": "https://www.youtube.com/watch?v=yrsGjrAN_w8",
+              "publishedAt": "2026-01-31T11:01:11Z",
+              "thumbnail": "https://i.ytimg.com/vi/yrsGjrAN_w8/default.jpg"
+            },
+            {
+              "videoId": "Dg99rGaA__0",
+              "title": "Stop Using ChatGPT for Research! This NEW Airtable AI is 10x Better",
+              "url": "https://www.youtube.com/watch?v=Dg99rGaA__0",
+              "publishedAt": "2026-01-29T07:57:08Z",
+              "thumbnail": "https://i.ytimg.com/vi/Dg99rGaA__0/default.jpg"
+            },
+            {
+              "videoId": "ZCexrDFS7Rk",
+              "title": "Submit now to speak at our KubeCon Amsterdam co-located event",
+              "url": "https://www.youtube.com/watch?v=ZCexrDFS7Rk",
+              "publishedAt": "2026-01-28T18:25:19Z",
+              "thumbnail": "https://i.ytimg.com/vi/ZCexrDFS7Rk/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "N9FZ8-1072299:3cee8a5a-efe8-41ff-bbed-6fa61d10daa9": {
+    "id": "3cee8a5a-efe8-41ff-bbed-6fa61d10daa9",
+    "name": "GenerateTitles",
+    "parentTraceId": "N9FZ8-1072299",
+    "status": "completed",
+    "startTime": 1770391076111,
+    "endTime": 1770391096207,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1770391076644,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391076652,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391095852,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391073136_da8w3jizn",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Your Kubernetes clusters are not optimized...",
+                "variants": {
+                  "viral": "Your K8s Clusters Are BLEEDING Money (Fix This NOW!)",
+                  "seo": "Kubernetes Cluster Optimization: Boost Performance & Save Costs (K8s Tutorial)",
+                  "professional": "Improving Kubernetes Cluster Efficiency and Performance"
+                },
+                "reasons": {
+                  "viral": "Uses strong emotional language ('BLEEDING Money') and creates urgency with a direct call to action ('Fix This NOW!').",
+                  "seo": "Includes primary keywords like 'Kubernetes Cluster Optimization,' 'Performance,' 'Costs,' and 'K8s Tutorial' for searchability.",
+                  "professional": "Presents a clear, objective goal using professional and concise language."
+                },
+                "thumbnailTexts": [
+                  "K8s Cost Leak",
+                  "Optimize Now!",
+                  "Stop Wasting $"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=9hYH1fW_c7w"
+              },
+              {
+                "original": "Register Now! ₹35 Lakh AI Hackathon Kicks Off Monday",
+                "variants": {
+                  "viral": "Win ₹35 Lakh! AI Hackathon Starts Monday - Don't Miss Out!",
+                  "seo": "AI Hackathon 2024: Register for ₹35 Lakh Prize (Starts Monday)",
+                  "professional": "AI Hackathon Announcement: ₹35 Lakh Prize Pool - Registration Open"
+                },
+                "reasons": {
+                  "viral": "Highlights the massive prize money and creates urgency/FOMO with 'Don't Miss Out!'",
+                  "seo": "Clearly states the event type, year, prize money, and call to action for search engines.",
+                  "professional": "Conveys the key information (event, prize, status) in a formal and clear manner."
+                },
+                "thumbnailTexts": [
+                  "₹35 Lakh Prize",
+                  "AI Hackathon",
+                  "Register Now!"
+                ],
+                "scores": {
+                  "viral": 90,
+                  "seo": 70,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=oJ_ytDEOjr4"
+              },
+              {
+                "original": "GitHub Just Killed the Hardest Part of Building AI Agents",
+                "variants": {
+                  "viral": "GitHub's Secret Weapon: AI Agents Just Got EASY (You Won't Believe It)",
+                  "seo": "GitHub AI Agents Development: Simplifying Complex AI Builds",
+                  "professional": "GitHub Enhances AI Agent Development Workflow"
+                },
+                "reasons": {
+                  "viral": "Uses 'Secret Weapon' and 'EASY' to create intrigue and a sense of revolutionary change, adding a curiosity hook.",
+                  "seo": "Focuses on 'GitHub AI Agents Development' and the benefit ('Simplifying Complex AI Builds') for search.",
+                  "professional": "Clearly states GitHub's action and the impact on AI agent development in a professional tone."
+                },
+                "thumbnailTexts": [
+                  "AI Agents Easy",
+                  "GitHub Changed AI",
+                  "No More Hard"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=yrsGjrAN_w8"
+              },
+              {
+                "original": "Stop Using ChatGPT for Research! This NEW Airtable AI is 10x Better",
+                "variants": {
+                  "viral": "Ditch ChatGPT NOW! Airtable AI Will Change Your Research FOREVER",
+                  "seo": "Airtable AI for Research: A Powerful ChatGPT Alternative",
+                  "professional": "Exploring Airtable AI for Enhanced Research Capabilities"
+                },
+                "reasons": {
+                  "viral": "Uses strong command ('Ditch ChatGPT NOW!'), an extreme claim ('Change Your Research FOREVER'), and comparison to create urgency and curiosity.",
+                  "seo": "Clearly identifies 'Airtable AI for Research' and positions it as a 'ChatGPT Alternative' for search.",
+                  "professional": "Presents the topic as an exploration of new capabilities, maintaining a neutral and professional tone."
+                },
+                "thumbnailTexts": [
+                  "Airtable vs ChatGPT",
+                  "AI Research Boost",
+                  "Better Than ChatGPT"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 70,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "SEO",
+                  "reason": "Best keyword coverage and long-term discoverability"
+                },
+                "url": "https://www.youtube.com/watch?v=Dg99rGaA__0"
+              },
+              {
+                "original": "Submit now to speak at our KubeCon Amsterdam co-located event",
+                "variants": {
+                  "viral": "Speak at KubeCon Amsterdam! Your Chance to Shine (Limited Spots!)",
+                  "seo": "KubeCon Amsterdam Co-Located Event: Call for Speakers 2024",
+                  "professional": "Call for Proposals: KubeCon Amsterdam Co-Located Event"
+                },
+                "reasons": {
+                  "viral": "Highlights the prestige of speaking at KubeCon and creates urgency/FOMO with 'Limited Spots!'",
+                  "seo": "Includes key event details and 'Call for Speakers' for those actively searching for speaking opportunities.",
+                  "professional": "Standard, clear, and professional language for a conference speaker invitation."
+                },
+                "thumbnailTexts": [
+                  "Speak at KubeCon",
+                  "Submit Your Talk",
+                  "Amsterdam Event"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 70,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "SEO",
+                  "reason": "Best keyword coverage and long-term discoverability"
+                },
+                "url": "https://www.youtube.com/watch?v=ZCexrDFS7Rk"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391095875,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391073136_da8w3jizn",
+          "channelName": "Kunal Kushwaha",
+          "improvedTitles": [
+            {
+              "original": "Your Kubernetes clusters are not optimized...",
+              "variants": {
+                "viral": "Your K8s Clusters Are BLEEDING Money (Fix This NOW!)",
+                "seo": "Kubernetes Cluster Optimization: Boost Performance & Save Costs (K8s Tutorial)",
+                "professional": "Improving Kubernetes Cluster Efficiency and Performance"
+              },
+              "reasons": {
+                "viral": "Uses strong emotional language ('BLEEDING Money') and creates urgency with a direct call to action ('Fix This NOW!').",
+                "seo": "Includes primary keywords like 'Kubernetes Cluster Optimization,' 'Performance,' 'Costs,' and 'K8s Tutorial' for searchability.",
+                "professional": "Presents a clear, objective goal using professional and concise language."
+              },
+              "thumbnailTexts": [
+                "K8s Cost Leak",
+                "Optimize Now!",
+                "Stop Wasting $"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=9hYH1fW_c7w"
+            },
+            {
+              "original": "Register Now! ₹35 Lakh AI Hackathon Kicks Off Monday",
+              "variants": {
+                "viral": "Win ₹35 Lakh! AI Hackathon Starts Monday - Don't Miss Out!",
+                "seo": "AI Hackathon 2024: Register for ₹35 Lakh Prize (Starts Monday)",
+                "professional": "AI Hackathon Announcement: ₹35 Lakh Prize Pool - Registration Open"
+              },
+              "reasons": {
+                "viral": "Highlights the massive prize money and creates urgency/FOMO with 'Don't Miss Out!'",
+                "seo": "Clearly states the event type, year, prize money, and call to action for search engines.",
+                "professional": "Conveys the key information (event, prize, status) in a formal and clear manner."
+              },
+              "thumbnailTexts": [
+                "₹35 Lakh Prize",
+                "AI Hackathon",
+                "Register Now!"
+              ],
+              "scores": {
+                "viral": 90,
+                "seo": 70,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=oJ_ytDEOjr4"
+            },
+            {
+              "original": "GitHub Just Killed the Hardest Part of Building AI Agents",
+              "variants": {
+                "viral": "GitHub's Secret Weapon: AI Agents Just Got EASY (You Won't Believe It)",
+                "seo": "GitHub AI Agents Development: Simplifying Complex AI Builds",
+                "professional": "GitHub Enhances AI Agent Development Workflow"
+              },
+              "reasons": {
+                "viral": "Uses 'Secret Weapon' and 'EASY' to create intrigue and a sense of revolutionary change, adding a curiosity hook.",
+                "seo": "Focuses on 'GitHub AI Agents Development' and the benefit ('Simplifying Complex AI Builds') for search.",
+                "professional": "Clearly states GitHub's action and the impact on AI agent development in a professional tone."
+              },
+              "thumbnailTexts": [
+                "AI Agents Easy",
+                "GitHub Changed AI",
+                "No More Hard"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=yrsGjrAN_w8"
+            },
+            {
+              "original": "Stop Using ChatGPT for Research! This NEW Airtable AI is 10x Better",
+              "variants": {
+                "viral": "Ditch ChatGPT NOW! Airtable AI Will Change Your Research FOREVER",
+                "seo": "Airtable AI for Research: A Powerful ChatGPT Alternative",
+                "professional": "Exploring Airtable AI for Enhanced Research Capabilities"
+              },
+              "reasons": {
+                "viral": "Uses strong command ('Ditch ChatGPT NOW!'), an extreme claim ('Change Your Research FOREVER'), and comparison to create urgency and curiosity.",
+                "seo": "Clearly identifies 'Airtable AI for Research' and positions it as a 'ChatGPT Alternative' for search.",
+                "professional": "Presents the topic as an exploration of new capabilities, maintaining a neutral and professional tone."
+              },
+              "thumbnailTexts": [
+                "Airtable vs ChatGPT",
+                "AI Research Boost",
+                "Better Than ChatGPT"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 70,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "SEO",
+                "reason": "Best keyword coverage and long-term discoverability"
+              },
+              "url": "https://www.youtube.com/watch?v=Dg99rGaA__0"
+            },
+            {
+              "original": "Submit now to speak at our KubeCon Amsterdam co-located event",
+              "variants": {
+                "viral": "Speak at KubeCon Amsterdam! Your Chance to Shine (Limited Spots!)",
+                "seo": "KubeCon Amsterdam Co-Located Event: Call for Speakers 2024",
+                "professional": "Call for Proposals: KubeCon Amsterdam Co-Located Event"
+              },
+              "reasons": {
+                "viral": "Highlights the prestige of speaking at KubeCon and creates urgency/FOMO with 'Limited Spots!'",
+                "seo": "Includes key event details and 'Call for Speakers' for those actively searching for speaking opportunities.",
+                "professional": "Standard, clear, and professional language for a conference speaker invitation."
+              },
+              "thumbnailTexts": [
+                "Speak at KubeCon",
+                "Submit Your Talk",
+                "Amsterdam Event"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 70,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "SEO",
+                "reason": "Best keyword coverage and long-term discoverability"
+              },
+              "url": "https://www.youtube.com/watch?v=ZCexrDFS7Rk"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "N9FZ8-1072299:4507cf58-fce4-4817-a348-da78d9f9815e": {
+    "id": "4507cf58-fce4-4817-a348-da78d9f9815e",
+    "name": "SendEmail",
+    "parentTraceId": "N9FZ8-1072299",
+    "status": "completed",
+    "startTime": 1770391095900,
+    "endTime": 1770391097426,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391097113,
+        "level": "error",
+        "message": "SendEmail Error",
+        "metadata": {
+          "traceId": "N9FZ8-1072299",
+          "step": "SendEmail",
+          "message": "API key is invalid",
+          "level": "error",
+          "time": 1770391097110,
+          "msg": "SendEmail Error"
+        }
+      }
+    ]
+  },
+  "A11DB-1859211:9828bee2-9ac7-4efc-a74f-f6d2679a05d7": {
+    "id": "9828bee2-9ac7-4efc-a74f-f6d2679a05d7",
+    "name": "SubmitChannel",
+    "parentTraceId": "A11DB-1859211",
+    "status": "completed",
+    "startTime": 1770391859218,
+    "endTime": 1770391860420,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391860320,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "A11DB-1859211",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@kunalkushwaha",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770391860249,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391860324,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391860250_ru97cs1nl",
+          "key": {
+            "jobId": "job_1770391860250_ru97cs1nl",
+            "channel": "@kunalkushwaha",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:31:00.250Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391860335,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "A11DB-1859211",
+          "step": "SubmitChannel",
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "channel": "@kunalkushwaha",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770391860329,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391860339,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "channel": "@kunalkushwaha",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "A11DB-1859211:db104416-993a-44e2-bbfa-bec35e3f00ed": {
+    "id": "db104416-993a-44e2-bbfa-bec35e3f00ed",
+    "name": "ResolveChannel",
+    "parentTraceId": "A11DB-1859211",
+    "status": "completed",
+    "startTime": 1770391860346,
+    "endTime": 1770391861507,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391860952,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "A11DB-1859211",
+          "step": "ResolveChannel",
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "channel": "@kunalkushwaha",
+          "level": "info",
+          "time": 1770391860948,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391860955,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770391860250_ru97cs1nl"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391860958,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391860250_ru97cs1nl",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391861324,
+        "level": "error",
+        "message": "Channel not found",
+        "metadata": {
+          "traceId": "A11DB-1859211",
+          "step": "ResolveChannel",
+          "channel": "@kunalkushwaha",
+          "level": "error",
+          "time": 1770391861322,
+          "msg": "Channel not found"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391861330,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391860250_ru97cs1nl",
+          "key": {
+            "status": "failed",
+            "error": "Channel not found"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391861339,
+        "topic": "yt.channel.error",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "A11DB-1859211:785596b3-b66d-4036-81d1-54be3398966f": {
+    "id": "785596b3-b66d-4036-81d1-54be3398966f",
+    "name": "ErrorHandler",
+    "parentTraceId": "A11DB-1859211",
+    "status": "completed",
+    "startTime": 1770391861343,
+    "endTime": 1770391862693,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ErrorHandler"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391861840,
+        "level": "info",
+        "message": "Handling error notification",
+        "metadata": {
+          "traceId": "A11DB-1859211",
+          "step": "ErrorHandler",
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "email": "pruturaj3003@gmail.com",
+          "error": "Unknown error occurred",
+          "level": "info",
+          "time": 1770391861839,
+          "msg": "Handling error notification"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391862492,
+        "level": "info",
+        "message": "Error notification sent successfully",
+        "metadata": {
+          "traceId": "A11DB-1859211",
+          "step": "ErrorHandler",
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "emailId": "b4c44904-0ec5-41cd-8414-0f4e1cfe0e53",
+          "level": "info",
+          "time": 1770391862486,
+          "msg": "Error notification sent successfully"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391862503,
+        "topic": "yt.error.notified",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391860250_ru97cs1nl",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "b4c44904-0ec5-41cd-8414-0f4e1cfe0e53"
+        }
+      }
+    ]
+  },
+  "MND2Y-1888686:61b1718a-387b-4aac-9efd-eea73812d293": {
+    "id": "61b1718a-387b-4aac-9efd-eea73812d293",
+    "name": "SubmitChannel",
+    "parentTraceId": "MND2Y-1888686",
+    "status": "completed",
+    "startTime": 1770391888692,
+    "endTime": 1770391889621,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391889526,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "MND2Y-1888686",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770391889523,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391889529,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391889524_o776s6rbk",
+          "key": {
+            "jobId": "job_1770391889524_o776s6rbk",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:31:29.524Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391889534,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "MND2Y-1888686",
+          "step": "SubmitChannel",
+          "jobId": "job_1770391889524_o776s6rbk",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770391889531,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391889545,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391889524_o776s6rbk",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "MND2Y-1888686:71ebc695-aab0-4129-af56-aeaa1dd1ae8f": {
+    "id": "71ebc695-aab0-4129-af56-aeaa1dd1ae8f",
+    "name": "ResolveChannel",
+    "parentTraceId": "MND2Y-1888686",
+    "status": "completed",
+    "startTime": 1770391889552,
+    "endTime": 1770391890940,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391890278,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "MND2Y-1888686",
+          "step": "ResolveChannel",
+          "jobId": "job_1770391889524_o776s6rbk",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1770391890273,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391890290,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770391889524_o776s6rbk"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391890300,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391889524_o776s6rbk",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391890664,
+        "level": "error",
+        "message": "Channel not found",
+        "metadata": {
+          "traceId": "MND2Y-1888686",
+          "step": "ResolveChannel",
+          "channel": "@chaiaurcode",
+          "level": "error",
+          "time": 1770391890661,
+          "msg": "Channel not found"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770391890674,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770391889524_o776s6rbk",
+          "key": {
+            "status": "failed",
+            "error": "Channel not found"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391890692,
+        "topic": "yt.channel.error",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391889524_o776s6rbk",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "MND2Y-1888686:3442fbee-aacd-44c9-8b6a-3e4c45a2788b": {
+    "id": "3442fbee-aacd-44c9-8b6a-3e4c45a2788b",
+    "name": "ErrorHandler",
+    "parentTraceId": "MND2Y-1888686",
+    "status": "completed",
+    "startTime": 1770391890705,
+    "endTime": 1770391892670,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ErrorHandler"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770391891449,
+        "level": "info",
+        "message": "Handling error notification",
+        "metadata": {
+          "traceId": "MND2Y-1888686",
+          "step": "ErrorHandler",
+          "jobId": "job_1770391889524_o776s6rbk",
+          "email": "pruturaj3003@gmail.com",
+          "error": "Unknown error occurred",
+          "level": "info",
+          "time": 1770391891447,
+          "msg": "Handling error notification"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770391892458,
+        "level": "info",
+        "message": "Error notification sent successfully",
+        "metadata": {
+          "traceId": "MND2Y-1888686",
+          "step": "ErrorHandler",
+          "jobId": "job_1770391889524_o776s6rbk",
+          "emailId": "4b9b3fcb-3308-45e7-9c4d-65448939146e",
+          "level": "info",
+          "time": 1770391892457,
+          "msg": "Error notification sent successfully"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770391892474,
+        "topic": "yt.error.notified",
+        "success": true,
+        "data": {
+          "jobId": "job_1770391889524_o776s6rbk",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "4b9b3fcb-3308-45e7-9c4d-65448939146e"
+        }
+      }
+    ]
+  },
+  "ZMK5U-2441611:0d6619cc-1bbb-4922-bd1f-2f0f0ee7cf6b": {
+    "id": "0d6619cc-1bbb-4922-bd1f-2f0f0ee7cf6b",
+    "name": "SubmitChannel",
+    "parentTraceId": "ZMK5U-2441611",
+    "status": "completed",
+    "startTime": 1770392441621,
+    "endTime": 1770392442663,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770392442525,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "ZMK5U-2441611",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@kunalkushwaha",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770392442446,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770392442533,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770392442447_1lpzx8q97",
+          "key": {
+            "jobId": "job_1770392442447_1lpzx8q97",
+            "channel": "@kunalkushwaha",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:40:42.447Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770392442550,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "ZMK5U-2441611",
+          "step": "SubmitChannel",
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "channel": "@kunalkushwaha",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770392442543,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770392442565,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "channel": "@kunalkushwaha",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "ZMK5U-2441611:a3297086-926f-441d-bb37-c35ed0b45233": {
+    "id": "a3297086-926f-441d-bb37-c35ed0b45233",
+    "name": "ResolveChannel",
+    "parentTraceId": "ZMK5U-2441611",
+    "status": "completed",
+    "startTime": 1770392442576,
+    "endTime": 1770392444099,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770392443364,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "ZMK5U-2441611",
+          "step": "ResolveChannel",
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "channel": "@kunalkushwaha",
+          "level": "info",
+          "time": 1770392443358,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770392443378,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770392442447_1lpzx8q97"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770392443387,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770392442447_1lpzx8q97",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770392443819,
+        "level": "error",
+        "message": "Channel not found",
+        "metadata": {
+          "traceId": "ZMK5U-2441611",
+          "step": "ResolveChannel",
+          "channel": "@kunalkushwaha",
+          "level": "error",
+          "time": 1770392443818,
+          "msg": "Channel not found"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770392443832,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770392442447_1lpzx8q97",
+          "key": {
+            "status": "failed",
+            "error": "Channel not found"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770392443846,
+        "topic": "yt.channel.error",
+        "success": true,
+        "data": {
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "ZMK5U-2441611:4523402e-5ad4-46d0-a306-e8dc49161eec": {
+    "id": "4523402e-5ad4-46d0-a306-e8dc49161eec",
+    "name": "ErrorHandler",
+    "parentTraceId": "ZMK5U-2441611",
+    "status": "completed",
+    "startTime": 1770392443861,
+    "endTime": 1770392446170,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ErrorHandler"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770392444864,
+        "level": "info",
+        "message": "Handling error notification",
+        "metadata": {
+          "traceId": "ZMK5U-2441611",
+          "step": "ErrorHandler",
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "email": "pruturaj3003@gmail.com",
+          "error": "Unknown error occurred",
+          "level": "info",
+          "time": 1770392444862,
+          "msg": "Handling error notification"
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770392445950,
+        "level": "info",
+        "message": "Error notification sent successfully",
+        "metadata": {
+          "traceId": "ZMK5U-2441611",
+          "step": "ErrorHandler",
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "emailId": "5aac8bfb-f23d-424b-9bed-73edfda0fd64",
+          "level": "info",
+          "time": 1770392445948,
+          "msg": "Error notification sent successfully"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770392445957,
+        "topic": "yt.error.notified",
+        "success": true,
+        "data": {
+          "jobId": "job_1770392442447_1lpzx8q97",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "5aac8bfb-f23d-424b-9bed-73edfda0fd64"
+        }
+      }
+    ]
+  },
+  "HZHRA-3203092:930069aa-621e-44f8-9a03-b155c9dcdbd2": {
+    "id": "930069aa-621e-44f8-9a03-b155c9dcdbd2",
+    "name": "SubmitChannel",
+    "parentTraceId": "HZHRA-3203092",
+    "status": "completed",
+    "startTime": 1770393203101,
+    "endTime": 1770393204060,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770393203928,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "HZHRA-3203092",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770393203867,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393203944,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc",
+          "key": {
+            "jobId": "job_1770393203867_lyhx8yqqc",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:53:23.867Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770393203963,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "HZHRA-3203092",
+          "step": "SubmitChannel",
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770393203951,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393203970,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "HZHRA-3203092:ca16f9f7-35b5-4862-9bab-c243ba9c2767": {
+    "id": "ca16f9f7-35b5-4862-9bab-c243ba9c2767",
+    "name": "ResolveChannel",
+    "parentTraceId": "HZHRA-3203092",
+    "status": "completed",
+    "startTime": 1770393203983,
+    "endTime": 1770393205393,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770393204662,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "HZHRA-3203092",
+          "step": "ResolveChannel",
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1770393204659,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393204666,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393204669,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393205126,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "channelName": "Chai aur Code",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "HZHRA-3203092:aa2936a2-0c91-4ff0-8648-1a4a7192f13f": {
+    "id": "aa2936a2-0c91-4ff0-8648-1a4a7192f13f",
+    "name": "fetchVideos",
+    "parentTraceId": "HZHRA-3203092",
+    "status": "completed",
+    "startTime": 1770393205134,
+    "endTime": 1770393206866,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770393205886,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "HZHRA-3203092",
+          "step": "fetchVideos",
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "level": "info",
+          "time": 1770393205885,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393205893,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393205904,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770393206629,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "HZHRA-3203092",
+          "step": "fetchVideos",
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1770393206627,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393206638,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "FHCKOP25Z1A",
+                "title": "Books that I am going through these days",
+                "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A",
+                "publishedAt": "2026-02-04T15:33:30Z",
+                "thumbnail": "https://i.ytimg.com/vi/FHCKOP25Z1A/default.jpg"
+              },
+              {
+                "videoId": "EeCpMJ5chzE",
+                "title": "A chill live stream",
+                "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE",
+                "publishedAt": "2026-02-03T17:17:55Z",
+                "thumbnail": "https://i.ytimg.com/vi/EeCpMJ5chzE/default.jpg"
+              },
+              {
+                "videoId": "45VaOdYet3Y",
+                "title": "Open Claw reality test",
+                "url": "https://www.youtube.com/watch?v=45VaOdYet3Y",
+                "publishedAt": "2026-02-03T10:10:07Z",
+                "thumbnail": "https://i.ytimg.com/vi/45VaOdYet3Y/default.jpg"
+              },
+              {
+                "videoId": "RXskasE9Db4",
+                "title": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+                "url": "https://www.youtube.com/watch?v=RXskasE9Db4",
+                "publishedAt": "2026-01-28T13:30:06Z",
+                "thumbnail": "https://i.ytimg.com/vi/RXskasE9Db4/default.jpg"
+              },
+              {
+                "videoId": "uUgLw5LVTAg",
+                "title": "23. Greedy Algorithm",
+                "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg",
+                "publishedAt": "2026-01-27T13:30:06Z",
+                "thumbnail": "https://i.ytimg.com/vi/uUgLw5LVTAg/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393206650,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channelName": "Chai aur Code",
+          "videos": [
+            {
+              "videoId": "FHCKOP25Z1A",
+              "title": "Books that I am going through these days",
+              "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A",
+              "publishedAt": "2026-02-04T15:33:30Z",
+              "thumbnail": "https://i.ytimg.com/vi/FHCKOP25Z1A/default.jpg"
+            },
+            {
+              "videoId": "EeCpMJ5chzE",
+              "title": "A chill live stream",
+              "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE",
+              "publishedAt": "2026-02-03T17:17:55Z",
+              "thumbnail": "https://i.ytimg.com/vi/EeCpMJ5chzE/default.jpg"
+            },
+            {
+              "videoId": "45VaOdYet3Y",
+              "title": "Open Claw reality test",
+              "url": "https://www.youtube.com/watch?v=45VaOdYet3Y",
+              "publishedAt": "2026-02-03T10:10:07Z",
+              "thumbnail": "https://i.ytimg.com/vi/45VaOdYet3Y/default.jpg"
+            },
+            {
+              "videoId": "RXskasE9Db4",
+              "title": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+              "url": "https://www.youtube.com/watch?v=RXskasE9Db4",
+              "publishedAt": "2026-01-28T13:30:06Z",
+              "thumbnail": "https://i.ytimg.com/vi/RXskasE9Db4/default.jpg"
+            },
+            {
+              "videoId": "uUgLw5LVTAg",
+              "title": "23. Greedy Algorithm",
+              "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg",
+              "publishedAt": "2026-01-27T13:30:06Z",
+              "thumbnail": "https://i.ytimg.com/vi/uUgLw5LVTAg/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "HZHRA-3203092:e63a904b-45ac-4fff-908a-0832b8764690": {
+    "id": "e63a904b-45ac-4fff-908a-0832b8764690",
+    "name": "GenerateTitles",
+    "parentTraceId": "HZHRA-3203092",
+    "status": "completed",
+    "startTime": 1770393206663,
+    "endTime": 1770393219445,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1770393207344,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393207349,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393219209,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393203867_lyhx8yqqc",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Books that I am going through these days",
+                "variants": {
+                  "viral": "These Books Will Change Your Life (Seriously)",
+                  "seo": "Best Books I'm Reading Now | Book Recommendations & Reviews",
+                  "professional": "My Current Book Selections & Insights"
+                },
+                "reasons": {
+                  "viral": "Evokes strong curiosity and promises a significant personal impact, creating an urgent desire to click.",
+                  "seo": "Includes relevant keywords like 'best books,' 'reading now,' and 'recommendations' for discoverability.",
+                  "professional": "Presents a clear, descriptive, and inviting title suitable for a reflective content creator."
+                },
+                "thumbnailTexts": [
+                  "My Top Books",
+                  "What I'm Reading",
+                  "Must-Read Now!"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A"
+              },
+              {
+                "original": "A chill live stream",
+                "variants": {
+                  "viral": "Come Chill with Me (Live & Unwind)",
+                  "seo": "Relaxing Live Stream | Chill & Study with Me | Background Noise",
+                  "professional": "Community Hangout: Relaxing Live Session"
+                },
+                "reasons": {
+                  "viral": "Offers an emotional benefit of relaxation and direct invitation, creating an appealing escape for viewers.",
+                  "seo": "Incorporates 'live stream,' 'relaxing,' 'chill,' and related activities for broader search visibility.",
+                  "professional": "Clearly describes the content as a relaxed, interactive live event, maintaining a friendly tone."
+                },
+                "thumbnailTexts": [
+                  "Chill Out LIVE",
+                  "Relax With Me",
+                  "Live Hangout"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE"
+              },
+              {
+                "original": "Open Claw reality test",
+                "variants": {
+                  "viral": "Does 'Open Claw' ACTUALLY Work? (Reality Check)",
+                  "seo": "Open Claw Review & Test | Honest User Experience",
+                  "professional": "Open Claw Device: Performance Evaluation"
+                },
+                "reasons": {
+                  "viral": "Poses a direct question to build curiosity and implies a conclusive, potentially surprising, outcome.",
+                  "seo": "Uses 'review,' 'test,' and 'user experience' to target searchers looking for product evaluations.",
+                  "professional": "Provides a straightforward, objective, and brand-safe description of a product or feature assessment."
+                },
+                "thumbnailTexts": [
+                  "Open Claw Tested",
+                  "Does It Work?",
+                  "Reality Check"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=45VaOdYet3Y"
+              },
+              {
+                "original": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+                "variants": {
+                  "viral": "CRACK Fractional Knapsack: Greedy Algorithm Made Easy (Part 2)",
+                  "seo": "Fractional Knapsack Explained | Greedy Algorithm Tutorial (Part 2)",
+                  "professional": "Fractional Knapsack Problem: Greedy Algorithm Approach (Part 2)"
+                },
+                "reasons": {
+                  "viral": "Uses strong action verbs ('CRACK', 'Made Easy') and promises simplified learning for a complex topic.",
+                  "seo": "Includes specific algorithm names and 'explained'/'tutorial' for educational content searchability.",
+                  "professional": "Offers a clear, academic, and sequential title suitable for a programming tutorial series."
+                },
+                "thumbnailTexts": [
+                  "Fractional Knapsack",
+                  "Greedy Part 2",
+                  "Algorithm Solved"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=RXskasE9Db4"
+              },
+              {
+                "original": "23. Greedy Algorithm",
+                "variants": {
+                  "viral": "MASTER the Greedy Algorithm: Essential Concepts You NEED to Know",
+                  "seo": "Greedy Algorithm Tutorial | DSA Explained | Data Structures Algorithms",
+                  "professional": "Introduction to Greedy Algorithms: Core Principles"
+                },
+                "reasons": {
+                  "viral": "Promises mastery and highlights essential knowledge, creating urgency and a desire for comprehensive understanding.",
+                  "seo": "Uses 'tutorial,' 'explained,' and relevant acronyms (DSA) for broad search engine optimization in education.",
+                  "professional": "Provides a clean, academic, and introductory title for explaining foundational computer science concepts."
+                },
+                "thumbnailTexts": [
+                  "Greedy Algorithm",
+                  "DSA Explained",
+                  "Understand NOW"
+                ],
+                "scores": {
+                  "viral": 50,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "PROFESSIONAL",
+                  "reason": "Most brand-safe and professional tone"
+                },
+                "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393219225,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "channelName": "Chai aur Code",
+          "improvedTitles": [
+            {
+              "original": "Books that I am going through these days",
+              "variants": {
+                "viral": "These Books Will Change Your Life (Seriously)",
+                "seo": "Best Books I'm Reading Now | Book Recommendations & Reviews",
+                "professional": "My Current Book Selections & Insights"
+              },
+              "reasons": {
+                "viral": "Evokes strong curiosity and promises a significant personal impact, creating an urgent desire to click.",
+                "seo": "Includes relevant keywords like 'best books,' 'reading now,' and 'recommendations' for discoverability.",
+                "professional": "Presents a clear, descriptive, and inviting title suitable for a reflective content creator."
+              },
+              "thumbnailTexts": [
+                "My Top Books",
+                "What I'm Reading",
+                "Must-Read Now!"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=FHCKOP25Z1A"
+            },
+            {
+              "original": "A chill live stream",
+              "variants": {
+                "viral": "Come Chill with Me (Live & Unwind)",
+                "seo": "Relaxing Live Stream | Chill & Study with Me | Background Noise",
+                "professional": "Community Hangout: Relaxing Live Session"
+              },
+              "reasons": {
+                "viral": "Offers an emotional benefit of relaxation and direct invitation, creating an appealing escape for viewers.",
+                "seo": "Incorporates 'live stream,' 'relaxing,' 'chill,' and related activities for broader search visibility.",
+                "professional": "Clearly describes the content as a relaxed, interactive live event, maintaining a friendly tone."
+              },
+              "thumbnailTexts": [
+                "Chill Out LIVE",
+                "Relax With Me",
+                "Live Hangout"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=EeCpMJ5chzE"
+            },
+            {
+              "original": "Open Claw reality test",
+              "variants": {
+                "viral": "Does 'Open Claw' ACTUALLY Work? (Reality Check)",
+                "seo": "Open Claw Review & Test | Honest User Experience",
+                "professional": "Open Claw Device: Performance Evaluation"
+              },
+              "reasons": {
+                "viral": "Poses a direct question to build curiosity and implies a conclusive, potentially surprising, outcome.",
+                "seo": "Uses 'review,' 'test,' and 'user experience' to target searchers looking for product evaluations.",
+                "professional": "Provides a straightforward, objective, and brand-safe description of a product or feature assessment."
+              },
+              "thumbnailTexts": [
+                "Open Claw Tested",
+                "Does It Work?",
+                "Reality Check"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=45VaOdYet3Y"
+            },
+            {
+              "original": "24. Fractional Knapsack , Greedy Algorithm Part   2",
+              "variants": {
+                "viral": "CRACK Fractional Knapsack: Greedy Algorithm Made Easy (Part 2)",
+                "seo": "Fractional Knapsack Explained | Greedy Algorithm Tutorial (Part 2)",
+                "professional": "Fractional Knapsack Problem: Greedy Algorithm Approach (Part 2)"
+              },
+              "reasons": {
+                "viral": "Uses strong action verbs ('CRACK', 'Made Easy') and promises simplified learning for a complex topic.",
+                "seo": "Includes specific algorithm names and 'explained'/'tutorial' for educational content searchability.",
+                "professional": "Offers a clear, academic, and sequential title suitable for a programming tutorial series."
+              },
+              "thumbnailTexts": [
+                "Fractional Knapsack",
+                "Greedy Part 2",
+                "Algorithm Solved"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=RXskasE9Db4"
+            },
+            {
+              "original": "23. Greedy Algorithm",
+              "variants": {
+                "viral": "MASTER the Greedy Algorithm: Essential Concepts You NEED to Know",
+                "seo": "Greedy Algorithm Tutorial | DSA Explained | Data Structures Algorithms",
+                "professional": "Introduction to Greedy Algorithms: Core Principles"
+              },
+              "reasons": {
+                "viral": "Promises mastery and highlights essential knowledge, creating urgency and a desire for comprehensive understanding.",
+                "seo": "Uses 'tutorial,' 'explained,' and relevant acronyms (DSA) for broad search engine optimization in education.",
+                "professional": "Provides a clean, academic, and introductory title for explaining foundational computer science concepts."
+              },
+              "thumbnailTexts": [
+                "Greedy Algorithm",
+                "DSA Explained",
+                "Understand NOW"
+              ],
+              "scores": {
+                "viral": 50,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "PROFESSIONAL",
+                "reason": "Most brand-safe and professional tone"
+              },
+              "url": "https://www.youtube.com/watch?v=uUgLw5LVTAg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "HZHRA-3203092:87fe7109-3f81-4d58-b29b-9b122a7468c8": {
+    "id": "87fe7109-3f81-4d58-b29b-9b122a7468c8",
+    "name": "SendEmail",
+    "parentTraceId": "HZHRA-3203092",
+    "status": "completed",
+    "startTime": 1770393219236,
+    "endTime": 1770393221812,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1770393221486,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393203867_lyhx8yqqc",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "3775d396-4baf-4b40-bd7b-fa64b3ed61b9"
+        }
+      }
+    ]
+  },
+  "SP78S-3255695:36a18c77-20ba-4b78-be15-5fdda08a7fa5": {
+    "id": "36a18c77-20ba-4b78-be15-5fdda08a7fa5",
+    "name": "SubmitChannel",
+    "parentTraceId": "SP78S-3255695",
+    "status": "completed",
+    "startTime": 1770393255699,
+    "endTime": 1770393256694,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770393256560,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "SP78S-3255695",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@mrbeast",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1770393256557,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393256570,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs",
+          "key": {
+            "jobId": "job_1770393256559_zkciz27gs",
+            "channel": "@mrbeast",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-02-06T15:54:16.559Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770393256588,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "SP78S-3255695",
+          "step": "SubmitChannel",
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channel": "@mrbeast",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1770393256573,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393256595,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channel": "@mrbeast",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "SP78S-3255695:4a90ea7e-8a33-45ae-b3f6-8466fd613e50": {
+    "id": "4a90ea7e-8a33-45ae-b3f6-8466fd613e50",
+    "name": "ResolveChannel",
+    "parentTraceId": "SP78S-3255695",
+    "status": "completed",
+    "startTime": 1770393256605,
+    "endTime": 1770393258163,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770393257443,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "SP78S-3255695",
+          "step": "ResolveChannel",
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channel": "@mrbeast",
+          "level": "info",
+          "time": 1770393257441,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393257456,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393257465,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393257824,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          "channelName": "MrBeast",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "SP78S-3255695:0a443861-49a9-4e54-8f74-f320f7946441": {
+    "id": "0a443861-49a9-4e54-8f74-f320f7946441",
+    "name": "fetchVideos",
+    "parentTraceId": "SP78S-3255695",
+    "status": "completed",
+    "startTime": 1770393257839,
+    "endTime": 1770393259423,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1770393258522,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "SP78S-3255695",
+          "step": "fetchVideos",
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channelId": "UCX6OQ3DkcsbYNE6H8uQQuVA",
+          "level": "info",
+          "time": 1770393258521,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393258533,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393258548,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1770393259237,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "SP78S-3255695",
+          "step": "fetchVideos",
+          "jobId": "job_1770393256559_zkciz27gs",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1770393259236,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393259248,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "_sBRk9ADpK8",
+                "title": "Flip a Coin, Win $30,000",
+                "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8",
+                "publishedAt": "2026-01-27T17:00:03Z",
+                "thumbnail": "https://i.ytimg.com/vi/_sBRk9ADpK8/default.jpg"
+              },
+              {
+                "videoId": "ZFoNBxpXen4",
+                "title": "Survive 30 Days Trapped In The Sky, Win $250,000",
+                "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4",
+                "publishedAt": "2025-12-20T17:00:01Z",
+                "thumbnail": "https://i.ytimg.com/vi/ZFoNBxpXen4/default.jpg"
+              },
+              {
+                "videoId": "HISfrcjiNPM",
+                "title": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+                "url": "https://www.youtube.com/watch?v=HISfrcjiNPM",
+                "publishedAt": "2025-11-21T19:40:01Z",
+                "thumbnail": "https://i.ytimg.com/vi/HISfrcjiNPM/default.jpg"
+              },
+              {
+                "videoId": "26QQE7EsnLA",
+                "title": "MrBeast Lab Disaster!",
+                "url": "https://www.youtube.com/watch?v=26QQE7EsnLA",
+                "publishedAt": "2025-11-03T17:00:01Z",
+                "thumbnail": "https://i.ytimg.com/vi/26QQE7EsnLA/default.jpg"
+              },
+              {
+                "videoId": "JgJrQnDIRgg",
+                "title": "First to Answer the Phone, Wins $10,000",
+                "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg",
+                "publishedAt": "2025-10-17T16:00:00Z",
+                "thumbnail": "https://i.ytimg.com/vi/JgJrQnDIRgg/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393259259,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channelName": "MrBeast",
+          "videos": [
+            {
+              "videoId": "_sBRk9ADpK8",
+              "title": "Flip a Coin, Win $30,000",
+              "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8",
+              "publishedAt": "2026-01-27T17:00:03Z",
+              "thumbnail": "https://i.ytimg.com/vi/_sBRk9ADpK8/default.jpg"
+            },
+            {
+              "videoId": "ZFoNBxpXen4",
+              "title": "Survive 30 Days Trapped In The Sky, Win $250,000",
+              "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4",
+              "publishedAt": "2025-12-20T17:00:01Z",
+              "thumbnail": "https://i.ytimg.com/vi/ZFoNBxpXen4/default.jpg"
+            },
+            {
+              "videoId": "HISfrcjiNPM",
+              "title": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+              "url": "https://www.youtube.com/watch?v=HISfrcjiNPM",
+              "publishedAt": "2025-11-21T19:40:01Z",
+              "thumbnail": "https://i.ytimg.com/vi/HISfrcjiNPM/default.jpg"
+            },
+            {
+              "videoId": "26QQE7EsnLA",
+              "title": "MrBeast Lab Disaster!",
+              "url": "https://www.youtube.com/watch?v=26QQE7EsnLA",
+              "publishedAt": "2025-11-03T17:00:01Z",
+              "thumbnail": "https://i.ytimg.com/vi/26QQE7EsnLA/default.jpg"
+            },
+            {
+              "videoId": "JgJrQnDIRgg",
+              "title": "First to Answer the Phone, Wins $10,000",
+              "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg",
+              "publishedAt": "2025-10-17T16:00:00Z",
+              "thumbnail": "https://i.ytimg.com/vi/JgJrQnDIRgg/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "SP78S-3255695:7277ac43-f94d-476a-8d33-f61320c4b754": {
+    "id": "7277ac43-f94d-476a-8d33-f61320c4b754",
+    "name": "GenerateTitles",
+    "parentTraceId": "SP78S-3255695",
+    "status": "completed",
+    "startTime": 1770393259270,
+    "endTime": 1770393274176,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1770393259739,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393259745,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1770393273902,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1770393256559_zkciz27gs",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "Flip a Coin, Win $30,000",
+                "variants": {
+                  "viral": "This Coin Flip Could Change Your Life (It Changed Mine!)",
+                  "seo": "High Stakes Coin Flip Challenge: Win $30,000!",
+                  "professional": "The Ultimate Coin Toss Challenge: $30,000 Prize"
+                },
+                "reasons": {
+                  "viral": "Creates immediate personal stakes and implies a massive, life-altering outcome, driving curiosity.",
+                  "seo": "Clearly states the core action, prize, and format, making it searchable for challenge and money keywords.",
+                  "professional": "Sounds organized and emphasizes the challenge aspect while clearly stating the generous prize."
+                },
+                "thumbnailTexts": [
+                  "$30,000 UP FOR GRABS!",
+                  "HEADS OR TAILS?",
+                  "ONE FLIP!"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 80,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "SEO",
+                  "reason": "Best keyword coverage and long-term discoverability"
+                },
+                "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8"
+              },
+              {
+                "original": "Survive 30 Days Trapped In The Sky, Win $250,000",
+                "variants": {
+                  "viral": "I Spent 30 Days Trapped in the Sky (For $250,000!)",
+                  "seo": "30-Day Sky Survival Challenge: Win $250,000",
+                  "professional": "The $250,000 Sky Survival Endurance Event"
+                },
+                "reasons": {
+                  "viral": "Creates a direct, personal narrative of an extreme, high-reward challenge, emphasizing both struggle and payoff.",
+                  "seo": "Uses precise keywords for the duration, location, challenge type, and prize, optimizing for search engines.",
+                  "professional": "Highlights the scale and nature of the challenge in a sophisticated, brand-safe manner."
+                },
+                "thumbnailTexts": [
+                  "30 DAYS ALOFT",
+                  "TRAPPED IN SKY",
+                  "$250K ON LINE"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 70,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4"
+              },
+              {
+                "original": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+                "variants": {
+                  "viral": "The Most Heartwarming Surprise: 50 Kids Go To Disneyland!",
+                  "seo": "Disneyland Surprise for 50 Kids: Charity Event",
+                  "professional": "Granting Wishes: 50 Children Experience Disneyland"
+                },
+                "reasons": {
+                  "viral": "Emphasizes the emotional impact and the scale of the heartwarming surprise, making viewers want to see the joy.",
+                  "seo": "Focuses on the destination, number of participants, and charitable nature, making it searchable for related events.",
+                  "professional": "Uses formal, positive language to describe the philanthropic act and the children's experience."
+                },
+                "thumbnailTexts": [
+                  "DREAMS COME TRUE",
+                  "DISNEYLAND SURPRISE!",
+                  "50 HAPPY KIDS"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 70,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=HISfrcjiNPM"
+              },
+              {
+                "original": "MrBeast Lab Disaster!",
+                "variants": {
+                  "viral": "MrBeast's Lab Went COMPLETELY WRONG!",
+                  "seo": "MrBeast Lab Experiment Disaster: Challenge Fail",
+                  "professional": "MrBeast Laboratory Incident Report"
+                },
+                "reasons": {
+                  "viral": "Builds immediate suspense and implies a major, unpredictable event involving a popular creator, driving clicks.",
+                  "seo": "Combines the creator's name with keywords related to the location, event type, and negative outcome for search.",
+                  "professional": "Presents the event with a serious, news-like tone, suitable for a professional and objective brand."
+                },
+                "thumbnailTexts": [
+                  "LAB GONE WRONG",
+                  "MRBEAST EXPLOSION",
+                  "UNEXPECTED FAIL"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=26QQE7EsnLA"
+              },
+              {
+                "original": "First to Answer the Phone, Wins $10,000",
+                "variants": {
+                  "viral": "I Called Strangers and Gave Them $10,000!",
+                  "seo": "Phone Call Challenge: First Answer Wins $10,000",
+                  "professional": "The $10,000 Instant Prize Phone Game"
+                },
+                "reasons": {
+                  "viral": "Highlights the direct action, the surprise element for participants, and the high reward, creating intrigue.",
+                  "seo": "Clearly states the challenge type, prize, and winning condition, making it easily discoverable via search.",
+                  "professional": "Describes the event clearly and professionally, emphasizing the game aspect and the instant reward."
+                },
+                "thumbnailTexts": [
+                  "PHONE RINGS!",
+                  "ANSWER FOR $10K",
+                  "INSTANT WINNER"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 70,
+                  "professional": 70
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1770393273923,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393256559_zkciz27gs",
+          "channelName": "MrBeast",
+          "improvedTitles": [
+            {
+              "original": "Flip a Coin, Win $30,000",
+              "variants": {
+                "viral": "This Coin Flip Could Change Your Life (It Changed Mine!)",
+                "seo": "High Stakes Coin Flip Challenge: Win $30,000!",
+                "professional": "The Ultimate Coin Toss Challenge: $30,000 Prize"
+              },
+              "reasons": {
+                "viral": "Creates immediate personal stakes and implies a massive, life-altering outcome, driving curiosity.",
+                "seo": "Clearly states the core action, prize, and format, making it searchable for challenge and money keywords.",
+                "professional": "Sounds organized and emphasizes the challenge aspect while clearly stating the generous prize."
+              },
+              "thumbnailTexts": [
+                "$30,000 UP FOR GRABS!",
+                "HEADS OR TAILS?",
+                "ONE FLIP!"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 80,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "SEO",
+                "reason": "Best keyword coverage and long-term discoverability"
+              },
+              "url": "https://www.youtube.com/watch?v=_sBRk9ADpK8"
+            },
+            {
+              "original": "Survive 30 Days Trapped In The Sky, Win $250,000",
+              "variants": {
+                "viral": "I Spent 30 Days Trapped in the Sky (For $250,000!)",
+                "seo": "30-Day Sky Survival Challenge: Win $250,000",
+                "professional": "The $250,000 Sky Survival Endurance Event"
+              },
+              "reasons": {
+                "viral": "Creates a direct, personal narrative of an extreme, high-reward challenge, emphasizing both struggle and payoff.",
+                "seo": "Uses precise keywords for the duration, location, challenge type, and prize, optimizing for search engines.",
+                "professional": "Highlights the scale and nature of the challenge in a sophisticated, brand-safe manner."
+              },
+              "thumbnailTexts": [
+                "30 DAYS ALOFT",
+                "TRAPPED IN SKY",
+                "$250K ON LINE"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 70,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=ZFoNBxpXen4"
+            },
+            {
+              "original": "I Surprised 50 Make-A-Wish Kids With Disneyland",
+              "variants": {
+                "viral": "The Most Heartwarming Surprise: 50 Kids Go To Disneyland!",
+                "seo": "Disneyland Surprise for 50 Kids: Charity Event",
+                "professional": "Granting Wishes: 50 Children Experience Disneyland"
+              },
+              "reasons": {
+                "viral": "Emphasizes the emotional impact and the scale of the heartwarming surprise, making viewers want to see the joy.",
+                "seo": "Focuses on the destination, number of participants, and charitable nature, making it searchable for related events.",
+                "professional": "Uses formal, positive language to describe the philanthropic act and the children's experience."
+              },
+              "thumbnailTexts": [
+                "DREAMS COME TRUE",
+                "DISNEYLAND SURPRISE!",
+                "50 HAPPY KIDS"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 70,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=HISfrcjiNPM"
+            },
+            {
+              "original": "MrBeast Lab Disaster!",
+              "variants": {
+                "viral": "MrBeast's Lab Went COMPLETELY WRONG!",
+                "seo": "MrBeast Lab Experiment Disaster: Challenge Fail",
+                "professional": "MrBeast Laboratory Incident Report"
+              },
+              "reasons": {
+                "viral": "Builds immediate suspense and implies a major, unpredictable event involving a popular creator, driving clicks.",
+                "seo": "Combines the creator's name with keywords related to the location, event type, and negative outcome for search.",
+                "professional": "Presents the event with a serious, news-like tone, suitable for a professional and objective brand."
+              },
+              "thumbnailTexts": [
+                "LAB GONE WRONG",
+                "MRBEAST EXPLOSION",
+                "UNEXPECTED FAIL"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=26QQE7EsnLA"
+            },
+            {
+              "original": "First to Answer the Phone, Wins $10,000",
+              "variants": {
+                "viral": "I Called Strangers and Gave Them $10,000!",
+                "seo": "Phone Call Challenge: First Answer Wins $10,000",
+                "professional": "The $10,000 Instant Prize Phone Game"
+              },
+              "reasons": {
+                "viral": "Highlights the direct action, the surprise element for participants, and the high reward, creating intrigue.",
+                "seo": "Clearly states the challenge type, prize, and winning condition, making it easily discoverable via search.",
+                "professional": "Describes the event clearly and professionally, emphasizing the game aspect and the instant reward."
+              },
+              "thumbnailTexts": [
+                "PHONE RINGS!",
+                "ANSWER FOR $10K",
+                "INSTANT WINNER"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 70,
+                "professional": 70
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=JgJrQnDIRgg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "SP78S-3255695:01fb46c1-af4e-412c-8742-43aa51153518": {
+    "id": "01fb46c1-af4e-412c-8742-43aa51153518",
+    "name": "SendEmail",
+    "parentTraceId": "SP78S-3255695",
+    "status": "completed",
+    "startTime": 1770393273938,
+    "endTime": 1770393275442,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1770393275229,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1770393256559_zkciz27gs",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "41cf8bee-1ea9-4084-a197-e5d5e94f371c"
         }
       }
     ]
