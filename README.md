@@ -5,29 +5,35 @@
 Turn raw YouTube titles into **viral, SEO-optimized, and brand-safe recommendations**.  
 It generates multiple title variations, compares their potential performance, and uses **AI to recommend the strongest title to publish**, along with a short explanation.
 
----
+----
 
-## Execution Walkthrough (Screen Recordings)
+## Visual Walkthrough
 
-**Full-quality screen recordings are hosted via GitHub Releases**
+### User Interface (Frontend)
+![Frontend Interface](screenrecordings/yt_viral_frontend.png)
 
----
-
-### Motia Workflow Execution (Workbench)
-![Motia Workflow](screenrecordings/motia_workbench.gif)  
-Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/motia_workbench.mp4
+*Simple form where users submit YouTube channels and receive AI-powered title suggestions*
 
 ---
 
-### Motia CLI Logs (Runtime)
-![Motia CLI Logs](screenrecordings/terminal_logs.gif)  
-Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/terminal_logs.mp4
+### Motia Workbench (Event Flow Visualization)
+![Motia Workflow](screenrecordings/motia_workbench_image.png)
+
+*Real-time event-driven workflow execution in Motia's visual debugger*
 
 ---
 
-### Final Email Output & AI Recommendation
-![Email Output](screenrecordings/email_system.gif)  
-Full video: https://github.com/Ruturaj-007/viral-youtube-title-processor/releases/download/v1-demo/email_system.mp4
+### Terminal Logs (Runtime Execution)
+![CLI Logs](screenrecordings/motia_cli_logss.png)
+
+*Step-by-step processing logs showing the entire pipeline in action*
+
+---
+
+### Email Delivery (Final Output)
+![Email Result](screenrecordings/email_systemm.png)
+
+*AI-generated viral, SEO, and professional title variants delivered via email*
 
 ---
 
@@ -137,7 +143,7 @@ The frontend is located inside the `public` folder.
 
 ```bash
 cd public
-npx http-server -p 3000
+npx http-server -p 3005
 ```
 
 ### Backend (Motia Workbench)
