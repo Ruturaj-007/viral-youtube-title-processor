@@ -1,563 +1,4 @@
 {
-  "T576A-1230793:ce8b3248-08a3-48ce-923b-c836b26776fe": {
-    "id": "ce8b3248-08a3-48ce-923b-c836b26776fe",
-    "name": "SubmitChannel",
-    "parentTraceId": "T576A-1230793",
-    "status": "completed",
-    "startTime": 1764271230796,
-    "endTime": 1764271231815,
-    "entryPoint": {
-      "type": "api",
-      "stepName": "SubmitChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764271231700,
-        "level": "info",
-        "message": "Received submition request",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "SubmitChannel",
-          "body": {
-            "channel": "@CodeWithHarry",
-            "email": "pruturaj3003@gmail.com"
-          },
-          "level": "info",
-          "time": 1764271231698,
-          "msg": "Received submition request"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271231705,
-        "operation": "set",
-        "data": {
-          "traceId": "job: job_1764271231699_fno6s93y4",
-          "key": {
-            "jobId": "job_1764271231699_fno6s93y4",
-            "channel": "@CodeWithHarry",
-            "email": "pruturaj3003@gmail.com",
-            "status": "queued",
-            "createdAt": "2025-11-27T19:20:31.699Z"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764271231711,
-        "level": "info",
-        "message": "Job created",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "SubmitChannel",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channel": "@CodeWithHarry",
-          "email": "pruturaj3003@gmail.com",
-          "level": "info",
-          "time": 1764271231708,
-          "msg": "Job created"
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764271231713,
-        "topic": "yt.submit",
-        "success": true,
-        "data": {
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channel": "@CodeWithHarry",
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "T576A-1230793:2cc4d66a-c942-41ac-a8ec-66d984b71f3d": {
-    "id": "2cc4d66a-c942-41ac-a8ec-66d984b71f3d",
-    "name": "ResolveChannel",
-    "parentTraceId": "T576A-1230793",
-    "status": "completed",
-    "startTime": 1764271231715,
-    "endTime": 1764271233618,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "ResolveChannel"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764271232668,
-        "level": "info",
-        "message": "Resolving youtube channel",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "ResolveChannel",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channel": "@CodeWithHarry",
-          "level": "info",
-          "time": 1764271232665,
-          "msg": "Resolving youtube channel"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271232670,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271232674,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "resolving channel"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764271233181,
-        "topic": "yt.channel.resolved",
-        "success": true,
-        "data": {
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channelId": "UCeVMnSShP_Iviwkknt83cww",
-          "channelName": "CodeWithHarry",
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "T576A-1230793:dafaf81b-aebc-40d5-8597-c914484123f1": {
-    "id": "dafaf81b-aebc-40d5-8597-c914484123f1",
-    "name": "fetchVideos",
-    "parentTraceId": "T576A-1230793",
-    "status": "completed",
-    "startTime": 1764271233183,
-    "endTime": 1764271235746,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "fetchVideos"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764271234280,
-        "level": "info",
-        "message": "Fetching youtube videos",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "fetchVideos",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channelId": "UCeVMnSShP_Iviwkknt83cww",
-          "level": "info",
-          "time": 1764271234276,
-          "msg": "Fetching youtube videos"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271234281,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271234283,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "fetching videos"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764271235154,
-        "level": "info",
-        "message": "Videos fetched successfully",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "fetchVideos",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764271235135,
-          "msg": "Videos fetched successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271235156,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "videos fetched",
-            "videos": [
-              {
-                "videoId": "ZlAs79nW4P4",
-                "title": "ChatGPT ❌ This Agentic AI ✅ (Game Changer) | Manus 1.5",
-                "url": "https://www.youtube.com/watch?v=ZlAs79nW4P4",
-                "publishedAt": "2025-11-24T06:10:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/ZlAs79nW4P4/default.jpg"
-              },
-              {
-                "videoId": "EY4eqjdrEew",
-                "title": "Google Antigravity is a....",
-                "url": "https://www.youtube.com/watch?v=EY4eqjdrEew",
-                "publishedAt": "2025-11-21T16:51:14Z",
-                "thumbnail": "https://i.ytimg.com/vi/EY4eqjdrEew/default.jpg"
-              },
-              {
-                "videoId": "CBYfXlP7ppQ",
-                "title": "5 Ways to use AI in Coding (Copy these)!",
-                "url": "https://www.youtube.com/watch?v=CBYfXlP7ppQ",
-                "publishedAt": "2025-11-19T05:30:05Z",
-                "thumbnail": "https://i.ytimg.com/vi/CBYfXlP7ppQ/default.jpg"
-              },
-              {
-                "videoId": "dpz80_o5kgA",
-                "title": "I Tested Trae SOLO: The New AI Coding Tool Everyone Is Talking About 🔥",
-                "url": "https://www.youtube.com/watch?v=dpz80_o5kgA",
-                "publishedAt": "2025-11-14T11:30:23Z",
-                "thumbnail": "https://i.ytimg.com/vi/dpz80_o5kgA/default.jpg"
-              },
-              {
-                "videoId": "M1dKYQ7GsTg",
-                "title": "MongoDB Crash Course 2026 (with Handbook)",
-                "url": "https://www.youtube.com/watch?v=M1dKYQ7GsTg",
-                "publishedAt": "2025-11-05T15:05:12Z",
-                "thumbnail": "https://i.ytimg.com/vi/M1dKYQ7GsTg/default.jpg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764271235159,
-        "topic": "yt.videos.fetched",
-        "success": true,
-        "data": {
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channelName": "CodeWithHarry",
-          "videos": [
-            {
-              "videoId": "ZlAs79nW4P4",
-              "title": "ChatGPT ❌ This Agentic AI ✅ (Game Changer) | Manus 1.5",
-              "url": "https://www.youtube.com/watch?v=ZlAs79nW4P4",
-              "publishedAt": "2025-11-24T06:10:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/ZlAs79nW4P4/default.jpg"
-            },
-            {
-              "videoId": "EY4eqjdrEew",
-              "title": "Google Antigravity is a....",
-              "url": "https://www.youtube.com/watch?v=EY4eqjdrEew",
-              "publishedAt": "2025-11-21T16:51:14Z",
-              "thumbnail": "https://i.ytimg.com/vi/EY4eqjdrEew/default.jpg"
-            },
-            {
-              "videoId": "CBYfXlP7ppQ",
-              "title": "5 Ways to use AI in Coding (Copy these)!",
-              "url": "https://www.youtube.com/watch?v=CBYfXlP7ppQ",
-              "publishedAt": "2025-11-19T05:30:05Z",
-              "thumbnail": "https://i.ytimg.com/vi/CBYfXlP7ppQ/default.jpg"
-            },
-            {
-              "videoId": "dpz80_o5kgA",
-              "title": "I Tested Trae SOLO: The New AI Coding Tool Everyone Is Talking About 🔥",
-              "url": "https://www.youtube.com/watch?v=dpz80_o5kgA",
-              "publishedAt": "2025-11-14T11:30:23Z",
-              "thumbnail": "https://i.ytimg.com/vi/dpz80_o5kgA/default.jpg"
-            },
-            {
-              "videoId": "M1dKYQ7GsTg",
-              "title": "MongoDB Crash Course 2026 (with Handbook)",
-              "url": "https://www.youtube.com/watch?v=M1dKYQ7GsTg",
-              "publishedAt": "2025-11-05T15:05:12Z",
-              "thumbnail": "https://i.ytimg.com/vi/M1dKYQ7GsTg/default.jpg"
-            }
-          ],
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "T576A-1230793:058b7d0d-0fc1-4f7f-bf29-139e18f875e1": {
-    "id": "058b7d0d-0fc1-4f7f-bf29-139e18f875e1",
-    "name": "GenerateTitles",
-    "parentTraceId": "T576A-1230793",
-    "status": "completed",
-    "startTime": 1764271235161,
-    "endTime": 1764271248341,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "GenerateTitles"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764271236217,
-        "level": "info",
-        "message": "GenerateTitles: Starting title generation",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "GenerateTitles",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "videoCount": 5,
-          "level": "info",
-          "time": 1764271236215,
-          "msg": "GenerateTitles: Starting title generation"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271236218,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271236219,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "generating titles"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764271248106,
-        "level": "info",
-        "message": "Gemini API Response received",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "GenerateTitles",
-          "hasResponse": true,
-          "hasCandidates": true,
-          "level": "info",
-          "time": 1764271248103,
-          "msg": "Gemini API Response received"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764271248108,
-        "level": "info",
-        "message": "Parsing AI response",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "GenerateTitles",
-          "textLength": 2238,
-          "level": "info",
-          "time": 1764271248104,
-          "msg": "Parsing AI response"
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764271248110,
-        "level": "info",
-        "message": "GenerateTitles: Titles generated successfully",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "GenerateTitles",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "titleCount": 5,
-          "level": "info",
-          "time": 1764271248104,
-          "msg": "GenerateTitles: Titles generated successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271248111,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "titles ready",
-            "improvedTitles": [
-              {
-                "original": "ChatGPT ❌ This Agentic AI ✅ (Game Changer) | Manus 1.5",
-                "improved": "ChatGPT Killer? This Agentic AI (Manus 1.5) Will REVOLUTIONIZE Your Coding Workflow!",
-                "rationale": "This title creates immediate tension with 'ChatGPT Killer?' and promises a 'REVOLUTIONIZE'd workflow, making the benefit of Manus 1.5 clear and highly engaging. It targets a strong keyword (ChatGPT) while introducing the new tool.",
-                "url": "https://www.youtube.com/watch?v=ZlAs79nW4P4"
-              },
-              {
-                "original": "Google Antigravity is a....",
-                "improved": "Google's SECRET Antigravity Project: The TRUTH Revealed (Beyond Your Wildest Dreams)",
-                "rationale": "The original was a massive missed opportunity. This improved title uses 'SECRET' and 'TRUTH Revealed' to create intense curiosity and a strong emotional hook, while 'Beyond Your Wildest Dreams' promises a mind-blowing revelation.",
-                "url": "https://www.youtube.com/watch?v=EY4eqjdrEew"
-              },
-              {
-                "original": "5 Ways to use AI in Coding (Copy these)!",
-                "improved": "Unlock 5 Game-Changing AI Coding Hacks (Steal My Workflow for INSANE Productivity!)",
-                "rationale": "This title uses action verbs like 'Unlock' and 'Steal,' promising specific, 'Game-Changing' benefits and 'INSANE Productivity.' It directly addresses the viewer's desire for efficiency and actionable strategies.",
-                "url": "https://www.youtube.com/watch?v=CBYfXlP7ppQ"
-              },
-              {
-                "original": "I Tested Trae SOLO: The New AI Coding Tool Everyone Is Talking About 🔥",
-                "improved": "I Tested Trae SOLO: This AI Coding Tool BLEW MY MIND! (Will It Replace Developers?)",
-                "rationale": "This version uses a strong emotional hook ('BLEW MY MIND!') from a personal test, immediately grabbing attention. The provocative question 'Will It Replace Developers?' creates urgency and high curiosity, directly addressing a common fear/interest.",
-                "url": "https://www.youtube.com/watch?v=dpz80_o5kgA"
-              },
-              {
-                "original": "MongoDB Crash Course 2026 (with Handbook)",
-                "improved": "MongoDB ULTIMATE Crash Course 2024-2026: Go From Zero to Pro FAST (FREE Handbook!)",
-                "rationale": "This title is more comprehensive and benefit-driven, specifying 'ULTIMATE' and '2024-2026' for clarity on its up-to-dateness and future-proofing. It promises clear progression ('Zero to Pro') and speed ('FAST'), with 'FREE Handbook!' as a strong value add.",
-                "url": "https://www.youtube.com/watch?v=M1dKYQ7GsTg"
-              }
-            ]
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764271248114,
-        "topic": "yt.titles.ready",
-        "success": true,
-        "data": {
-          "jobId": "job_1764271231699_fno6s93y4",
-          "channelName": "CodeWithHarry",
-          "improvedTitles": [
-            {
-              "original": "ChatGPT ❌ This Agentic AI ✅ (Game Changer) | Manus 1.5",
-              "improved": "ChatGPT Killer? This Agentic AI (Manus 1.5) Will REVOLUTIONIZE Your Coding Workflow!",
-              "rationale": "This title creates immediate tension with 'ChatGPT Killer?' and promises a 'REVOLUTIONIZE'd workflow, making the benefit of Manus 1.5 clear and highly engaging. It targets a strong keyword (ChatGPT) while introducing the new tool.",
-              "url": "https://www.youtube.com/watch?v=ZlAs79nW4P4"
-            },
-            {
-              "original": "Google Antigravity is a....",
-              "improved": "Google's SECRET Antigravity Project: The TRUTH Revealed (Beyond Your Wildest Dreams)",
-              "rationale": "The original was a massive missed opportunity. This improved title uses 'SECRET' and 'TRUTH Revealed' to create intense curiosity and a strong emotional hook, while 'Beyond Your Wildest Dreams' promises a mind-blowing revelation.",
-              "url": "https://www.youtube.com/watch?v=EY4eqjdrEew"
-            },
-            {
-              "original": "5 Ways to use AI in Coding (Copy these)!",
-              "improved": "Unlock 5 Game-Changing AI Coding Hacks (Steal My Workflow for INSANE Productivity!)",
-              "rationale": "This title uses action verbs like 'Unlock' and 'Steal,' promising specific, 'Game-Changing' benefits and 'INSANE Productivity.' It directly addresses the viewer's desire for efficiency and actionable strategies.",
-              "url": "https://www.youtube.com/watch?v=CBYfXlP7ppQ"
-            },
-            {
-              "original": "I Tested Trae SOLO: The New AI Coding Tool Everyone Is Talking About 🔥",
-              "improved": "I Tested Trae SOLO: This AI Coding Tool BLEW MY MIND! (Will It Replace Developers?)",
-              "rationale": "This version uses a strong emotional hook ('BLEW MY MIND!') from a personal test, immediately grabbing attention. The provocative question 'Will It Replace Developers?' creates urgency and high curiosity, directly addressing a common fear/interest.",
-              "url": "https://www.youtube.com/watch?v=dpz80_o5kgA"
-            },
-            {
-              "original": "MongoDB Crash Course 2026 (with Handbook)",
-              "improved": "MongoDB ULTIMATE Crash Course 2024-2026: Go From Zero to Pro FAST (FREE Handbook!)",
-              "rationale": "This title is more comprehensive and benefit-driven, specifying 'ULTIMATE' and '2024-2026' for clarity on its up-to-dateness and future-proofing. It promises clear progression ('Zero to Pro') and speed ('FAST'), with 'FREE Handbook!' as a strong value add.",
-              "url": "https://www.youtube.com/watch?v=M1dKYQ7GsTg"
-            }
-          ],
-          "email": "pruturaj3003@gmail.com"
-        }
-      }
-    ]
-  },
-  "T576A-1230793:f310c783-ec47-4024-af29-4f8051a422a7": {
-    "id": "f310c783-ec47-4024-af29-4f8051a422a7",
-    "name": "SendEmail",
-    "parentTraceId": "T576A-1230793",
-    "status": "completed",
-    "startTime": 1764271248115,
-    "endTime": 1764271249606,
-    "entryPoint": {
-      "type": "event",
-      "stepName": "SendEmail"
-    },
-    "events": [
-      {
-        "type": "log",
-        "timestamp": 1764271248833,
-        "level": "info",
-        "message": "Sending email",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "SendEmail",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "email": "pruturaj3003@gmail.com",
-          "titleCount": 5,
-          "level": "info",
-          "time": 1764271248831,
-          "msg": "Sending email"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271248834,
-        "operation": "get",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271248837,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "sending email"
-          }
-        }
-      },
-      {
-        "type": "log",
-        "timestamp": 1764271249419,
-        "level": "info",
-        "message": "Email sent successfully",
-        "metadata": {
-          "traceId": "T576A-1230793",
-          "step": "SendEmail",
-          "jobId": "job_1764271231699_fno6s93y4",
-          "emailId": "4c2595a3-804d-47ff-9489-d7d425bdcdeb",
-          "level": "info",
-          "time": 1764271249417,
-          "msg": "Email sent successfully"
-        }
-      },
-      {
-        "type": "state",
-        "timestamp": 1764271249420,
-        "operation": "set",
-        "data": {
-          "traceId": "job:job_1764271231699_fno6s93y4",
-          "key": {
-            "status": "completed",
-            "emailSent": true,
-            "emailId": "4c2595a3-804d-47ff-9489-d7d425bdcdeb",
-            "completedAt": "2025-11-27T19:20:49.417Z"
-          }
-        }
-      },
-      {
-        "type": "emit",
-        "timestamp": 1764271249424,
-        "topic": "yt.email.sent",
-        "success": true,
-        "data": {
-          "jobId": "job_1764271231699_fno6s93y4",
-          "email": "pruturaj3003@gmail.com",
-          "emailId": "4c2595a3-804d-47ff-9489-d7d425bdcdeb"
-        }
-      }
-    ]
-  },
   "SNQ54-1329771:836e1c23-f5e3-4a38-846b-70a66afbb6b9": {
     "id": "836e1c23-f5e3-4a38-846b-70a66afbb6b9",
     "name": "HomePage",
@@ -26649,6 +26090,662 @@
           "jobId": "job_1770393256559_zkciz27gs",
           "email": "pruturaj3003@gmail.com",
           "emailId": "41cf8bee-1ea9-4084-a197-e5d5e94f371c"
+        }
+      }
+    ]
+  },
+  "9HZ7T-0726547:08859189-3ccb-4e6d-a362-79cd0585a296": {
+    "id": "08859189-3ccb-4e6d-a362-79cd0585a296",
+    "name": "SubmitChannel",
+    "parentTraceId": "9HZ7T-0726547",
+    "status": "completed",
+    "startTime": 1772460726555,
+    "endTime": 1772460727849,
+    "entryPoint": {
+      "type": "api",
+      "stepName": "SubmitChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1772460727729,
+        "level": "info",
+        "message": "Received submission request",
+        "metadata": {
+          "traceId": "9HZ7T-0726547",
+          "step": "SubmitChannel",
+          "body": {
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com"
+          },
+          "level": "info",
+          "time": 1772460727490,
+          "msg": "Received submission request"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460727738,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr",
+          "key": {
+            "jobId": "job_1772460727490_bcxk4ckdr",
+            "channel": "@chaiaurcode",
+            "email": "pruturaj3003@gmail.com",
+            "status": "queued",
+            "createdAt": "2026-03-02T14:12:07.490Z"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1772460727756,
+        "level": "info",
+        "message": "Job created",
+        "metadata": {
+          "traceId": "9HZ7T-0726547",
+          "step": "SubmitChannel",
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com",
+          "level": "info",
+          "time": 1772460727747,
+          "msg": "Job created"
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1772460727769,
+        "topic": "yt.submit",
+        "success": true,
+        "data": {
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channel": "@chaiaurcode",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "9HZ7T-0726547:dbd25bcd-92b9-4604-ad56-a13f69b882e1": {
+    "id": "dbd25bcd-92b9-4604-ad56-a13f69b882e1",
+    "name": "ResolveChannel",
+    "parentTraceId": "9HZ7T-0726547",
+    "status": "completed",
+    "startTime": 1772460727776,
+    "endTime": 1772460729052,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "ResolveChannel"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1772460728406,
+        "level": "info",
+        "message": "Resolving youtube channel",
+        "metadata": {
+          "traceId": "9HZ7T-0726547",
+          "step": "ResolveChannel",
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channel": "@chaiaurcode",
+          "level": "info",
+          "time": 1772460728405,
+          "msg": "Resolving youtube channel"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460728410,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460728415,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr",
+          "key": {
+            "status": "resolving channel"
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1772460728820,
+        "topic": "yt.channel.resolved",
+        "success": true,
+        "data": {
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "channelName": "Chai aur Code",
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "9HZ7T-0726547:965fcc4b-3898-4169-a336-803f00719864": {
+    "id": "965fcc4b-3898-4169-a336-803f00719864",
+    "name": "fetchVideos",
+    "parentTraceId": "9HZ7T-0726547",
+    "status": "completed",
+    "startTime": 1772460728827,
+    "endTime": 1772460730428,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "fetchVideos"
+    },
+    "events": [
+      {
+        "type": "log",
+        "timestamp": 1772460729429,
+        "level": "info",
+        "message": "Fetching youtube videos",
+        "metadata": {
+          "traceId": "9HZ7T-0726547",
+          "step": "fetchVideos",
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channelId": "UCNQ6FEtztATuaVhZKCY28Yw",
+          "level": "info",
+          "time": 1772460729425,
+          "msg": "Fetching youtube videos"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460729436,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460729441,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr",
+          "key": {
+            "status": "fetching videos"
+          }
+        }
+      },
+      {
+        "type": "log",
+        "timestamp": 1772460730121,
+        "level": "info",
+        "message": "Videos fetched successfully",
+        "metadata": {
+          "traceId": "9HZ7T-0726547",
+          "step": "fetchVideos",
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "videoCount": 5,
+          "level": "info",
+          "time": 1772460730118,
+          "msg": "Videos fetched successfully"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460730130,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr",
+          "key": {
+            "status": "videos fetched",
+            "videos": [
+              {
+                "videoId": "N6TBNpZLn3c",
+                "title": "The Most Underrated JavaScript Framework Nobody is Talking About!",
+                "url": "https://www.youtube.com/watch?v=N6TBNpZLn3c",
+                "publishedAt": "2026-02-24T11:54:15Z",
+                "thumbnail": "https://i.ytimg.com/vi/N6TBNpZLn3c/default.jpg"
+              },
+              {
+                "videoId": "gxZv9xw30Es",
+                "title": "Internal Architechture and Installation of Open Claw on VPS",
+                "url": "https://www.youtube.com/watch?v=gxZv9xw30Es",
+                "publishedAt": "2026-02-22T11:46:45Z",
+                "thumbnail": "https://i.ytimg.com/vi/gxZv9xw30Es/default.jpg"
+              },
+              {
+                "videoId": "Oanmq2zNmpE",
+                "title": "Chai pe charcha",
+                "url": "https://www.youtube.com/watch?v=Oanmq2zNmpE",
+                "publishedAt": "2026-02-20T18:03:53Z",
+                "thumbnail": "https://i.ytimg.com/vi/Oanmq2zNmpE/default.jpg"
+              },
+              {
+                "videoId": "5j2LvT_-As8",
+                "title": "C10K Problem Explained in Hindi | System Design | Apache, Nginx, Node.js &amp; BEAM",
+                "url": "https://www.youtube.com/watch?v=5j2LvT_-As8",
+                "publishedAt": "2026-02-20T15:44:54Z",
+                "thumbnail": "https://i.ytimg.com/vi/5j2LvT_-As8/default.jpg"
+              },
+              {
+                "videoId": "FVM82rMMmEI",
+                "title": "3 pillars of software Development for beginners",
+                "url": "https://www.youtube.com/watch?v=FVM82rMMmEI",
+                "publishedAt": "2026-02-20T14:03:12Z",
+                "thumbnail": "https://i.ytimg.com/vi/FVM82rMMmEI/default.jpg"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1772460730142,
+        "topic": "yt.videos.fetched",
+        "success": true,
+        "data": {
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channelName": "Chai aur Code",
+          "videos": [
+            {
+              "videoId": "N6TBNpZLn3c",
+              "title": "The Most Underrated JavaScript Framework Nobody is Talking About!",
+              "url": "https://www.youtube.com/watch?v=N6TBNpZLn3c",
+              "publishedAt": "2026-02-24T11:54:15Z",
+              "thumbnail": "https://i.ytimg.com/vi/N6TBNpZLn3c/default.jpg"
+            },
+            {
+              "videoId": "gxZv9xw30Es",
+              "title": "Internal Architechture and Installation of Open Claw on VPS",
+              "url": "https://www.youtube.com/watch?v=gxZv9xw30Es",
+              "publishedAt": "2026-02-22T11:46:45Z",
+              "thumbnail": "https://i.ytimg.com/vi/gxZv9xw30Es/default.jpg"
+            },
+            {
+              "videoId": "Oanmq2zNmpE",
+              "title": "Chai pe charcha",
+              "url": "https://www.youtube.com/watch?v=Oanmq2zNmpE",
+              "publishedAt": "2026-02-20T18:03:53Z",
+              "thumbnail": "https://i.ytimg.com/vi/Oanmq2zNmpE/default.jpg"
+            },
+            {
+              "videoId": "5j2LvT_-As8",
+              "title": "C10K Problem Explained in Hindi | System Design | Apache, Nginx, Node.js &amp; BEAM",
+              "url": "https://www.youtube.com/watch?v=5j2LvT_-As8",
+              "publishedAt": "2026-02-20T15:44:54Z",
+              "thumbnail": "https://i.ytimg.com/vi/5j2LvT_-As8/default.jpg"
+            },
+            {
+              "videoId": "FVM82rMMmEI",
+              "title": "3 pillars of software Development for beginners",
+              "url": "https://www.youtube.com/watch?v=FVM82rMMmEI",
+              "publishedAt": "2026-02-20T14:03:12Z",
+              "thumbnail": "https://i.ytimg.com/vi/FVM82rMMmEI/default.jpg"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "9HZ7T-0726547:ffe7bbf1-c4b2-4078-88b4-3f70e95cd03b": {
+    "id": "ffe7bbf1-c4b2-4078-88b4-3f70e95cd03b",
+    "name": "GenerateTitles",
+    "parentTraceId": "9HZ7T-0726547",
+    "status": "completed",
+    "startTime": 1772460730154,
+    "endTime": 1772460742557,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "GenerateTitles"
+    },
+    "events": [
+      {
+        "type": "state",
+        "timestamp": 1772460731066,
+        "operation": "get",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr"
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460731074,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr",
+          "key": {
+            "status": "generating titles"
+          }
+        }
+      },
+      {
+        "type": "state",
+        "timestamp": 1772460742276,
+        "operation": "set",
+        "data": {
+          "traceId": "job:job_1772460727490_bcxk4ckdr",
+          "key": {
+            "status": "titles ready",
+            "improvedTitles": [
+              {
+                "original": "The Most Underrated JavaScript Framework Nobody is Talking About!",
+                "variants": {
+                  "viral": "This JavaScript Framework Will Change Everything (You're Missing Out!)",
+                  "seo": "Hidden Gem JavaScript Framework: Unlocking Underrated Potential",
+                  "professional": "Exploring an Overlooked JavaScript Framework: A Deep Dive"
+                },
+                "reasons": {
+                  "viral": "Emphasizes a transformative impact and creates FOMO (Fear Of Missing Out) to drive clicks.",
+                  "seo": "Uses searchable terms like 'JavaScript Framework' and 'hidden gem' while hinting at value.",
+                  "professional": "Conveys a serious, in-depth analysis of a specific technology in a professional tone."
+                },
+                "thumbnailTexts": [
+                  "Underrated JS?",
+                  "Hidden Power!",
+                  "Don't Miss This"
+                ],
+                "scores": {
+                  "viral": 60,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=N6TBNpZLn3c"
+              },
+              {
+                "original": "Internal Architechture and Installation of Open Claw on VPS",
+                "variants": {
+                  "viral": "Install Open Claw on VPS: You Won't Believe How Easy!",
+                  "seo": "Open Claw VPS Installation Guide: Architecture & Setup Tutorial",
+                  "professional": "Open Claw: Internal Architecture and VPS Deployment Guide"
+                },
+                "reasons": {
+                  "viral": "Creates curiosity and promises an unexpectedly simple solution to a technical task.",
+                  "seo": "Packs keywords like 'Open Claw,' 'VPS,' 'installation guide,' 'architecture,' and 'setup tutorial' for discoverability.",
+                  "professional": "Clearly states the technical topics covered in a direct and informative manner."
+                },
+                "thumbnailTexts": [
+                  "Open Claw Setup",
+                  "VPS Deployment",
+                  "Architecture Explained"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 50,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=gxZv9xw30Es"
+              },
+              {
+                "original": "Chai pe charcha",
+                "variants": {
+                  "viral": "Unfiltered Talks Over Chai: What REALLY Matters?",
+                  "seo": "Chai Pe Charcha: Casual Discussions & Talks (Hindi/English)",
+                  "professional": "Chai pe Charcha: An Informal Discussion Series"
+                },
+                "reasons": {
+                  "viral": "Implies genuine, candid discussions and sparks curiosity about the depth of the topics discussed.",
+                  "seo": "Includes the Hindi phrase for direct search and clarifies the content type for a broader audience.",
+                  "professional": "Professionalizes the concept by framing it as a structured yet informal discussion series."
+                },
+                "thumbnailTexts": [
+                  "Chai & Chat",
+                  "Let's Talk!",
+                  "Real Discussions"
+                ],
+                "scores": {
+                  "viral": 70,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=Oanmq2zNmpE"
+              },
+              {
+                "original": "C10K Problem Explained in Hindi | System Design | Apache, Nginx, Node.js &amp; BEAM",
+                "variants": {
+                  "viral": "Finally Master the C10K Problem! (Hindi Explanation)",
+                  "seo": "C10K Problem System Design Explained Hindi | Apache, Nginx, Node.js, BEAM",
+                  "professional": "The C10K Problem: System Design Solutions (Apache, Nginx, Node.js, BEAM) in Hindi"
+                },
+                "reasons": {
+                  "viral": "Creates a sense of achievement and targets Hindi-speaking viewers looking for a solution to a known challenge.",
+                  "seo": "Combines all major keywords related to the problem, solutions, and language for maximum search visibility.",
+                  "professional": "Clearly defines the problem, lists specific solutions, and specifies the language of instruction."
+                },
+                "thumbnailTexts": [
+                  "C10K Demystified",
+                  "System Design",
+                  "Apache, Nginx"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 60,
+                  "professional": 60
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=5j2LvT_-As8"
+              },
+              {
+                "original": "3 pillars of software Development for beginners",
+                "variants": {
+                  "viral": "Master Software Development: The 3 Secrets Every Beginner NEEDS!",
+                  "seo": "Software Development Fundamentals: 3 Essential Pillars for Beginners",
+                  "professional": "Foundational Concepts in Software Development: A Beginner's Guide"
+                },
+                "reasons": {
+                  "viral": "Creates urgency and curiosity by promising essential 'secrets' that new learners absolutely must know.",
+                  "seo": "Uses core search terms like 'software development fundamentals' and 'beginners' to attract target audience.",
+                  "professional": "Presents the topic as a structured, educational guide for those new to software development."
+                },
+                "thumbnailTexts": [
+                  "Dev Pillars",
+                  "For Beginners",
+                  "Start Here!"
+                ],
+                "scores": {
+                  "viral": 80,
+                  "seo": 60,
+                  "professional": 50
+                },
+                "recommendation": {
+                  "type": "VIRAL",
+                  "reason": "Highest emotional impact and curiosity trigger"
+                },
+                "url": "https://www.youtube.com/watch?v=FVM82rMMmEI"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "emit",
+        "timestamp": 1772460742285,
+        "topic": "yt.titles.ready",
+        "success": true,
+        "data": {
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "channelName": "Chai aur Code",
+          "improvedTitles": [
+            {
+              "original": "The Most Underrated JavaScript Framework Nobody is Talking About!",
+              "variants": {
+                "viral": "This JavaScript Framework Will Change Everything (You're Missing Out!)",
+                "seo": "Hidden Gem JavaScript Framework: Unlocking Underrated Potential",
+                "professional": "Exploring an Overlooked JavaScript Framework: A Deep Dive"
+              },
+              "reasons": {
+                "viral": "Emphasizes a transformative impact and creates FOMO (Fear Of Missing Out) to drive clicks.",
+                "seo": "Uses searchable terms like 'JavaScript Framework' and 'hidden gem' while hinting at value.",
+                "professional": "Conveys a serious, in-depth analysis of a specific technology in a professional tone."
+              },
+              "thumbnailTexts": [
+                "Underrated JS?",
+                "Hidden Power!",
+                "Don't Miss This"
+              ],
+              "scores": {
+                "viral": 60,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=N6TBNpZLn3c"
+            },
+            {
+              "original": "Internal Architechture and Installation of Open Claw on VPS",
+              "variants": {
+                "viral": "Install Open Claw on VPS: You Won't Believe How Easy!",
+                "seo": "Open Claw VPS Installation Guide: Architecture & Setup Tutorial",
+                "professional": "Open Claw: Internal Architecture and VPS Deployment Guide"
+              },
+              "reasons": {
+                "viral": "Creates curiosity and promises an unexpectedly simple solution to a technical task.",
+                "seo": "Packs keywords like 'Open Claw,' 'VPS,' 'installation guide,' 'architecture,' and 'setup tutorial' for discoverability.",
+                "professional": "Clearly states the technical topics covered in a direct and informative manner."
+              },
+              "thumbnailTexts": [
+                "Open Claw Setup",
+                "VPS Deployment",
+                "Architecture Explained"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 50,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=gxZv9xw30Es"
+            },
+            {
+              "original": "Chai pe charcha",
+              "variants": {
+                "viral": "Unfiltered Talks Over Chai: What REALLY Matters?",
+                "seo": "Chai Pe Charcha: Casual Discussions & Talks (Hindi/English)",
+                "professional": "Chai pe Charcha: An Informal Discussion Series"
+              },
+              "reasons": {
+                "viral": "Implies genuine, candid discussions and sparks curiosity about the depth of the topics discussed.",
+                "seo": "Includes the Hindi phrase for direct search and clarifies the content type for a broader audience.",
+                "professional": "Professionalizes the concept by framing it as a structured yet informal discussion series."
+              },
+              "thumbnailTexts": [
+                "Chai & Chat",
+                "Let's Talk!",
+                "Real Discussions"
+              ],
+              "scores": {
+                "viral": 70,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=Oanmq2zNmpE"
+            },
+            {
+              "original": "C10K Problem Explained in Hindi | System Design | Apache, Nginx, Node.js &amp; BEAM",
+              "variants": {
+                "viral": "Finally Master the C10K Problem! (Hindi Explanation)",
+                "seo": "C10K Problem System Design Explained Hindi | Apache, Nginx, Node.js, BEAM",
+                "professional": "The C10K Problem: System Design Solutions (Apache, Nginx, Node.js, BEAM) in Hindi"
+              },
+              "reasons": {
+                "viral": "Creates a sense of achievement and targets Hindi-speaking viewers looking for a solution to a known challenge.",
+                "seo": "Combines all major keywords related to the problem, solutions, and language for maximum search visibility.",
+                "professional": "Clearly defines the problem, lists specific solutions, and specifies the language of instruction."
+              },
+              "thumbnailTexts": [
+                "C10K Demystified",
+                "System Design",
+                "Apache, Nginx"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 60,
+                "professional": 60
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=5j2LvT_-As8"
+            },
+            {
+              "original": "3 pillars of software Development for beginners",
+              "variants": {
+                "viral": "Master Software Development: The 3 Secrets Every Beginner NEEDS!",
+                "seo": "Software Development Fundamentals: 3 Essential Pillars for Beginners",
+                "professional": "Foundational Concepts in Software Development: A Beginner's Guide"
+              },
+              "reasons": {
+                "viral": "Creates urgency and curiosity by promising essential 'secrets' that new learners absolutely must know.",
+                "seo": "Uses core search terms like 'software development fundamentals' and 'beginners' to attract target audience.",
+                "professional": "Presents the topic as a structured, educational guide for those new to software development."
+              },
+              "thumbnailTexts": [
+                "Dev Pillars",
+                "For Beginners",
+                "Start Here!"
+              ],
+              "scores": {
+                "viral": 80,
+                "seo": 60,
+                "professional": 50
+              },
+              "recommendation": {
+                "type": "VIRAL",
+                "reason": "Highest emotional impact and curiosity trigger"
+              },
+              "url": "https://www.youtube.com/watch?v=FVM82rMMmEI"
+            }
+          ],
+          "email": "pruturaj3003@gmail.com"
+        }
+      }
+    ]
+  },
+  "9HZ7T-0726547:4919c864-c09b-4944-8ade-bac7721a21a2": {
+    "id": "4919c864-c09b-4944-8ade-bac7721a21a2",
+    "name": "SendEmail",
+    "parentTraceId": "9HZ7T-0726547",
+    "status": "completed",
+    "startTime": 1772460742293,
+    "endTime": 1772460743755,
+    "entryPoint": {
+      "type": "event",
+      "stepName": "SendEmail"
+    },
+    "events": [
+      {
+        "type": "emit",
+        "timestamp": 1772460743534,
+        "topic": "yt.email.sent",
+        "success": true,
+        "data": {
+          "jobId": "job_1772460727490_bcxk4ckdr",
+          "email": "pruturaj3003@gmail.com",
+          "emailId": "9cac3c4c-edef-4a51-90e9-f49a274d85cd"
         }
       }
     ]
